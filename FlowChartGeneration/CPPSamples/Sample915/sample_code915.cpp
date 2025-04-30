@@ -1,0 +1,15 @@
+#include <vector>
+#include <tuple>
+
+std::tuple<int, int, int> find_triplet_array(const std::vector<int>& A, int arr_size, int sum) {
+    for (int i = 0; i < arr_size - 2; i++) {
+        for (int j = i + 1; j < arr_size - 1; j++) {
+            for (int k = j + 1; k < arr_size; k++) {
+                if (A[i] + A[j] + A[k] == sum) {
+                    return std::make_tuple(A[i], A[j], A[k]);
+                }
+            }
+        }
+    }
+    return std::make_tuple(false, false, false);
+}

@@ -1,0 +1,2 @@
+ START ----->  bool ----->  is_odd (int n) ----->  if ((n ^ 1) == (n - 1)) ----->  return true; -----> END
+ START ----->  bool ----->  is_odd (int n) ----->  if ((n ^ 1) == (n - 1)) ----->  else ----->  return false; -----> END

@@ -1,0 +1,2 @@
+ START ----->  double ----->  triangle_area (double a, double b, double c) ----->  if (a + b <= c || a + c <= b || b + c <= a) ----->  return -1; -----> END
+ START ----->  double ----->  triangle_area (double a, double b, double c) ----->  if (a + b <= c || a + c <= b || b + c <= a) ----->  double s = (a + b + c) / 2; ----->  double area = sqrt (s * (s - a) * (s - b) * (s - c)); ----->  area = round (area * 100) / 100; ----->  return area; -----> END

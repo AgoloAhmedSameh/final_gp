@@ -1,0 +1,11 @@
+#include <vector>
+#include <tuple>
+
+std::pair<std::vector<std::string>, std::vector<std::string>> add_str(const std::vector<std::tuple<std::string>>& test_tup, const std::string& K) {
+    std::vector<std::string> res;
+    for (const auto& sub : test_tup) {
+        res.push_back(std::get<0>(sub));
+        res.push_back(K);
+    }
+    return {res};
+}

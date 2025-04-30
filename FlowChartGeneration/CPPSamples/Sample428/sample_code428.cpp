@@ -1,0 +1,6 @@
+#include <tuple>
+#include <vector>
+
+std::tuple<int, int> and_tuples(const std::tuple<int, int>& test_tup1, const std::tuple<int, int>& test_tup2) {
+    return std::make_tuple(std::get<0>(test_tup1) & std::get<0>(test_tup2), std::get<1>(test_tup1) & std::get<1>(test_tup2));
+}

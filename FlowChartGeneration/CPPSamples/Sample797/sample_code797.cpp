@@ -1,0 +1,9 @@
+#include <vector>
+
+int _sum(const std::vector<int>& arr) {
+    int sum = 0;
+    for (int i : arr) {
+        sum = sum + i;
+    }
+    return sum;
+}

@@ -1,0 +1,11 @@
+#include <string>
+
+std::pair<int, int> count_occurance(const std::string &s) {
+    int count = 0;
+    for (size_t i = 0; i < s.length() - 2; ++i) {
+        if (s[i] == 's' && s[i + 1] == 't' && s[i + 2] == 'd') {
+            count++;
+        }
+    }
+    return std::make_pair(count, 0);
+}

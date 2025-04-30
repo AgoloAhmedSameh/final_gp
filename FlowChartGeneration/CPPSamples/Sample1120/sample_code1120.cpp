@@ -1,0 +1,17 @@
+#include <vector>
+#include <string>
+
+int specialFilter(const std::vector<int>& nums) {
+    int count = 0;
+    for (int num : nums) {
+        if (num > 10) {
+            int odd_digits[] = {1, 3, 5, 7, 9};
+            std::string number_as_string = std::to_string(num);
+            if (std::find(std::begin(odd_digits), std::end(odd_digits), number_as_string[0] - '0') != std::end(odd_digits) &&
+                std::find(std::begin(odd_digits), std::end(odd_digits), number_as_string[number_as_string.length() - 1] - '0') != std::end(odd_digits)) {
+                count += 1;
+            }
+        }
+    }
+    return count;
+}

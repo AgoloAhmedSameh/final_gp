@@ -1,0 +1,6 @@
+#include <tuple>
+
+std::tuple<int> parabola_directrix(int a, int b, int c) {
+    int directrix = c - ((b * b) + 1) * 4 * a;
+    return std::make_tuple(directrix);
+}

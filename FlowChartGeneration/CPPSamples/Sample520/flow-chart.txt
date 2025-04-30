@@ -1,0 +1,2 @@
+ START ----->  bool ----->  check_isosceles (int x, int y, int z) ----->  if (x != y && y != z && z != x) ----->  return true; -----> END
+ START ----->  bool ----->  check_isosceles (int x, int y, int z) ----->  if (x != y && y != z && z != x) ----->  else ----->  return false; -----> END

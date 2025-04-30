@@ -1,0 +1,20 @@
+#include <string>
+
+int min_Swaps(const std::string& s1, const std::string& s2) {
+    int c0 = 0, c1 = 0;
+    for (size_t i = 0; i < s1.length(); ++i) {
+        if (s1[i] == '0' && s2[i] == '1') {
+            c0++;
+        } else if (s1[i] == '1' && s2[i] == '0') {
+            c1++;
+        }
+    }
+    int result = c0 / 2 + c1 / 2;
+    if (c0 % 2 == 0 && c1 % 2 == 0) {
+        return result;
+    } else if ((c0 + c1) % 2 == 0) {
+        return result + 2;
+    } else {
+        return -1;
+    }
+}

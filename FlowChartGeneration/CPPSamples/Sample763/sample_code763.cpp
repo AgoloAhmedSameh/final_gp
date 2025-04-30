@@ -1,0 +1,9 @@
+#include <string>
+
+std::pair<int, int> number_ctr(const std::string& str) {
+    int number_ctr = 0;
+    for (size_t i = 0; i < str.length(); ++i) {
+        if (str[i] >= '0' && str[i] <= '9') number_ctr += 1;
+    }
+    return {number_ctr, 0};
+}

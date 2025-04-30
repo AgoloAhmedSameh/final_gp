@@ -1,0 +1,2 @@
+ START ----->  std::pair<int, int> ----->  min_Operations (int A, int B) ----->  if (A > B) ----->  std::swap (A, B); ----->  B = B / std::gcd (A, B); ----->  return { B - 1, 0 }; -----> END
+ START ----->  std::pair<int, int> ----->  min_Operations (int A, int B) ----->  if (A > B) ----->  B = B / std::gcd (A, B); ----->  return { B - 1, 0 }; -----> END

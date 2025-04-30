@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+pair<int, int> odd_Num_Sum(int n) {
+    int j = 0;
+    int sm = 0;
+    for (int i = 1; i <= n; ++i) {
+        j = (2 * i - 1);
+        sm += (j * j * j * j);
+    }
+    return make_pair(sm, 0); // Returning a pair, second value can be adjusted as needed
+}

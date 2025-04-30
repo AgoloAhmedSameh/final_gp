@@ -1,0 +1,10 @@
+#include <vector>
+#include <utility>
+
+std::pair<std::vector<int>, std::vector<int>> diff_consecutivenums(const std::vector<int>& nums) {
+    std::vector<int> result;
+    for (size_t i = 1; i < nums.size(); ++i) {
+        result.push_back(nums[i] - nums[i - 1]);
+    }
+    return {result};
+}

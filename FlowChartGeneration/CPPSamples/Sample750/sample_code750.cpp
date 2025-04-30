@@ -1,0 +1,10 @@
+#include <vector>
+
+bool check_min_heap(std::vector<int>& arr, int i) {
+    if (2 * i + 2 >= arr.size()) {
+        return true;
+    }
+    bool left_child = (arr[i] <= arr[2 * i + 1]) && check_min_heap(arr, 2 * i + 1);
+    bool right_child = (2 * i + 2 == arr.size()) || (arr[i] <= arr[2 * i + 2] && check_min_heap(arr, 2 * i + 2));
+    return left_child && right_child;
+}

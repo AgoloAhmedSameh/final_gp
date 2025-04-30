@@ -1,0 +1,10 @@
+#include <cmath>
+#include <vector>
+
+int sum_squares(const std::vector<double>& lst) {
+    int squared = 0;
+    for (const auto& i : lst) {
+        squared += static_cast<int>(std::ceil(i)) * static_cast<int>(std::ceil(i));
+    }
+    return squared;
+}

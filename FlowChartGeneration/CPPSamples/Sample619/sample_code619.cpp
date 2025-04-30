@@ -1,0 +1,18 @@
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+pair<int, int> largest_subset(vector<int>& a, int n) {
+    vector<int> dp(n, 0);
+    dp[n - 1] = 1;
+    for (int i = n - 2; i >= 0; i--) {
+        int mxm = 0;
+        for (int j = i + 1; j < n; j++) {
+            if (a[j] % a[i] == 0 || a[i] % a[j] == 0) {
+                mxm = max(mxm, dp[j]);
+            }
+        }
+        dp[i] = 1 + mxm;
+    }
+    return {max(dp[0], 1), 0}; // Max subset size, second return value is not specified in original python
+}

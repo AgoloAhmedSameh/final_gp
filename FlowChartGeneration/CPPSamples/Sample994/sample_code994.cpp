@@ -1,0 +1,24 @@
+#include <vector>
+#include <cmath>
+#include <tuple>
+#include <algorithm>
+#include <limits>
+
+std::tuple<float, float> find_closest_elements(const std::vector<float>& numbers) {
+    std::tuple<float, float> closest_pair;
+    float distance = std::numeric_limits<float>::max();
+
+    for (size_t idx = 0; idx < numbers.size(); ++idx) {
+        for (size_t idx2 = 0; idx2 < numbers.size(); ++idx2) {
+            if (idx != idx2) {
+                float new_distance = std::abs(numbers[idx] - numbers[idx2]);
+                if (new_distance < distance) {
+                    distance = new_distance;
+                    closest_pair = std::make_tuple(std::min(numbers[idx], numbers[idx2]), std::max(numbers[idx], numbers[idx2]));
+                }
+            }
+        }
+    }
+
+    return closest_pair;
+}

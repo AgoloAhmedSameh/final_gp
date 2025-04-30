@@ -1,0 +1,7 @@
+#include <tuple>
+#include <vector>
+
+std::vector<std::tuple<int, int>> repeat_tuples(const std::tuple<int, int>& test_tup, int N) {
+    std::vector<std::tuple<int, int>> res(N, test_tup);
+    return res;
+}

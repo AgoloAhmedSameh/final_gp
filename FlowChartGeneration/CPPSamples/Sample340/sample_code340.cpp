@@ -1,0 +1,9 @@
+#include <vector>
+#include <algorithm>
+#include <tuple>
+
+std::tuple<std::vector<int>> set_to_tuple(const std::set<int>& s) {
+    std::vector<int> t(s.begin(), s.end());
+    std::sort(t.begin(), t.end());
+    return std::make_tuple(t);
+}

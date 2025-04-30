@@ -1,0 +1,4 @@
+ START ----->  int ----->  find_First_Missing (std::vector<int> &array, int start, int end) ----->  if (start > end) ----->  return end + 1; -----> END
+ START ----->  int ----->  find_First_Missing (std::vector<int> &array, int start, int end) ----->  if (start > end) ----->  if (start != array[start]) ----->  return start; -----> END
+ START ----->  int ----->  find_First_Missing (std::vector<int> &array, int start, int end) ----->  if (start > end) ----->  if (start != array[start]) ----->  int mid = (start + end) / 2; ----->  if (array[mid] == mid) ----->  return find_First_Missing (array, mid + 1, end); -----> END
+ START ----->  int ----->  find_First_Missing (std::vector<int> &array, int start, int end) ----->  if (start > end) ----->  if (start != array[start]) ----->  int mid = (start + end) / 2; ----->  if (array[mid] == mid) ----->  return find_First_Missing (array, start, mid); -----> END

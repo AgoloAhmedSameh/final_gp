@@ -1,0 +1,3 @@
+ START ----->  bool ----->  prime_length (const std::string &str) ----->  int l = str.length (); ----->  if (l == 0 || l == 1) ----->  return false; -----> END
+ START ----->  bool ----->  prime_length (const std::string &str) ----->  int l = str.length (); ----->  if (l == 0 || l == 1) -----> for (int i = 2; i < l; i++) ----->  if (l % i == 0) ----->  return false; -----> END
+ START ----->  bool ----->  prime_length (const std::string &str) ----->  int l = str.length (); ----->  if (l == 0 || l == 1) -----> for (int i = 2; i < l; i++) ----->  if (l % i == 0) ----->  return true; -----> END

@@ -1,0 +1,5 @@
+ START ----->  int ----->  last_Digit_Factorial (int n) ----->  if (n == 0) ----->  return 1; -----> END
+ START ----->  int ----->  last_Digit_Factorial (int n) ----->  if (n == 0) ----->  else if (n <= 2) ----->  return n; -----> END
+ START ----->  int ----->  last_Digit_Factorial (int n) ----->  if (n == 0) ----->  else if (n <= 2) ----->  else if (n == 3) ----->  return 6; -----> END
+ START ----->  int ----->  last_Digit_Factorial (int n) ----->  if (n == 0) ----->  else if (n <= 2) ----->  else if (n == 3) ----->  else if (n == 4) ----->  return 4; -----> END
+ START ----->  int ----->  last_Digit_Factorial (int n) ----->  if (n == 0) ----->  else if (n <= 2) ----->  else if (n == 3) ----->  else if (n == 4) ----->  else ----->  return 0; -----> END

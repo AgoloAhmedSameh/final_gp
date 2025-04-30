@@ -1,0 +1,2 @@
+ START ----->  int ----->  find_equal_tuple (const std::vector<std::tuple<int, int> > &Input, int k) ----->  int flag = 1; -----> for (const auto &tuple : Input) ----->  if (std::tuple_size<decltype (tuple)>::value != k) ----->  flag = 0; ----->  break; ----->  return flag; -----> END
+ START ----->  int ----->  find_equal_tuple (const std::vector<std::tuple<int, int> > &Input, int k) ----->  int flag = 1; -----> for (const auto &tuple : Input) ----->  if (std::tuple_size<decltype (tuple)>::value != k) ----->  return flag; -----> END

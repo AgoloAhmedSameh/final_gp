@@ -1,0 +1,2 @@
+ START ----->  bool ----->  check_monthnum (const std::string &monthname1) ----->  if (monthname1 == "February") ----->  return true; -----> END
+ START ----->  bool ----->  check_monthnum (const std::string &monthname1) ----->  if (monthname1 == "February") ----->  else ----->  return false; -----> END

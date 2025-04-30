@@ -1,0 +1,11 @@
+#include <string>
+
+bool check_monthnumb(std::string monthname2) {
+    if (monthname2 == "January" || monthname2 == "March" || monthname2 == "May" || 
+        monthname2 == "July" || monthname2 == "August" || monthname2 == "October" || 
+        monthname2 == "December") {
+        return true;
+    } else {
+        return false;
+    }
+}

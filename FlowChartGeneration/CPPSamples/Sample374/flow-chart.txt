@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  round_num (int n, int m) ----->  int a = (n / m) * m; ----->  int b = a + m; ----->  return (n - a > b - n) ? std::make_pair (b, a) : std::make_pair (a, b); -----> END

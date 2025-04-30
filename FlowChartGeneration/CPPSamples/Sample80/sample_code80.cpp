@@ -1,0 +1,11 @@
+#include <iostream>
+#include <vector>
+#include <tuple>
+
+std::pair<std::vector<std::tuple<decltype(test_tup1[0]), decltype(test_tup2[0])>>, std::vector<std::tuple<decltype(test_tup1[0]), decltype(test_tup2[0])>>> zip_tuples(const std::vector<decltype(test_tup1[0])>& test_tup1, const std::vector<decltype(test_tup2[0])>& test_tup2) {
+    std::vector<std::tuple<decltype(test_tup1[0]), decltype(test_tup2[0])>> res;
+    for (size_t i = 0; i < test_tup1.size(); ++i) {
+        res.emplace_back(test_tup1[i], test_tup2[i % test_tup2.size()]);
+    }
+    return res;
+}

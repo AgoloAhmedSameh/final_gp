@@ -1,0 +1,1 @@
+ START ----->  long long ----->  get_product (const std::vector<int> &val) ----->  long long res = 1; -----> for (const auto &ele : val) ----->  res *= ele; ----->  return res; -----> END

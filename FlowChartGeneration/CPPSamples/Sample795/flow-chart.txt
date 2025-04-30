@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  return_sum (const std::unordered_map<std::string, int> &dict) -----> END

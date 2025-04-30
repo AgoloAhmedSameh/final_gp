@@ -1,0 +1,1 @@
+ START ----->  std::pair<std::string> ----->  most_occurrences (const std::vector<std::string> &test_list) ----->  std::unordered_map<std::string, int> temp; -----> for (const auto &sub : test_list) ----->  std::istringstream iss (sub); ----->  std::string wrd; -----> while (iss >> wrd) ----->  temp[wrd]++;

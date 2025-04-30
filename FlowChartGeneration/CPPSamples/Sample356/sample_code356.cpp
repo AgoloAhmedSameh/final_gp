@@ -1,0 +1,13 @@
+#include <vector>
+#include <algorithm>
+#include <iostream>
+
+std::pair<int, int> find_max(const std::vector<std::vector<std::string>>& test_list) {
+    int res = 0;
+    for (const auto& i : test_list) {
+        for (const auto& j : i) {
+            res = std::max(res, std::stoi(j));
+        }
+    }
+    return {res};
+}

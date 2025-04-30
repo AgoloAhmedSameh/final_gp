@@ -1,0 +1,2 @@
+ START ----->  double ----->  triangle_area (double r) ----->  if (r < 0) ----->  return -1; -----> END
+ START ----->  double ----->  triangle_area (double r) ----->  if (r < 0) ----->  return r * r; -----> END

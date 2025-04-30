@@ -1,0 +1,1 @@
+ START ----->  std::map<std::vector<int>, int> ----->  check_occurences (const std::vector<std::vector<int> > &test_list) ----->  std::map<std::vector<int>, int> res; -----> for (const auto &ele : test_list) ----->  auto sorted_ele = ele; ----->  std::sort (sorted_ele.begin (), sorted_ele.end ()); ----->  res[sorted_ele]++; ----->  return res; -----> END

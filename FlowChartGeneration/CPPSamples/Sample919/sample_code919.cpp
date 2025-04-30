@@ -1,0 +1,34 @@
+#include <vector>
+#include <string>
+#include <sstream>
+
+std::pair<std::string, std::vector<std::vector<std::string>>> remove_tuple(const std::vector<std::vector<std::string>>& test_list) {
+    std::vector<std::vector<std::string>> res;
+    for (const auto& sub : test_list) {
+        bool all_none = true;
+        for (const auto& ele : sub) {
+            if (ele != "None") { // Assuming "None" is used as a string representation of None
+                all_none = false;
+                break;
+            }
+        }
+        if (!all_none) {
+            res.push_back(sub);
+        }
+    }
+
+    std::ostringstream oss;
+    oss << "[";
+    for (size_t i = 0; i < res.size(); ++i) {
+        oss << "[";
+        for (size_t j = 0; j < res[i].size(); ++j) {
+            oss << res[i][j];
+            if (j < res[i].size() - 1) oss << ", ";
+        }
+        oss << "]";
+        if (i < res.size() - 1) oss << ", ";
+    }
+    oss << "]";
+
+    return {oss.str(), res};
+}

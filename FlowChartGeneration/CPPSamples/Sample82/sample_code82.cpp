@@ -1,0 +1,14 @@
+#include <string>
+
+char get_Char(const std::string& strr) {
+    int summ = 0;
+    for (size_t i = 0; i < strr.length(); ++i) {
+        summ += (strr[i] - 'a' + 1);
+    }
+    if (summ % 26 == 0) {
+        return 'z';
+    } else {
+        summ = summ % 26;
+        return 'a' + summ - 1;
+    }
+}

@@ -1,0 +1,14 @@
+#include <vector>
+#include <algorithm>
+
+std::pair<std::vector<std::vector<int>>, std::vector<int>> intersection_nested_lists(const std::vector<int>& l1, const std::vector<std::vector<int>>& l2) {
+    std::vector<std::vector<int>> result;
+    for (const auto& lst : l2) {
+        std::vector<int> intersection;
+        std::copy_if(lst.begin(), lst.end(), std::back_inserter(intersection), [&l1](int n) {
+            return std::find(l1.begin(), l1.end(), n) != l1.end();
+        });
+        result.push_back(intersection);
+    }
+    return {result};
+}

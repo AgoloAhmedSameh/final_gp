@@ -1,0 +1,11 @@
+#include <string>
+
+std::pair<std::string> odd_values_string(const std::string& str) {
+    std::string result = ""; 
+    for (size_t i = 0; i < str.length(); ++i) {
+        if (i % 2 == 0) {
+            result += str[i];
+        }
+    }
+    return {result};
+}

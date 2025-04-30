@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+
+std::pair<int, int> max_run_uppercase(const std::string& test_str) {
+    int cnt = 0;
+    int res = 0;
+    for (size_t idx = 0; idx < test_str.length(); idx++) {
+        if (isupper(test_str[idx])) {
+            cnt++;
+        } else {
+            res = cnt;
+            cnt = 0;
+        }
+    }
+    if (isupper(test_str[test_str.length() - 1])) {
+        res = cnt;
+    }
+    return std::make_pair(res, 0);
+}

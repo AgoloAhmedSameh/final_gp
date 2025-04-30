@@ -1,0 +1,6 @@
+#include <cmath>
+
+double volume_sphere(double r) {
+    double volume = (4.0 / 3.0) * M_PI * r * r * r;
+    return volume;
+}

@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <tuple>
+#include <sstream>
+
+std::pair<std::string, std::string> list_to_float(const std::vector<std::tuple<std::string, std::string>> &test_list) {
+    std::vector<std::pair<std::string, std::string>> res;
+    for (const auto &tup : test_list) {
+        std::vector<std::string> temp;
+        for (const auto &ele : tup) {
+            if (std::isalpha(ele[0])) {
+                temp.push_back(ele);
+            } else {
+                temp.push_back(std::to_string(std::stof(ele)));
+            }
+        }
+        res.emplace_back(temp[0], temp[1]);
+    }
+    
+    std::ostringstream result;
+    result << "(";
+    for (size_t i = 0; i < res.size(); i++) {
+        result << "(" << res[i].first << "," << res[i].second << ")";
+        if (i < res.size() - 1) result << ", ";
+    }
+    result << ")";
+    
+    return std::make_pair(result.str(), result.str());
+}

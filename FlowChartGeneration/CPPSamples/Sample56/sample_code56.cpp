@@ -1,0 +1,11 @@
+#include <algorithm>
+#include <vector>
+
+std::pair<long long, void> find_Max_Num(std::vector<int>& arr, int n) {
+    std::sort(arr.rbegin(), arr.rend());
+    long long num = arr[0];
+    for (int i = 1; i < n; i++) {
+        num = num * 10 + arr[i];
+    }
+    return {num, {}};
+}

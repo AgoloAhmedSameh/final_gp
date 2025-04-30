@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  floor_Max (int A, int B, int N) ----->  int x = std::min (B - 1, N); ----->  return { (A * x) / B, 0 }; -----> END

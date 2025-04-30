@@ -1,0 +1,16 @@
+#include <vector>
+#include <string>
+#include <regex>
+
+std::vector<std::string> find_long_word(const std::string& text) {
+    std::regex pattern(R"(\b\w{5}\b)");
+    std::sregex_iterator it(text.begin(), text.end(), pattern);
+    std::sregex_iterator end;
+
+    std::vector<std::string> result;
+    while (it != end) {
+        result.push_back(it->str());
+        ++it;
+    }
+    return result;
+}

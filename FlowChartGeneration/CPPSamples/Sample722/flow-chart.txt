@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  count_same_pair (const std::vector<int> &nums1, const std::vector<int> &nums2) ----->  int result = std::count_if (nums1.begin (), nums1.end (), [&nums2, index = 0] (int num) mutable { ----->  return num == nums2[index++]; -----> END

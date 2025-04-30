@@ -1,0 +1,2 @@
+ START ----->  std::pair<int, int> ----->  pos_count (const std::vector<int> &list) ----->  int pos_count = 0; -----> for (int num : list) ----->  if (num >= 0) ----->  pos_count += 1; ----->  return { pos_count, 0 }; -----> END
+ START ----->  std::pair<int, int> ----->  pos_count (const std::vector<int> &list) ----->  int pos_count = 0; -----> for (int num : list) ----->  if (num >= 0) ----->  return { pos_count, 0 }; -----> END

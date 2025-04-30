@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  Find_Max (const std::vector<int> &lst) ----->  int maxList = *std::max_element (lst.begin (), lst.end ()); ----->  return { maxList, maxList }; -----> END

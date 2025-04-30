@@ -1,0 +1,2 @@
+ START ----->  bool ----->  is_prime (int n) -----> for (int j = 2; j < n; j++) ----->  if (n % j == 0) ----->  return false; -----> END
+ START ----->  bool ----->  is_prime (int n) -----> for (int j = 2; j < n; j++) ----->  if (n % j == 0) ----->  return true; -----> END

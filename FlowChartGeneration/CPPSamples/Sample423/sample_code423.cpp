@@ -1,0 +1,11 @@
+#include <iostream>
+#include <vector>
+#include <tuple>
+
+std::pair<std::vector<std::string>, std::vector<std::string>> extract_rear(const std::vector<std::tuple<std::string, std::string>>& test_tuple) {
+    std::vector<std::string> res;
+    for (const auto& sub : test_tuple) {
+        res.push_back(std::get<1>(sub));
+    }
+    return {res};
+}

@@ -1,0 +1,1 @@
+ START ----->  std::pair<std::vector<int>, std::vector<int> > ----->  multiples_of_num (int m, int n) ----->  std::vector<int> multiples_of_num; -----> for (int i = n; i <= (m + 1) * n; i += n) ----->  multiples_of_num.push_back (i); ----->  return { multiples_of_num, multiples_of_num }; -----> END

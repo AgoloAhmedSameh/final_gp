@@ -1,0 +1,12 @@
+#include <iostream>
+#include <regex>
+#include <string>
+
+std::string check_IP(const std::string& Ip) {
+    std::regex regex(R"(^((25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)$)");
+    if (std::regex_match(Ip, regex)) {
+        return "Valid IP address";
+    } else {
+        return "Invalid IP address";
+    }
+}

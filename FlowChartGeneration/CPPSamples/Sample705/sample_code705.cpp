@@ -1,0 +1,17 @@
+#include <unordered_set>
+#include <vector>
+
+bool is_subset(const std::vector<int>& arr1, int m, const std::vector<int>& arr2, int n) {
+    std::unordered_set<int> hashset;
+    for (int i = 0; i < m; i++) {
+        hashset.insert(arr1[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        if (hashset.find(arr2[i]) != hashset.end()) {
+            continue;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}

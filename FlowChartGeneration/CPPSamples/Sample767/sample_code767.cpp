@@ -1,0 +1,12 @@
+bool check_Odd_Parity(int x) { 
+    int parity = 0; 
+    while (x != 0) { 
+        x = x & (x - 1); 
+        parity += 1; 
+    } 
+    if (parity % 2 == 1) { 
+        return true; 
+    } else { 
+        return false; 
+    } 
+}

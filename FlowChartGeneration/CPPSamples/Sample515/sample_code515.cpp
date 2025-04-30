@@ -1,0 +1,25 @@
+#include <vector>
+#include <algorithm>
+
+std::vector<int> radix_sort(std::vector<int>& nums) {
+    const int RADIX = 10;
+    int placement = 1;
+    int max_digit = *std::max_element(nums.begin(), nums.end());
+
+    while (placement < max_digit) {
+        std::vector<std::vector<int>> buckets(RADIX);
+        for (int i : nums) {
+            int tmp = (i / placement) % RADIX;
+            buckets[tmp].push_back(i);
+        }
+        int a = 0;
+        for (int b = 0; b < RADIX; b++) {
+            for (int i : buckets[b]) {
+                nums[a] = i;
+                a++;
+            }
+        }
+        placement *= RADIX;
+    }
+    return nums;
+}

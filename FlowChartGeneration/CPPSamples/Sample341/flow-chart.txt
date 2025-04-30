@@ -1,0 +1,1 @@
+ START ----->  class Node ----->  public: ----->  int value; ----->  int list_num; ----->  int index; ----->  Node (int v, int ln, int idx) ----->  : value (v), list_num (ln), index (idx) ----->  bool ----->  operator< (const Node &other) const ----->  return value > other.value; -----> END

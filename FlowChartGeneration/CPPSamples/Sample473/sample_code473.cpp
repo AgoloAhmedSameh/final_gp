@@ -1,0 +1,7 @@
+#include <string>
+
+std::pair<std::string, std::string> replace_char(const std::string& str1, char ch, char newch) {
+    std::string str2 = str1;
+    std::replace(str2.begin(), str2.end(), ch, newch);
+    return {str2, str2};
+}

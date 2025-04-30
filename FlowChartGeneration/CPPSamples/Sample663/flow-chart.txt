@@ -1,0 +1,2 @@
+ START ----->  using namespace std; ----->  pair<int, int> ----->  average_Even (int n) ----->  if (n % 2 != 0) ----->  cout << "Invalid Input" << endl; ----->  return make_pair (-1, -1); -----> END
+ START ----->  using namespace std; ----->  pair<int, int> ----->  average_Even (int n) ----->  if (n % 2 != 0) ----->  int sm = 0; ----->  int count = 0; -----> while (n >= 2) ----->  count = count + 1; ----->  sm = sm + n; ----->  n = n - 2; ----->  return make_pair (sm / count, count); -----> END

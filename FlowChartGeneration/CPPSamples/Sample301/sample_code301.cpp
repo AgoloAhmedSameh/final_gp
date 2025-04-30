@@ -1,0 +1,14 @@
+#include <iostream>
+
+std::pair<int, int> set_Bit_Number(int n) {
+    if (n == 0) {
+        return {0, 0};
+    }
+    int msb = 0;
+    n = n / 2;
+    while (n > 0) {
+        n = n / 2;
+        msb += 1;
+    }
+    return {1 << msb, 0}; // The second value can be adjusted as needed
+}

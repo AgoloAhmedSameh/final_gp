@@ -1,0 +1,1 @@
+ START ----->  int ----->  find_gcd (int x, int y) -----> while (y) ----->  int temp = y; ----->  y = x % y; ----->  x = temp; ----->  return x; -----> END

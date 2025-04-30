@@ -1,0 +1,8 @@
+#include <vector>
+#include <algorithm>
+
+std::vector<int> rearrange_numbs(const std::vector<int>& array_nums) {
+    std::vector<int> result = array_nums;
+    std::sort(result.begin(), result.end(), [](int i) { return i == 0 ? 0 : -1.0 / i; });
+    return result;
+}

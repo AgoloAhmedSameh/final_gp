@@ -1,0 +1,9 @@
+#include <iostream>
+#include <vector>
+#include <sstream>
+
+std::pair<std::vector<std::string>, std::string> Convert(const std::string& str) {
+    std::istringstream iss(str);
+    std::vector<std::string> li((std::istream_iterator<std::string>(iss)), std::istream_iterator<std::string>());
+    return {li, ""};
+}

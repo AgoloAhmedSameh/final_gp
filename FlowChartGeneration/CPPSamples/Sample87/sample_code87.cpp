@@ -1,0 +1,10 @@
+#include <vector>
+#include <unordered_map>
+
+std::unordered_map<int, int> freq_count(const std::vector<int>& list1) {
+    std::unordered_map<int, int> freq_count;
+    for (int num : list1) {
+        freq_count[num]++;
+    }
+    return freq_count;
+}

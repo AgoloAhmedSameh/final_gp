@@ -1,9 +1,11 @@
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI,APIRouter, HTTPException
+
 import sqlite3
 from pydantic import BaseModel
 
 db_path = "app/authentication/employees.db"
-app = FastAPI()
+
+router = APIRouter()
 
 class AuthRequest(BaseModel):
     email: str
@@ -17,7 +19,7 @@ def get_user(email: str):
     conn.close()
     return user
 
-@app.post("/api/authenticate")
+@router.post("/api/authenticate")
 def authenticate(auth: AuthRequest):
     user = get_user(auth.email)
     

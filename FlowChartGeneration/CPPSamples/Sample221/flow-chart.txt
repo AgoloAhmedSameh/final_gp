@@ -1,0 +1,1 @@
+ START ----->  bool ----->  check_type (const std::tuple<> &test_tuple) ----->  return true; -----> END

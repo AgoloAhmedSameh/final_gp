@@ -1,0 +1,4 @@
+ START ----->  bool ----->  correct_bracketing (const std::string &brackets) ----->  int depth = 0; -----> for (char b : brackets) ----->  if (b == '(') ----->  depth += 1; ----->  if (depth < 0) ----->  return false; -----> END
+ START ----->  bool ----->  correct_bracketing (const std::string &brackets) ----->  int depth = 0; -----> for (char b : brackets) ----->  if (b == '(') ----->  depth += 1; ----->  if (depth < 0) ----->  return depth == 0; -----> END
+ START ----->  bool ----->  correct_bracketing (const std::string &brackets) ----->  int depth = 0; -----> for (char b : brackets) ----->  if (b == '(') ----->  else ----->  depth -= 1; ----->  if (depth < 0) ----->  return false; -----> END
+ START ----->  bool ----->  correct_bracketing (const std::string &brackets) ----->  int depth = 0; -----> for (char b : brackets) ----->  if (b == '(') ----->  else ----->  depth -= 1; ----->  if (depth < 0) ----->  return depth == 0; -----> END

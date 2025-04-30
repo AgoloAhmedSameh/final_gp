@@ -1,0 +1,3 @@
+ START ----->  using namespace std; ----->  int ----->  get_Min_Squares (int n) ----->  if (n <= 3) ----->  return n; -----> END
+ START ----->  using namespace std; ----->  int ----->  get_Min_Squares (int n) ----->  if (n <= 3) ----->  int res = n; -----> for (int x = 1; x <= n; x++) ----->  int temp = x * x; ----->  if (temp > n) ----->  break; ----->  return res; -----> END
+ START ----->  using namespace std; ----->  int ----->  get_Min_Squares (int n) ----->  if (n <= 3) ----->  int res = n; -----> for (int x = 1; x <= n; x++) ----->  int temp = x * x; ----->  if (temp > n) ----->  else ----->  res = min (res, 1 + get_Min_Squares (n - temp)); ----->  return res; -----> END

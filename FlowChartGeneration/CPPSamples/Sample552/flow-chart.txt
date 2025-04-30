@@ -1,0 +1,1 @@
+ START ----->  std::pair<double> ----->  tuple_to_float (const std::tuple<int, int> &test_tup) ----->  std::ostringstream oss; ----->  oss << std::get<0> (test_tup) << '.' << std::get<1> (test_tup); ----->  return std::make_pair (std::stod (oss.str ())); -----> END

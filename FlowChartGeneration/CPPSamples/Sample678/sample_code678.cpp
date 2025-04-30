@@ -1,0 +1,11 @@
+#include <map>
+#include <vector>
+#include <string>
+
+std::pair<std::string, std::string> access_key(std::map<std::string, std::string> dictionary, int key) {
+    std::vector<std::string> keys;
+    for (const auto& pair : dictionary) {
+        keys.push_back(pair.first);
+    }
+    return {keys[key], dictionary[keys[key]]};
+}

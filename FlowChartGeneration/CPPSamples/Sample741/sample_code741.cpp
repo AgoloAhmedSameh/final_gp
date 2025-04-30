@@ -1,0 +1,6 @@
+#include <cmath>
+
+std::pair<double, double> area_tetrahedron(double side) {
+    double area = sqrt(3) * (side * side);
+    return {area, area};
+}

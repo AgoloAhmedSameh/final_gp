@@ -1,0 +1,3 @@
+int square_Sum(int n) {
+    return static_cast<int>(n * (4 * n * n - 1) / 3);
+}

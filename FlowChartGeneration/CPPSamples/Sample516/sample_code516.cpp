@@ -1,0 +1,11 @@
+#include <vector>
+
+std::pair<int, int> largest_pos(const std::vector<int>& list1) {
+    int max = list1[0];
+    for (int x : list1) {
+        if (x > max) {
+            max = x;
+        }
+    }
+    return {max, max};
+}

@@ -1,0 +1,8 @@
+#include <vector>
+
+std::vector<int> move_first(std::vector<int> test_list) {
+    std::vector<int> result;
+    result.insert(result.end(), test_list.end() - 1, test_list.end());
+    result.insert(result.end(), test_list.begin(), test_list.end() - 1);
+    return result;
+}

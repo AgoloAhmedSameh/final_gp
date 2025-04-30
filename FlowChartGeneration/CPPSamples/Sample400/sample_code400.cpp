@@ -1,0 +1,12 @@
+#include <tuple>
+#include <vector>
+#include <iostream>
+
+std::vector<std::tuple<int, int>> add_nested_tuples(const std::vector<std::tuple<int, int>>& test_tup1, const std::vector<std::tuple<int, int>>& test_tup2) {
+    std::vector<std::tuple<int, int>> res;
+    for (size_t i = 0; i < test_tup1.size(); ++i) {
+        res.emplace_back(std::make_tuple(std::get<0>(test_tup1[i]) + std::get<0>(test_tup2[i]),
+                                          std::get<1>(test_tup1[i]) + std::get<1>(test_tup2[i])));
+    }
+    return res;
+}

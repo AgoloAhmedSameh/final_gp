@@ -1,0 +1,1 @@
+ START ----->  std::vector<int> ----->  remove_duplicate (std::vector<int> &list1) ----->  std::sort (list1.begin (), list1.end ()); ----->  std::vector<int> remove_duplicate; ----->  auto last = std::unique (list1.begin (), list1.end ()); ----->  remove_duplicate.insert (remove_duplicate.end (), list1.begin (), last); ----->  return remove_duplicate; -----> END

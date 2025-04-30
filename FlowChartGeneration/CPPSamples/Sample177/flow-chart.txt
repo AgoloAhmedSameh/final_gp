@@ -1,0 +1,2 @@
+ START ----->  std::string ----->  string_literals (const std::vector<std::string> &patterns, const std::string &text) -----> for (const auto &pattern : patterns) ----->  if (std::regex_search (text, std::regex (pattern))) ----->  return "Matched!"; -----> END
+ START ----->  std::string ----->  string_literals (const std::vector<std::string> &patterns, const std::string &text) -----> for (const auto &pattern : patterns) ----->  if (std::regex_search (text, std::regex (pattern))) ----->  else ----->  return "Not Matched!"; -----> END

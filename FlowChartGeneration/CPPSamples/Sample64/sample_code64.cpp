@@ -1,0 +1,16 @@
+#include <vector>
+#include <variant>
+
+using namespace std;
+
+int recursive_list_sum(const vector<variant<int, vector<variant<int, vector<int>>>>& data_list) {
+    int total = 0;
+    for (const auto& element : data_list) {
+        if (holds_alternative<vector<variant<int, vector<int>>>>(element)) {
+            total += recursive_list_sum(get<vector<variant<int, vector<int>>>>(element));
+        } else {
+            total += get<int>(element);
+        }
+    }
+    return total;
+}

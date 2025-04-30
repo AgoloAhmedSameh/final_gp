@@ -1,0 +1,14 @@
+#include <vector>
+
+std::pair<long long, long long> sum_Of_Subarray_Prod(std::vector<int>& arr, int n) {
+    long long ans = 0;
+    long long res = 0;
+    int i = n - 1;
+    while (i >= 0) {
+        long long incr = arr[i] * (1 + res);
+        ans += incr;
+        res = incr;
+        i--;
+    }
+    return {ans, 0}; // Assuming the second return value is not needed, returning 0 instead
+}

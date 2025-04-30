@@ -1,0 +1,6 @@
+#include <iostream>
+using namespace std;
+
+pair<double, double> find_Volume(double l, double b, double h) {
+    return make_pair((l * b * h) / 2, 0);
+}

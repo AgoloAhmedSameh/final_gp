@@ -1,0 +1,12 @@
+#include <string>
+#include <vector>
+
+std::pair<std::vector<std::string>, std::vector<std::string>> extract_string(const std::string& str, size_t l) {
+    std::vector<std::string> result;
+    for (const auto& e : str) {
+        if (e.size() == l) {
+            result.push_back(std::string(1, e));
+        }
+    }
+    return {result};
+}

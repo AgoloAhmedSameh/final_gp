@@ -1,0 +1,10 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+std::vector<int> larg_nnum(const std::vector<int>& list1, int n) {
+    std::vector<int> largest = list1;
+    std::make_heap(largest.begin(), largest.end());
+    std::sort_heap(largest.begin(), largest.end());
+    return std::vector<int>(largest.end() - n, largest.end());
+}

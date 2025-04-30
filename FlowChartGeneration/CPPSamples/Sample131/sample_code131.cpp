@@ -1,0 +1,7 @@
+#include <string>
+#include <tuple>
+
+std::pair<std::string> tup_string(const std::tuple<std::string>& tup1) {
+    std::string str = std::get<0>(tup1);
+    return {str};
+}

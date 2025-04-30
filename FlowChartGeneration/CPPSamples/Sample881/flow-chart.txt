@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  parallelogram_perimeter (int b, int h) ----->  int perimeter = 2 * (b + h); ----->  return { perimeter, perimeter }; -----> END

@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  hexagonal_num (int n) ----->  return std::make_pair (n * (2 * n - 1), 0); -----> END

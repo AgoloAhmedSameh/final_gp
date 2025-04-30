@@ -1,0 +1,1 @@
+ START ----->  std::tuple<int, int> ----->  remove_tuple (std::tuple<int, int> test_tup) ----->  std::set<int> unique_elements = { std::get<0> (test_tup), std::get<1> (test_tup) }; ----->  std::vector<int> res_vec (unique_elements.begin (), unique_elements.end ()); ----->  return std::make_tuple (res_vec[0], res_vec.size () > 1 ? res_vec[1] : 0); -----> END

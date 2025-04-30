@@ -1,0 +1,1 @@
+ START ----->  std::string ----->  decimal_to_binary (int decimal) ----->  return  + std::to_string (decimal) + ; -----> END

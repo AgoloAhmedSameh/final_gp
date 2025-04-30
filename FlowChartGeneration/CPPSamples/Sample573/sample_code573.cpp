@@ -1,0 +1,6 @@
+#include <cmath>
+
+std::pair<double, double> surfacearea_cylinder(double r, double h) {
+    double surfacearea = (2 * 3.1415 * r * r) + (2 * 3.1415 * r * h);
+    return {surfacearea, surfacearea};
+}

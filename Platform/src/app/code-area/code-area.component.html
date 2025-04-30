@@ -1,0 +1,62 @@
+
+
+<div class="code">
+    <div class="editor-settings" name="editor-settings">
+        <div class="console-design">
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+        </div>
+
+        @if (!forViewOnly()) {
+
+            <div class="select-wrapper">
+                <select name="languae-type" (change)="onLanguageSelectionChange($event)">
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="c++">C++</option>
+                    <option value="javascript">JavaScript</option>
+                </select>
+        
+                <select name="testing-type" (change)="onTestingSelectionChange($event)">
+                    <option value="integration">Integration</option>
+                    <option value="unit">Unit</option>
+                </select>
+            </div>
+
+        }
+    </div>
+    @if (forViewOnly()) {
+        <!-- <textarea [readOnly]="true" name="code" id="code" #code placeholder="Write your code here ..." (input)="SaveCode($event)">
+            {{codeString}}
+        </textarea> -->
+
+        <!-- <textarea [readOnly]="true" name="code" id="code" #code placeholder="Write your code here ..." (input)="SaveCode($event)">
+            {{codeString}}
+        </textarea> -->
+        <ngx-codemirror class="code-editor" #code name="code" id="code" placeholder="Write your code here ... " 
+        (ngModelChange)="SaveCode($event)"
+        [(ngModel)]="codeString" 
+        [options]="options"
+        >{{codeString}}</ngx-codemirror>
+    }
+    @else {
+        <!-- <textarea name="code" id="code" #code placeholder="Write your code here ..." (input)="SaveCode($event)">
+            {{codeString}}
+        </textarea> -->
+
+        <!-- <ngx-codemirror
+            #code  
+            name="code" 
+            id="code" 
+            placeholder="Write your code here ..." 
+            (input)="SaveCode($event)">
+            {{codeString}}
+        </ngx-codemirror> -->
+        <ngx-codemirror class="code-editor" #code name="code" id="code" placeholder="Write your code here ... " 
+        (ngModelChange)="SaveCode($event)"
+        [(ngModel)]="codeString" 
+        [options]="options"
+        >{{codeString}}</ngx-codemirror>
+    }
+</div>

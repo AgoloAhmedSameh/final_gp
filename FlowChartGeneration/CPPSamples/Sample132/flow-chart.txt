@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  sum_negativenum (const std::vector<int> &nums) ----->  std::vector<int> negative_nums; ----->  std::copy_if (nums.begin (), nums.end (), std::back_inserter (negative_nums), [] (int num) { return num < 0; }); -----> END

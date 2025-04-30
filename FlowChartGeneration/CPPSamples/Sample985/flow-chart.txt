@@ -1,0 +1,1 @@
+ START ----->  std::string ----->  string_xor (const std::string &a, const std::string &b) ----->  auto xor_func = [] (char i, char j) { ----->  return (i == j) ? '0' : '1'; -----> END

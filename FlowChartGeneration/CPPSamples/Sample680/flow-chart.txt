@@ -1,0 +1,3 @@
+ START ----->  int ----->  smallest_Divisor (int n) ----->  if (n % 2 == 0) ----->  return 2; -----> END
+ START ----->  int ----->  smallest_Divisor (int n) ----->  if (n % 2 == 0) ----->  int i = 3; -----> while (i * i <= n) ----->  if (n % i == 0) ----->  return i; -----> END
+ START ----->  int ----->  smallest_Divisor (int n) ----->  if (n % 2 == 0) ----->  int i = 3; -----> while (i * i <= n) ----->  if (n % i == 0) ----->  i += 2; ----->  return n; -----> END

@@ -1,0 +1,2 @@
+ START ----->  std::string ----->  is_palindrome (const std::string &str) ----->  if (str.empty ()) ----->  return ""; -----> END
+ START ----->  std::string ----->  is_palindrome (const std::string &str) ----->  if (str.empty ()) ----->  int beginning_of_suffix = 0; -----> while (is_palindrome (str.substr (beginning_of_suffix))) ----->  beginning_of_suffix++; ----->  std::string reversed_suffix = str.substr (0, beginning_of_suffix); ----->  std::reverse (reversed_suffix.begin (), reversed_suffix.end ()); ----->  return str + reversed_suffix; -----> END

@@ -1,0 +1,9 @@
+#include <vector>
+
+std::pair<double, double> sum_num(const std::vector<int>& numbers) {
+    double total = 0;
+    for (int x : numbers) {
+        total += x;
+    }
+    return {total / numbers.size()};
+}

@@ -1,0 +1,30 @@
+#include <iostream>
+#include <sstream>
+#include <vector>
+
+std::pair<std::string, std::string> remove_length(const std::string& test_str, int K) {
+    std::istringstream iss(test_str);
+    std::vector<std::string> temp;
+    std::string word;
+    
+    while (iss >> word) {
+        temp.push_back(word);
+    }
+    
+    std::vector<std::string> res;
+    for (const auto& ele : temp) {
+        if (ele.length() != K) {
+            res.push_back(ele);
+        }
+    }
+    
+    std::string result = "";
+    for (size_t i = 0; i < res.size(); ++i) {
+        result += res[i];
+        if (i < res.size() - 1) {
+            result += " ";
+        }
+    }
+    
+    return {result, ""};
+}

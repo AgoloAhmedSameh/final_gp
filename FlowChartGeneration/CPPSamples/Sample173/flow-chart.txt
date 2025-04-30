@@ -1,0 +1,1 @@
+ START ----->  std::pair<std::unordered_map<int, std::vector<int> >, std::vector<int> > ----->  group_keyvalue (const std::vector<std::pair<int, int> > &l) ----->  std::unordered_map<int, std::vector<int> > result; -----> for (const auto &p : l) ----->  result[p.first].push_back (p.second); ----->  return { result, {} }; -----> END

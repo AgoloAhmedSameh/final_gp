@@ -1,0 +1,10 @@
+#include <cmath>
+#include <complex>
+#include <tuple>
+
+std::pair<std::tuple<double, double>, std::complex<double>> polar_rect(double x, double y) {
+    std::complex<double> cn(x, y);
+    auto cn_polar = std::polar(abs(cn), arg(cn));
+    std::complex<double> cn1 = std::polar(2.0, M_PI);
+    return {cn_polar, cn1};
+}

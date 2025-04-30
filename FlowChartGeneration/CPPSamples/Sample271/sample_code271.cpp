@@ -1,0 +1,9 @@
+#include <vector>
+
+std::pair<std::vector<int>, std::vector<int>> rear_extract(const std::vector<std::vector<int>>& test_list) {
+    std::vector<int> res;
+    for (const auto& lis : test_list) {
+        res.push_back(lis.back());
+    }
+    return {res};
+}

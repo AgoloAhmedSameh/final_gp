@@ -1,0 +1,15 @@
+#include <vector>
+#include <algorithm>
+
+std::vector<int> generate_integers(int a, int b) {
+    int lower = std::max(2, std::min(a, b));
+    int upper = std::min(8, std::max(a, b));
+    
+    std::vector<int> result;
+    for (int i = lower; i <= upper; ++i) {
+        if (i % 2 == 0) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}

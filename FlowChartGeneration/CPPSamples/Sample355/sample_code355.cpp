@@ -1,0 +1,4 @@
+int find_angle(int a, int b) {
+    int c = 180 - (a + b);
+    return c;
+}

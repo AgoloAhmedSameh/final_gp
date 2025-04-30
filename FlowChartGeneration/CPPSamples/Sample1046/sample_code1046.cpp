@@ -1,0 +1,18 @@
+#include <vector>
+#include <numeric>
+
+bool will_it_fly(const std::vector<int>& q, int w) {
+    if (std::accumulate(q.begin(), q.end(), 0) > w) {
+        return false;
+    }
+
+    int i = 0, j = q.size() - 1;
+    while (i < j) {
+        if (q[i] != q[j]) {
+            return false;
+        }
+        i++;
+        j--;
+    }
+    return true;
+}

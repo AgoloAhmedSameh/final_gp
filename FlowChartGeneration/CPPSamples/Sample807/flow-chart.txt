@@ -1,0 +1,2 @@
+ START ----->  std::pair<bool, bool> ----->  check_K (const std::tuple<int> &test_tup, int K) ----->  bool res = false; -----> for (const auto &ele : test_tup) ----->  if (ele == K) ----->  res = true; ----->  break; ----->  return { res, res }; -----> END
+ START ----->  std::pair<bool, bool> ----->  check_K (const std::tuple<int> &test_tup, int K) ----->  bool res = false; -----> for (const auto &ele : test_tup) ----->  if (ele == K) ----->  return { res, res }; -----> END

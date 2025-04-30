@@ -1,0 +1,2 @@
+ START ----->  bool ----->  check_monthnum_number (int monthnum1) ----->  if (monthnum1 == 2) ----->  return true; -----> END
+ START ----->  bool ----->  check_monthnum_number (int monthnum1) ----->  if (monthnum1 == 2) ----->  else ----->  return false; -----> END

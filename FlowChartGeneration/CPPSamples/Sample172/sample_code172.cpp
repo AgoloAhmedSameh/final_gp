@@ -1,0 +1,7 @@
+#include <regex>
+#include <string>
+
+std::pair<std::string, std::string> remove_splchar(const std::string& text) {
+    std::regex pattern("[\\W_]+");
+    return {std::regex_replace(text, pattern, ""), ""};
+}

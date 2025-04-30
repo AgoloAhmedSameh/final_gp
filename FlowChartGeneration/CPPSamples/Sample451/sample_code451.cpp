@@ -1,0 +1,10 @@
+#include <tuple>
+
+std::tuple<double, bool> loss_amount(double actual_cost, double sale_amount) {
+    if (sale_amount > actual_cost) {
+        double amount = sale_amount - actual_cost;
+        return std::make_tuple(amount, true);
+    } else {
+        return std::make_tuple(0.0, false);
+    }
+}

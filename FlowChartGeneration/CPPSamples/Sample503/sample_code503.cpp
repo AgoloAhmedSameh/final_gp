@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+pair<int, int> sum_Of_Series(int n) {
+    int sum = 0;
+    for (int i = 1; i <= n; ++i) {
+        sum += i * i * i;
+    }
+    return make_pair(sum, 0);
+}

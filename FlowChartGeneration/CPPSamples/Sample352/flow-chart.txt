@@ -1,0 +1,1 @@
+ START ----->  std::vector<std::vector<int> > ----->  remove_column (std::vector<std::vector<int> > &list1, int n) -----> for (auto &i : list1) ----->  i.erase (i.begin () + n); ----->  return list1; -----> END

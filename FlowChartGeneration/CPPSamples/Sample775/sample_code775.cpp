@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+std::pair<int, int> count_vowels(const std::string& test_str) {
+    int res = 0;
+    std::vector<char> vow_list = {'a', 'e', 'i', 'o', 'u'};
+    
+    for (size_t idx = 1; idx < test_str.length() - 1; ++idx) {
+        if (std::find(vow_list.begin(), vow_list.end(), test_str[idx]) == vow_list.end() && 
+            (std::find(vow_list.begin(), vow_list.end(), test_str[idx - 1]) != vow_list.end() || 
+             std::find(vow_list.begin(), vow_list.end(), test_str[idx + 1]) != vow_list.end())) {
+            res++;
+        }
+    }
+    
+    if (test_str.length() > 0 && std::find(vow_list.begin(), vow_list.end(), test_str[0]) == vow_list.end() && 
+        std::find(vow_list.begin(), vow_list.end(), test_str[1]) != vow_list.end()) {
+        res++;
+    }
+    
+    if (test_str.length() > 1 && std::find(vow_list.begin(), vow_list.end(), test_str[test_str.length() - 1]) == vow_list.end() && 
+        std::find(vow_list.begin(), vow_list.end(), test_str[test_str.length() - 2]) != vow_list.end()) {
+        res++;
+    }
+    
+    return std::make_pair(res, 0);
+}

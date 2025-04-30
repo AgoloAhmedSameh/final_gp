@@ -1,0 +1,1 @@
+ START ----->  std::map<std::string, int> ----->  merge_dict (const std::map<std::string, int> &d1, const std::map<std::string, int> &d2) ----->  std::map<std::string, int> d = d1; ----->  d.insert (d2.begin (), d2.end ()); ----->  return d; -----> END

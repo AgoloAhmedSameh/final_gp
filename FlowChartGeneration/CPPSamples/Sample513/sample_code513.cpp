@@ -1,0 +1,7 @@
+#include <tuple>
+#include <numeric>
+
+std::tuple<int> sum_elements(const std::tuple<int>& test_tup) {
+    int res = std::get<0>(test_tup);
+    return std::make_tuple(res);
+}

@@ -1,0 +1,5 @@
+#include <tuple>
+
+std::tuple<double> tetrahedral_number(int n) {
+    return std::make_tuple(static_cast<double>(n * (n + 1) * (n + 2)) / 6);
+}

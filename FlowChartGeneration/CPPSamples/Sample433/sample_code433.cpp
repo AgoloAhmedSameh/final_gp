@@ -1,0 +1,13 @@
+#include <iostream>
+#include <regex>
+#include <string>
+
+std::string text_match_one(const std::string& text) {
+    std::string patterns = "ab+?";
+    std::regex regex(patterns);
+    if (std::regex_search(text, regex)) {
+        return "Found a match!";
+    } else {
+        return "Not matched!";
+    }
+}

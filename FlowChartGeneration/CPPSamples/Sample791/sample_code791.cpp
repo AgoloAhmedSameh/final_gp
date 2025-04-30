@@ -1,0 +1,5 @@
+#include <vector>
+
+std::pair<int, int> count_list(const std::vector<int>& input_list) {
+    return {static_cast<int>(input_list.size()), 0};
+}

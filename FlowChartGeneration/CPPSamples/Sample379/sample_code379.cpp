@@ -1,0 +1,11 @@
+#include <vector>
+
+std::vector<std::vector<int>> multi_list(int rownum, int colnum) {
+    std::vector<std::vector<int>> multi_list(rownum, std::vector<int>(colnum, 0));
+    for (int row = 0; row < rownum; row++) {
+        for (int col = 0; col < colnum; col++) {
+            multi_list[row][col] = row * col;
+        }
+    }
+    return multi_list;
+}

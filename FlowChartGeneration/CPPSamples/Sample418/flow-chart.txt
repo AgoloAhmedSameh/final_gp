@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  round_and_sum (const std::vector<double> &list1) ----->  int length = list1.size (); ----->  int round_and_sum = std::accumulate (list1.begin (), list1.end (), 0, [] (int sum, double value) { ----->  return sum + std::round (value); -----> END

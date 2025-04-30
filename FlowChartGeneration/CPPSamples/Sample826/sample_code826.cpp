@@ -1,0 +1,9 @@
+#include <vector>
+
+std::pair<int, int> sum_column(const std::vector<std::vector<int>>& list1, int C) {
+    int result = 0;
+    for (const auto& row : list1) {
+        result += row[C];
+    }
+    return {result, result}; // Returning result twice to match the original function's return type
+}

@@ -1,0 +1,15 @@
+#include <tuple>
+#include <vector>
+
+std::pair<int, int> sum_of_alternates(const std::vector<int>& test_tuple) {
+    int sum1 = 0;
+    int sum2 = 0;
+    for (size_t idx = 0; idx < test_tuple.size(); ++idx) {
+        if (idx % 2) {
+            sum1 += test_tuple[idx];
+        } else {
+            sum2 += test_tuple[idx];
+        }
+    }
+    return std::make_pair(sum1, sum2);
+}

@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cmath>
+
+std::pair<int, int> decimal_To_Binary(int N) {
+    int B_Number = 0;
+    int cnt = 0;
+    while (N != 0) {
+        int rem = N % 2;
+        int c = pow(10, cnt);
+        B_Number += rem * c;
+        N /= 2;
+        cnt += 1;
+    }
+    return {B_Number, 0}; // Return a pair for compatibility with function signature
+}

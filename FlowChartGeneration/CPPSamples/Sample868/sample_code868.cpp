@@ -1,0 +1,12 @@
+#include <vector>
+#include <algorithm>
+
+std::pair<std::vector<std::vector<int>>, std::vector<int>> remove_list_range(const std::vector<std::vector<int>>& list1, int leftrange, int rigthrange) {
+    std::vector<std::vector<int>> result;
+    for (const auto& i : list1) {
+        if (std::min_element(i.begin(), i.end()) >= leftrange && std::max_element(i.begin(), i.end()) <= rigthrange) {
+            result.push_back(i);
+        }
+    }
+    return {result, {}};
+}

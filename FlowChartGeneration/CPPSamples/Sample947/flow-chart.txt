@@ -1,0 +1,1 @@
+ START ----->  std::tuple<int, int> ----->  get_item (const std::tuple<int, int> &tup1, int index) ----->  return std::make_tuple (std::get<0> (tup1), std::get<1> (tup1))[index]; -----> END

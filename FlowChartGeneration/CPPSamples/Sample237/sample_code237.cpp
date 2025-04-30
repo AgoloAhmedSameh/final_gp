@@ -1,0 +1,4 @@
+int number_of_substrings(const std::string& str) {
+    int str_len = str.length();
+    return static_cast<int>(str_len * (str_len + 1) / 2);
+}

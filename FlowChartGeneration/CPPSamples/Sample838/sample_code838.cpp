@@ -1,0 +1,15 @@
+#include <vector>
+#include <tuple>
+
+std::vector<std::tuple<int, int>> sort_tuple(const std::vector<std::tuple<int, int>>& tup) {
+    std::vector<std::tuple<int, int>> sorted_tup = tup;
+    int n = sorted_tup.size();
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (std::get<0>(sorted_tup[j]) > std::get<0>(sorted_tup[j + 1])) {
+                std::swap(sorted_tup[j], sorted_tup[j + 1]);
+            }
+        }
+    }
+    return sorted_tup;
+}

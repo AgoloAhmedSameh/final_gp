@@ -1,0 +1,2 @@
+ START ----->  bool ----->  my_dict (const std::map<int, int> &dict1) ----->  if (!dict1.empty ()) ----->  return false; -----> END
+ START ----->  bool ----->  my_dict (const std::map<int, int> &dict1) ----->  if (!dict1.empty ()) ----->  else ----->  return true; -----> END

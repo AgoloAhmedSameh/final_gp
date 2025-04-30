@@ -1,0 +1,12 @@
+#include <vector>
+#include <tuple>
+
+std::pair<std::vector<int>, std::vector<int>> extract_index_list(const std::vector<int>& l1, const std::vector<int>& l2, const std::vector<int>& l3) {
+    std::vector<int> result;
+    for (size_t i = 0; i < l1.size() && i < l2.size() && i < l3.size(); ++i) {
+        if (l1[i] == l2[i] && l2[i] == l3[i]) {
+            result.push_back(l1[i]);
+        }
+    }
+    return {result, {}};
+}

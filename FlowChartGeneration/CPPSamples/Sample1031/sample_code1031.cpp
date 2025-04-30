@@ -1,0 +1,6 @@
+#include <vector>
+#include <algorithm>
+
+bool monotonic(std::vector<int> l) {
+    return l == std::vector<int>(l.begin(), l.end()) || l == std::vector<int>(l.rbegin(), l.rend());
+}

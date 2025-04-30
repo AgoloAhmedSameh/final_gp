@@ -1,0 +1,1 @@
+ START ----->  using namespace std; ----->  vector<int> ----->  right_rotate (vector<int> &arr, int n, int out_of_place, int cur) ----->  int temp = arr[cur]; -----> for (int i = cur; i > out_of_place; i--) ----->  arr[i] = arr[i - 1]; ----->  arr[out_of_place] = temp; ----->  return arr; -----> END

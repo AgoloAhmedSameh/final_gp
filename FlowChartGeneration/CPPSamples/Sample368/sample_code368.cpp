@@ -1,0 +1,6 @@
+#include <tuple>
+
+std::tuple<double, double> lateralsurface_cuboid(double l, double w, double h) {
+    double LSA = 2 * h * (l + w);
+    return std::make_tuple(LSA, LSA);
+}

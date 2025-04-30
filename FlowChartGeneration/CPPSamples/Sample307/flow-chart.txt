@@ -1,0 +1,1 @@
+ START ----->  std::pair<std::vector<int>, std::vector<int> > ----->  large_product (const std::vector<int> &nums1, const std::vector<int> &nums2, int N) ----->  std::vector<int> product; -----> for (int x : nums1) -----> for (int y : nums2) ----->  product.push_back (x * y);

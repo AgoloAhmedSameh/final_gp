@@ -1,0 +1,2 @@
+ START ----->  double ----->  nCr (int n, int r) ----->  if (r > n / 2) ----->  r = n - r; ----->  double answer = 1; -----> for (int i = 1; i <= r; ++i) ----->  answer *= (n - r + i); ----->  answer /= i; ----->  return answer; -----> END
+ START ----->  double ----->  nCr (int n, int r) ----->  if (r > n / 2) ----->  double answer = 1; -----> for (int i = 1; i <= r; ++i) ----->  answer *= (n - r + i); ----->  answer /= i; ----->  return answer; -----> END

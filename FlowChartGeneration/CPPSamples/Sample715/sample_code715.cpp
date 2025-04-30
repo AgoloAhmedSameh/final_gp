@@ -1,0 +1,4 @@
+int rombus_perimeter(int a) {
+    int perimeter = 4 * a;
+    return perimeter;
+}

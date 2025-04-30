@@ -1,0 +1,2 @@
+ START ----->  bool ----->  even_num (int x) ----->  if (x % 2 == 0) ----->  return true; -----> END
+ START ----->  bool ----->  even_num (int x) ----->  if (x % 2 == 0) ----->  else ----->  return false; -----> END

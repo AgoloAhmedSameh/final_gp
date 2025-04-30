@@ -1,0 +1,1 @@
+ START ----->  std::vector<int> ----->  func (const std::vector<std::vector<int> > &nums, int k) ----->  std::unordered_map<int, int> d; -----> for (const auto &row : nums) -----> for (int i : row) ----->  d[i]++;

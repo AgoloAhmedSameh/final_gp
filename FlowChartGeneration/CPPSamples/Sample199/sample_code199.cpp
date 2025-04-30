@@ -1,0 +1,13 @@
+#include <vector>
+#include <algorithm>
+
+std::pair<std::vector<int>, int> position_max(const std::vector<int>& list1) {
+    int max_val = *std::max_element(list1.begin(), list1.end());
+    std::vector<int> max_result;
+    for (size_t i = 0; i < list1.size(); ++i) {
+        if (list1[i] == max_val) {
+            max_result.push_back(i);
+        }
+    }
+    return {max_result,0};
+}

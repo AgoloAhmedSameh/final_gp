@@ -1,0 +1,11 @@
+#include <iostream>
+#include <utility>
+
+std::pair<std::pair<int, double>, double> sum_average(int number) {
+    int total = 0;
+    for (int value = 1; value <= number; ++value) {
+        total += value;
+    }
+    double average = static_cast<double>(total) / number;
+    return {{total, average}, average};
+}

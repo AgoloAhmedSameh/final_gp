@@ -1,0 +1,1 @@
+ START ----->  int ----->  digit_distance_nums (int n1, int n2) ----->  int distance = std::abs (n1 - n2); ----->  std::string distance_str = std::to_string (distance); ----->  int sum = 0; -----> for (char c : distance_str) ----->  sum += c - '0'; ----->  return sum; -----> END

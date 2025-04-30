@@ -1,0 +1,17 @@
+#include <vector>
+#include <map>
+#include <tuple>
+
+std::vector<std::map<std::string, std::map<std::string, std::string>>> convert_list_dictionary(
+    const std::vector<std::string>& l1, 
+    const std::vector<std::string>& l2, 
+    const std::vector<std::string>& l3) 
+{
+    std::vector<std::map<std::string, std::map<std::string, std::string>>> result;
+    for (size_t i = 0; i < l1.size() && i < l2.size() && i < l3.size(); ++i) {
+        std::map<std::string, std::map<std::string, std::string>> entry;
+        entry[l1[i]] = {{l2[i], l3[i]}};
+        result.push_back(entry);
+    }
+    return result;
+}

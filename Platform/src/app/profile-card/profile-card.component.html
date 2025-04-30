@@ -1,0 +1,44 @@
+<div class="parent">
+    
+    <div class="upper-card">
+        <div class="profile"></div>
+        <div class="text" style="padding-left: 10px;">
+            <div class="name" style="font-weight: bold;">
+                {{data.first_name}} {{data.last_name}} <br>
+            </div>
+            <span style="color: var(--main-color);">{{data.position}}</span>
+        </div>
+    </div>
+
+    <div class="lower-card">
+        <p style="display: block; font-weight: bold; padding: 25px;"> 
+            Personal Information
+        </p>
+        <div class="info">
+            <div class="first-name">
+                <p> First Name </p>
+                <span style="color: var(--main-color);"> {{data.first_name}} </span> 
+            </div>
+            <div class="last-name">
+                <p> Last Name </p>
+                <span style="color: var(--main-color);"> {{data.last_name}} </span> 
+            </div>
+            <div class="email">
+                <p> Email </p>
+                <span style="color: var(--main-color);"> {{data.email}} </span> 
+            </div>
+            <div class="phone-number">
+                <p> Phone Number </p>
+                <span style="color: var(--main-color);"> {{data.phone_number}} </span> 
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<!-- <p>{{data['firstName']}}</p>
+<p>{{data['lastName']}}</p>
+<p>{{data['email']}}</p>
+<p>{{data['phoneNumber']}}</p>
+<p>{{data['jobTitle']}}</p> -->

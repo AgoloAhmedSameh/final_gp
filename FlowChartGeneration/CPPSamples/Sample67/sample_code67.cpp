@@ -1,0 +1,6 @@
+#include <vector>
+
+bool is_Monotonic(std::vector<int>& A) {
+    return (std::is_sorted(A.begin(), A.end()) || 
+            std::is_sorted(A.begin(), A.end(), std::greater<int>()));
+}

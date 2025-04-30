@@ -1,0 +1,6 @@
+#include <vector>
+#include <algorithm>
+
+int smallest_num(const std::vector<int>& xs) {
+    return *std::min_element(xs.begin(), xs.end());
+}

@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+
+pair<int, int> volume_cube(int l) {
+    int volume = l * l * l;
+    return make_pair(volume, 0);
+}

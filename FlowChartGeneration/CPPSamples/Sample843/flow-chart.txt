@@ -1,0 +1,1 @@
+ START ----->  int ----->  get_Number (int n, int k) ----->  std::vector<int> arr (n); ----->  int i = 0; ----->  int odd = 1; -----> while (odd <= n) ----->  arr[i] = odd; ----->  i += 1; ----->  odd += 2; ----->  int even = 2; -----> while (even <= n) ----->  arr[i] = even; ----->  i += 1; ----->  even += 2; ----->  return arr[k - 1]; -----> END

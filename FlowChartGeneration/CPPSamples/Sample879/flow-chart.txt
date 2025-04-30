@@ -1,0 +1,3 @@
+ START ----->  std::string ----->  Check_Solution (int a, int b, int c) ----->  if ((b * b) - (4 * a * c) > 0) ----->  return "2 solutions"; -----> END
+ START ----->  std::string ----->  Check_Solution (int a, int b, int c) ----->  if ((b * b) - (4 * a * c) > 0) ----->  else if ((b * b) - (4 * a * c) == 0) ----->  return "1 solution"; -----> END
+ START ----->  std::string ----->  Check_Solution (int a, int b, int c) ----->  if ((b * b) - (4 * a * c) > 0) ----->  else if ((b * b) - (4 * a * c) == 0) ----->  else ----->  return "No solutions"; -----> END

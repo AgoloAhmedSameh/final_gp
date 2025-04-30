@@ -1,0 +1,2 @@
+ START ----->  std::pair<double, double> ----->  zero_count (const std::vector<int> &nums) ----->  int n = nums.size (); ----->  int n1 = 0; -----> for (int x : nums) ----->  if (x == 0) ----->  n1 += 1; ----->  return { std::round (static_cast<double> (n1) / n * 100) / 100, 0 }; -----> END
+ START ----->  std::pair<double, double> ----->  zero_count (const std::vector<int> &nums) ----->  int n = nums.size (); ----->  int n1 = 0; -----> for (int x : nums) ----->  if (x == 0) ----->  return { std::round (static_cast<double> (n1) / n * 100) / 100, 0 }; -----> END

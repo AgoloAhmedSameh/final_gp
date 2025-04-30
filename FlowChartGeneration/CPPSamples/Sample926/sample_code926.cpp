@@ -1,0 +1,22 @@
+class Node {
+public:
+    int data;
+    Node* left;
+    Node* right;
+
+    Node(int data) {
+        this->data = data;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+int max_height(Node* node) {
+    if (node == nullptr) {
+        return 0;
+    } else {
+        int left_height = max_height(node->left);
+        int right_height = max_height(node->right);
+        return (left_height > right_height) ? left_height + 1 : right_height + 1;
+    }
+}

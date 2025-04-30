@@ -1,0 +1,2 @@
+ START ----->  std::pair<bool, bool> ----->  check_value (const std::unordered_map<std::string, int> &dict, int n) ----->  bool result = true; -----> for (const auto &pair : dict) ----->  if (pair.second != n) ----->  result = false; ----->  break; ----->  return { result, result }; -----> END
+ START ----->  std::pair<bool, bool> ----->  check_value (const std::unordered_map<std::string, int> &dict, int n) ----->  bool result = true; -----> for (const auto &pair : dict) ----->  if (pair.second != n) ----->  return { result, result }; -----> END

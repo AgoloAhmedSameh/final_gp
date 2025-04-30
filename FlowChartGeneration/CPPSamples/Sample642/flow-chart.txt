@@ -1,0 +1,2 @@
+ START ----->  std::string ----->  text_match_wordz_middle (const std::string &text) ----->  std::regex patterns ("\\Bz\\B"); ----->  if (std::regex_search (text, patterns)) ----->  return "Found a match!"; -----> END
+ START ----->  std::string ----->  text_match_wordz_middle (const std::string &text) ----->  std::regex patterns ("\\Bz\\B"); ----->  if (std::regex_search (text, patterns)) ----->  else ----->  return "Not matched!"; -----> END

@@ -1,0 +1,34 @@
+#include <vector>
+#include <string>
+#include <sstream>
+
+std::pair<std::string, std::vector<std::vector<int>>> find_tuples(const std::vector<std::vector<int>>& test_list, int K) {
+    std::vector<std::vector<int>> res;
+    for (const auto& sub : test_list) {
+        bool all_divisible = true;
+        for (const auto& ele : sub) {
+            if (ele % K != 0) {
+                all_divisible = false;
+                break;
+            }
+        }
+        if (all_divisible) {
+            res.push_back(sub);
+        }
+    }
+    
+    std::ostringstream oss;
+    oss << "[";
+    for (size_t i = 0; i < res.size(); ++i) {
+        oss << "[";
+        for (size_t j = 0; j < res[i].size(); ++j) {
+            oss << res[i][j];
+            if (j < res[i].size() - 1) oss << ", ";
+        }
+        oss << "]";
+        if (i < res.size() - 1) oss << ", ";
+    }
+    oss << "]";
+
+    return {oss.str(), res};
+}

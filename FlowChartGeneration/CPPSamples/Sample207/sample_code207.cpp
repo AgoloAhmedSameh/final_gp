@@ -1,0 +1,7 @@
+#include <regex>
+#include <string>
+
+bool is_decimal(const std::string& num) {
+    std::regex num_fetch("^[0-9]+(\\.[0-9]{1,2})?$");
+    return std::regex_search(num, num_fetch);
+}

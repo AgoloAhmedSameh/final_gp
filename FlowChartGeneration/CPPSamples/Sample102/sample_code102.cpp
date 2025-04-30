@@ -1,0 +1,9 @@
+#include <iostream>
+
+int eulerian_num(int n, int m) { 
+    if (m >= n || n == 0) 
+        return 0; 
+    if (m == 0) 
+        return 1; 
+    return (n - m) * eulerian_num(n - 1, m - 1) + (m + 1) * eulerian_num(n - 1, m); 
+}

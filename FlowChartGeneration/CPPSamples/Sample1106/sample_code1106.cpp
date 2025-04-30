@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+bool is_nested(const std::string& str) {
+    std::vector<int> opening_bracket_index;
+    std::vector<int> closing_bracket_index;
+
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == '[') {
+            opening_bracket_index.push_back(i);
+        } else {
+            closing_bracket_index.push_back(i);
+        }
+    }
+    
+    std::reverse(closing_bracket_index.begin(), closing_bracket_index.end());
+    int cnt = 0;
+    int i = 0;
+    int l = closing_bracket_index.size();
+
+    for (int idx : opening_bracket_index) {
+        if (i < l && idx < closing_bracket_index[i]) {
+            cnt++;
+            i++;
+        }
+    }
+    
+    return cnt >= 2;
+}

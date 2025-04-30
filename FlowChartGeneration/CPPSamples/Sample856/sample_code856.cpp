@@ -1,0 +1,10 @@
+#include <vector>
+#include <list>
+
+std::vector<std::list<int>> listify_list(const std::vector<std::vector<int>>& list1) {
+    std::vector<std::list<int>> result;
+    for (const auto& sublist : list1) {
+        result.emplace_back(sublist.begin(), sublist.end());
+    }
+    return result;
+}

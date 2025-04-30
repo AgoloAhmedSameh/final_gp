@@ -1,0 +1,15 @@
+#include <string>
+#include <algorithm>
+
+std::pair<int, int> find_length(const std::string& str, int n) {
+    int current_sum = 0;
+    int max_sum = 0;
+    for (int i = 0; i < n; ++i) {
+        current_sum += (str[i] == '0' ? 1 : -1);
+        if (current_sum < 0) {
+            current_sum = 0;
+        }
+        max_sum = std::max(current_sum, max_sum);
+    }
+    return {max_sum ? max_sum : 0, 0};
+}

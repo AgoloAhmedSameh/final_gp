@@ -1,0 +1,1 @@
+ START ----->  std::string ----->  replace_max_specialchar (const std::string &text, int n) ----->  std::regex pattern ("[ ,.]"); ----->  return std::regex_replace (text, pattern, ":", std::regex_constants::format_first_only | std::regex_constants::format_no_copy); -----> END

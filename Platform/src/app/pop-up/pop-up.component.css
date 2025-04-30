@@ -1,0 +1,234 @@
+.parent{
+    
+    display: flex;
+    flex-direction: row;
+
+    width: 0vw;
+    height: 100% !important;
+
+    font-size: 1em;
+    animation: PoP 0.5s ease-in-out 0s 1 forwards;
+   
+}
+
+
+@keyframes PoP {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        width: 80vw;
+        height: 80vh;
+        transform: rotate(360deg);
+    }
+}
+
+.bot, .content, .buttons
+{
+    display: flex;
+    flex-direction: column;
+    /* width: calc(100% / 3); */
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none !important;
+}
+
+.bot
+{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    filter: drop-shadow(10px 0px 30px rgba(0, 0, 0, 0.8));   
+}
+
+.bot > img
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.content
+{
+    width: 55%;
+
+    overflow: scroll;
+    scrollbar-width: none;
+    /* background: white; */
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* width: auto; */
+}
+.content > .element
+{
+    position: relative;
+    height: 65%;
+    /* background-color: blue; */
+}
+.buttons
+{
+    width: 20%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow-y: scroll;
+
+}
+
+/* .container
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+} */
+
+.content:has(.element:only-child)
+{
+    justify-content: center;
+}
+
+/* Text Box Style */
+
+pre
+{
+    text-wrap: wrap;
+    white-space: pre-line;
+
+}
+.text-box
+{
+    scrollbar-width: initial;
+    /* font-size: 1.3em; */
+    overflow-y: auto;
+    /* overflow-x: visible; */
+    scroll-behavior: smooth;
+    text-wrap: wrap;
+    /* max-height: 70%; */
+}
+
+
+.content:has(.text-box.green-message), .content:has(.text-box.red-message)
+{
+    overflow: visible; 
+}
+.content > .text-box.green-message, .content > .text-box.red-message
+{
+    font-size: 3em; 
+    font-weight:bold; 
+    overflow: visible; 
+    text-wrap: nowrap;
+    
+}
+.text-box.green-message
+{
+    color: rgb(0,150,64) ;
+}
+.text-box.red-message
+{
+    color: red ;
+}
+.text-box:has(+ .element:empty)
+{
+    height: 100%;
+}
+.content > div:only-child
+{
+    height: 100%;
+}
+.element:empty{
+    display: none;
+}
+
+.content:not(:has(+ .buttons))
+{
+    /* background-color: black; */
+    width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+    *{
+        font-size: 1em;
+    }
+    .parent{
+        font-size: 0.8em;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .bot, .content, .buttons
+    {
+
+        display: flex;
+        /* flex-direction: row; */
+        width: 100%;
+    }
+    .bot
+    {
+        height: 25%;
+    }
+    .content
+    {
+        height: 60%;
+    }
+    .buttons
+    {
+        height: 15%;
+    }
+    .content > .text-box.green-message, .content > .text-box.red-message
+    {
+        text-wrap: wrap;
+        stroke-width: none;
+        font-size: 3em; 
+    }
+    .content:has(.text-box.green-message) + .buttons, .content:has(.text-box.red-message) + .buttons
+    {
+        height: 40%;
+    }
+    .content > .element, .content > .text-box
+    {
+        height: 100%;
+        width: 100%;
+    }
+    .content > .element
+    {
+        position: relative;
+        width: 100%;
+        /* background-color: blue; */
+    }
+    .content > .text-box
+    {
+        width: 100%;
+        max-height: 100%;
+        font-size: 1.2em;
+    } 
+    .text-box:has( + .element:empty)
+    {
+        width: 100%;
+    }
+    .element:empty{
+        display: none;
+    }
+    .content:not(:has(+ .buttons))
+    {
+        /* background-color: black; */
+        height:  75%;
+        width: 100%;
+    }
+
+}

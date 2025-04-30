@@ -1,0 +1,3 @@
+ START ----->  using namespace std; ----->  bool ----->  is_prime (int k) ----->  if (k < 2) ----->  return false; -----> END
+ START ----->  using namespace std; ----->  bool ----->  is_prime (int k) ----->  if (k < 2) -----> for (int i = 2; i < k; i++) ----->  if (k % i == 0) ----->  return false; -----> END
+ START ----->  using namespace std; ----->  bool ----->  is_prime (int k) ----->  if (k < 2) -----> for (int i = 2; i < k; i++) ----->  if (k % i == 0) ----->  return true; -----> END

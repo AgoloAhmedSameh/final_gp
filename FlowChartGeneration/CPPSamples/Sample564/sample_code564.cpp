@@ -1,0 +1,10 @@
+#include <vector>
+#include <string>
+
+std::pair<std::vector<char>, std::vector<char>> split(const std::string &word) {
+    std::vector<char> chars;
+    for (char c : word) {
+        chars.push_back(c);
+    }
+    return {chars, {}};
+}

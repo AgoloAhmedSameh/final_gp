@@ -1,0 +1,8 @@
+#include <iostream>
+using namespace std;
+
+pair<double, double> series_sum(int number) {
+    double total = 0;
+    total = (number * (number + 1) * (2 * number + 1)) / 6.0;
+    return make_pair(total, total);
+}

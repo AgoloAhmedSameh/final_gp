@@ -1,0 +1,1 @@
+ START ----->  int ----->  strlen (const std::string &str) ----->  return str.length (); -----> END

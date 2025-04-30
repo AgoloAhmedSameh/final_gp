@@ -1,0 +1,1 @@
+ START ----->  bool ----->  is_allowed_specific_char (const std::string &str) ----->  std::regex get_char ("[^a-zA-Z0-9.]"); ----->  return !std::regex_search (str, get_char); -----> END

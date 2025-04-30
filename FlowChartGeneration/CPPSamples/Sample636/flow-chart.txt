@@ -1,0 +1,2 @@
+ START ----->  bool ----->  noprofit_noloss (double actual_cost, double sale_amount) ----->  if (sale_amount == actual_cost) ----->  return true; -----> END
+ START ----->  bool ----->  noprofit_noloss (double actual_cost, double sale_amount) ----->  if (sale_amount == actual_cost) ----->  else ----->  return false; -----> END

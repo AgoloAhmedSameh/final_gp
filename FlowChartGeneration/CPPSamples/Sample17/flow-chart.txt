@@ -1,0 +1,1 @@
+ START ----->  const int NO_OF_CHARS = 256; ----->  std::vector<char> ----->  str_to_list (const std::string &str) ----->  std::vector<char> temp; -----> for (char x : str) ----->  temp.push_back (x); ----->  return temp; -----> END

@@ -1,0 +1,14 @@
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
+int sum_three_smallest_nums(const std::vector<int>& lst) {
+    std::vector<int> positives;
+    for(int x : lst) {
+        if(x > 0) {
+            positives.push_back(x);
+        }
+    }
+    std::sort(positives.begin(), positives.end());
+    return std::accumulate(positives.begin(), positives.begin() + std::min(3, (int)positives.size()), 0);
+}

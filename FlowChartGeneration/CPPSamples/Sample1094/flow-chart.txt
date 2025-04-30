@@ -1,0 +1,2 @@
+ START ----->  std::vector<int> ----->  maximum (std::vector<int> &arr, int k) ----->  if (k == 0) ----->  return {}; -----> END
+ START ----->  std::vector<int> ----->  maximum (std::vector<int> &arr, int k) ----->  if (k == 0) ----->  std::sort (arr.begin (), arr.end ()); ----->  std::vector<int> ans (arr.end () - k, arr.end ()); ----->  return ans; -----> END

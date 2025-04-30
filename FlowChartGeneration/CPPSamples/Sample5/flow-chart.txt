@@ -1,0 +1,1 @@
+ START ----->  bool ----->  is_Power_Of_Two (int x) ----->  return x && !(x & (x - 1)); -----> END

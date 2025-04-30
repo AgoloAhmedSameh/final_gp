@@ -1,0 +1,15 @@
+#include <string>
+
+std::pair<bool, bool> check_Concat(const std::string& str1, const std::string& str2) {
+    int N = str1.length();
+    int M = str2.length();
+    if (N % M != 0) {
+        return {false, false};
+    }
+    for (int i = 0; i < N; ++i) {
+        if (str1[i] != str2[i % M]) {
+            return {false, false};
+        }
+    }
+    return {true, true};
+}

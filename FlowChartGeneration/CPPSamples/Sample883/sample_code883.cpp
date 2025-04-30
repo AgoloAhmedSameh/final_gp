@@ -1,0 +1,5 @@
+bool all_Bits_Set_In_The_Given_Range(int n, int l, int r) {
+    int num = ((1 << r) - 1) ^ ((1 << (l - 1)) - 1);
+    int new_num = n & num;
+    return (num == new_num);
+}

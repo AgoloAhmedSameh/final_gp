@@ -1,0 +1,7 @@
+#include <tuple>
+#include <vector>
+
+std::pair<std::vector<int>, std::vector<int>> add_tuple(std::vector<int> test_list, std::vector<int> test_tup) {
+    test_list.insert(test_list.end(), test_tup.begin(), test_tup.end());
+    return std::make_pair(test_list, test_tup);
+}

@@ -1,0 +1,11 @@
+#include <tuple>
+#include <vector>
+#include <iostream>
+
+std::tuple<int> add_pairwise(const std::vector<int>& test_tup) {
+    std::vector<int> res;
+    for (size_t i = 0; i < test_tup.size() - 1; ++i) {
+        res.push_back(test_tup[i] + test_tup[i + 1]);
+    }
+    return std::make_tuple(res);
+}

@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  first_even (const std::vector<int> &nums) ----->  auto it = std::find_if (nums.begin (), nums.end (), [] (int el) { return el % 2 == 0; }); -----> END

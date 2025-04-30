@@ -1,0 +1,1 @@
+ START ----->  std::pair<double, double> ----->  get_First_Set_Bit_Pos (int n) ----->  return { log2 (n & -n) + 1, 0 }; -----> END

@@ -1,0 +1,1 @@
+ START ----->  std::tuple<> ----->  clear_tuple (const std::tuple<int> &test_tup) ----->  std::vector<int> temp; ----->  std::apply ([&temp] (const auto &...args) { (temp.push_back (args), ...); }, test_tup); ----->  return std::tuple<> (); -----> END

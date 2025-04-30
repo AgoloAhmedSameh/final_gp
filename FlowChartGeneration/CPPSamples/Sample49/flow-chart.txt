@@ -1,0 +1,1 @@
+ START ----->  std::tuple<int, std::string> ----->  min_length_list (const std::vector<std::string> &input_list) ----->  int min_length = std::min_element (input_list.begin (), input_list.end (), ----->  [] (const std::string &a, const std::string &b) { ----->  return a.length () < b.length (); -----> END

@@ -1,0 +1,19 @@
+#include <set>
+#include <string>
+
+std::string check(const std::string& str) {
+    std::set<char> vowels = {'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'};
+    std::set<char> found;
+    
+    for (char ch : str) {
+        if (vowels.count(ch) > 0) {
+            found.insert(ch);
+        }
+    }
+    
+    if (found.size() >= 5) {
+        return "accepted";
+    } else {
+        return "not accepted";
+    }
+}

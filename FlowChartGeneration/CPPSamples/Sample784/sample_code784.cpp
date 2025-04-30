@@ -1,0 +1,21 @@
+#include <iostream>
+#include <sstream>
+#include <tuple>
+#include <vector>
+
+std::tuple<int> tuple_str_int(const std::string& test_str) {
+    std::string cleaned_str = test_str;
+    cleaned_str.erase(remove(cleaned_str.begin(), cleaned_str.end(), '('), cleaned_str.end());
+    cleaned_str.erase(remove(cleaned_str.begin(), cleaned_str.end(), ')'), cleaned_str.end());
+    cleaned_str.erase(remove(cleaned_str.begin(), cleaned_str.end(), '.'), cleaned_str.end());
+
+    std::istringstream ss(cleaned_str);
+    std::string item;
+    std::vector<int> res;
+
+    while (std::getline(ss, item, ',')) {
+        res.push_back(std::stoi(item));
+    }
+
+    return std::make_tuple(res.begin(), res.end());
+}

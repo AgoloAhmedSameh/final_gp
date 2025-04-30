@@ -1,0 +1,5 @@
+#include <cmath>
+
+std::pair<int, int> even_binomial_Coeff_Sum(int n) {
+    return std::make_pair(1 << (n - 1), 0);
+}

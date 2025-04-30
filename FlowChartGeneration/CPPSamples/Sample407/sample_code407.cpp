@@ -1,0 +1,32 @@
+#include <vector>
+#include <queue>
+
+using namespace std;
+
+vector<vector<int>> k_smallest_pairs(vector<int>& nums1, vector<int>& nums2, int k) {
+    using Element = pair<int, pair<int, int>>;
+    priority_queue<Element, vector<Element>, greater<Element>> queue;
+
+    auto push = [&](int i, int j) {
+        if (i < nums1.size() && j < nums2.size()) {
+            queue.push({nums1[i] + nums2[j], {i, j}});
+        }
+    };
+
+    push(0, 0);
+    vector<vector<int>> pairs;
+
+    while (!queue.empty() && pairs.size() < k) {
+        auto [sum, indices] = queue.top();
+        queue.pop();
+        int i = indices.first, j = indices.second;
+        pairs.push_back({nums1[i], nums2[j]});
+        
+        push(i, j + 1);
+        if (j == 0) {
+            push(i + 1, 0);
+        }
+    }
+
+    return pairs;
+}

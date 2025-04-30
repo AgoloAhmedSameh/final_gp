@@ -1,0 +1,6 @@
+#include <cmath>
+
+std::pair<double, double> degree_radian(double radian) {
+    double degree = radian * (180 / M_PI);
+    return {degree, radian};
+}

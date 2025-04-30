@@ -1,0 +1,2 @@
+ START ----->  bool ----->  word_len (const std::string &s) ----->  std::istringstream iss (s); ----->  std::string word; -----> while (iss >> word) ----->  if (word.length () % 2 != 0) ----->  return true; -----> END
+ START ----->  bool ----->  word_len (const std::string &s) ----->  std::istringstream iss (s); ----->  std::string word; -----> while (iss >> word) ----->  if (word.length () % 2 != 0) ----->  else ----->  return false; -----> END

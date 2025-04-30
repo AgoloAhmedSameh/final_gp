@@ -1,0 +1,16 @@
+#include <cmath>
+#include <string>
+
+std::string check_Type_Of_Triangle(double a, double b, double c) {
+    double sqa = pow(a, 2);
+    double sqb = pow(b, 2);
+    double sqc = pow(c, 2);
+
+    if (sqa == sqb + sqc || sqb == sqa + sqc || sqc == sqa + sqb) {
+        return "Right-angled Triangle";
+    } else if (sqa > sqb + sqc || sqb > sqa + sqc || sqc > sqa + sqb) {
+        return "Obtuse-angled Triangle";
+    } else {
+        return "Acute-angled Triangle";
+    }
+}

@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+long long even_Power_Sum(int n) {
+    long long sum = 0;
+    for (int i = 1; i <= n; ++i) {
+        int j = 2 * i;
+        sum += (j * j * j * j);
+    }
+    return sum;
+}

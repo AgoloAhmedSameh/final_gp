@@ -1,0 +1,10 @@
+#include <vector>
+#include <cmath>
+
+std::pair<std::vector<double>, std::vector<double>> basesnum_coresspondingnum(const std::vector<double>& bases_num, const std::vector<double>& index) {
+    std::vector<double> result;
+    for (size_t i = 0; i < bases_num.size(); ++i) {
+        result.push_back(std::pow(bases_num[i], index[i]));
+    }
+    return {result, result}; // Returning result twice as an example, modify as needed.
+}

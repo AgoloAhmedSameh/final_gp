@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <tuple>
+
+std::pair<std::vector<std::tuple<std::string, int>>, std::unordered_map<std::string, int>> re_arrange_tuples(const std::vector<std::tuple<std::string, int>>& test_list, const std::vector<std::string>& ord_list) {
+    std::unordered_map<std::string, int> temp;
+    for (const auto& item : test_list) {
+        temp[std::get<0>(item)] = std::get<1>(item);
+    }
+    
+    std::vector<std::tuple<std::string, int>> res;
+    for (const auto& key : ord_list) {
+        res.emplace_back(key, temp[key]);
+    }
+    
+    return {res, temp};
+}

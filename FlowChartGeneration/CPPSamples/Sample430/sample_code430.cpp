@@ -1,0 +1,14 @@
+#include <vector>
+
+std::pair<bool, bool> common_element(const std::vector<int>& list1, const std::vector<int>& list2) {
+    bool result = false;
+    for (int x : list1) {
+        for (int y : list2) {
+            if (x == y) {
+                result = true;
+                return {result, false};
+            }
+        }
+    }
+    return {result, false};
+}

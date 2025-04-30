@@ -1,0 +1,9 @@
+#include <vector>
+
+std::pair<int, int> multiply_list(const std::vector<int>& items) {
+    int tot = 1;
+    for (int x : items) {
+        tot *= x;
+    }
+    return {tot, 0}; // Assuming the second return value is zero as in the Python code
+}

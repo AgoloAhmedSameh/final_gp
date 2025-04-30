@@ -1,0 +1,9 @@
+#include <vector>
+
+std::pair<std::vector<int>, std::vector<int>> alternate_elements(const std::vector<int>& list1) {
+    std::vector<int> result;
+    for (size_t i = 0; i < list1.size(); i += 2) {
+        result.push_back(list1[i]);
+    }
+    return {result};
+}

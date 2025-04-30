@@ -1,0 +1,16 @@
+#include <string>
+#include <cstdlib>
+
+std::string compare_one(const std::string& a, const std::string& b) {
+    std::string temp_a = a, temp_b = b;
+    
+    if (temp_a.find(',') != std::string::npos) 
+        std::replace(temp_a.begin(), temp_a.end(), ',', '.');
+    if (temp_b.find(',') != std::string::npos) 
+        std::replace(temp_b.begin(), temp_b.end(), ',', '.');
+
+    if (std::atof(temp_a.c_str()) == std::atof(temp_b.c_str())) 
+        return "";
+
+    return std::atof(temp_a.c_str()) > std::atof(temp_b.c_str()) ? a : b;
+}

@@ -1,0 +1,2 @@
+ START ----->  int ----->  prod_signs (const std::vector<int> &arr) ----->  if (arr.empty ()) ----->  return 0; -----> END
+ START ----->  int ----->  prod_signs (const std::vector<int> &arr) ----->  if (arr.empty ()) ----->  bool has_zero = std::find (arr.begin (), arr.end (), 0) != arr.end (); ----->  int prod = has_zero ? 0 : (std::count_if (arr.begin (), arr.end (), [] (int x) { return x < 0; }) % 2 == 0 ? 1 : -1); -----> END

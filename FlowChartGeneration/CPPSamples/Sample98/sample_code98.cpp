@@ -1,0 +1,6 @@
+#include <iostream>
+#include <string>
+
+std::string decimal_to_binary(int n) {
+    return std::bitset<32>(n).to_string().substr(std::bitset<32>(n).to_string().find('1'));
+}

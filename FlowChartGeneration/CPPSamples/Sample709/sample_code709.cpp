@@ -1,0 +1,7 @@
+#include <tuple>
+#include <iostream>
+#include <vector>
+
+std::pair<std::tuple<int, int>, std::tuple<int, int>> front_and_rear(const std::vector<int>& test_tup) {
+    return std::make_pair(std::make_tuple(test_tup.front(), test_tup.back()), std::make_tuple());
+}

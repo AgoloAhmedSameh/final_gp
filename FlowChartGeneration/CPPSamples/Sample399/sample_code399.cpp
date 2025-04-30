@@ -1,0 +1,14 @@
+#include <vector>
+#include <set>
+#include <algorithm>
+#include <tuple>
+
+std::pair<int, int> extract_freq(const std::vector<std::vector<int>>& test_list) {
+    std::set<std::tuple<std::vector<int>>> unique_subs;
+    for (const auto& sub : test_list) {
+        auto sorted_sub = sub;
+        std::sort(sorted_sub.begin(), sorted_sub.end());
+        unique_subs.insert(std::make_tuple(sorted_sub));
+    }
+    return {static_cast<int>(unique_subs.size()), 0};
+}

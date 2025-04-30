@@ -1,0 +1,210 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import "../node_modules/prismjs/themes/prism.css";
+@import "../node_modules/prismjs/plugins/toolbar/prism-toolbar.css";
+@import '../node_modules/prismjs/themes/prism.css';
+@import '../node_modules/prismjs/plugins/toolbar/prism-toolbar.css';
+@import '../node_modules/prismjs/themes/prism-okaidia.css';
+@import '../node_modules/prismjs/themes/prism-dark.css';
+/* @import '../node_modules/prismjs/themes/prism-tomorrow.css'; */
+/* @import '../node_modules/prismjs/themes/prism-solarizedlight.css'; */
+
+/* @import '../node_modules/prismjs/plugins/show-language/prism-show-language.css'; */
+
+
+.code-editor
+{
+    /* width: 100% !important; */
+    min-height: 90%;
+    height: 100% !important;
+}
+
+.code-editor *
+{
+    font-family: monospace !important;
+}
+
+.CodeMirror, .cm-s-material, .CodeMirror-wrap, .ngx-codemirror{
+    
+    font-size: 0.4em !important;
+    overflow: auto !important;
+    clip-path: none !important;
+    max-height: 100% !important;
+    min-height: 100% !important; 
+    border-radius: 15px !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    scroll-behavior: initial !important; 
+
+    /* pointer-events: none; */
+}
+.CodeMirror-lines span
+{
+    font-family: monospace !important;
+}
+
+.cm-meta
+{
+    font-family: monospace !important;
+}
+
+/* .CodeMirror-linenumber.CodeMirror-gutter-elt
+{
+    position: absolute !important;
+    left: 0px !important;
+} */
+
+*
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: sans-serif;
+    scrollbar-width: none;
+
+}
+
+:root
+{
+    --main-color: #17AFAF;
+    --second-color: #EEEEEE;
+    --third-color: #686D76;
+    --fourth-color: #373A40;
+    
+}
+
+
+
+.mat-mdc-dialog-surface, .mdc-dialog__surface
+{
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    min-width: 1px !important;
+    min-height: 1px !important;
+}
+
+.QdialogLeftPinned .mat-mdc-dialog-surface , .QdialogLeftPinned .mdc-dialog__surface
+{
+    left: calc(-50vw + 175px) !important;
+    max-width: 320px !important;
+    min-height: 100vh !important;
+}
+
+
+
+.QdialogIframe .mat-mdc-dialog-surface , .QdialogIframe .mdc-dialog__surface
+{
+    right: -9vw;
+    overflow: auto !important;
+    width: 70vw !important;
+    min-height: 100vh !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+
+
+.Qdialog, .QdialogLeftPinned, .QdialogIframe
+{
+    width: 80%;
+    height: 80vh;
+
+    position: relative !important;
+
+    min-width: 1px !important;
+    min-height: 1px !important;
+
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+
+    animation: PoPGrow 0.5s ease-in-out 0s 1 forwards;
+}
+
+
+@keyframes PoPGrow {
+    from{
+        scale: 0;
+    }
+    to{
+       scale: 1;
+    }
+}
+
+@keyframes PoP {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        width: 80vw;
+        height: 80vh;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floatEffect {
+    0% { transform:  translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform:  translateY(0px); }
+}
+
+@keyframes barEffect {
+    0%{transform: translateX(-360px);}
+    80%{transform: translateX(70px);}
+    100%{transform: translateX(0px);}
+}
+
+@keyframes Rotation {
+    0%{transform: rotate(0deg);}
+    18%{transform: rotate(400deg);}
+    24%{transform: rotate(360deg);}
+    100%{transform: rotate(360deg);}
+}
+
+@keyframes RotationInverse {
+    0%{transform: rotate(0deg);}
+    18%{transform: rotate(-400deg);}
+    24%{transform: rotate(-360deg);}
+    100%{transform: rotate(-360deg);}
+}
+
+@keyframes typing {
+    from {width: 0;}
+}
+
+
+.Qtext
+{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+
+html, body {
+     height: 100%; 
+    
+}
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+@media screen and (max-width: 768px) {
+    .CodeMirror, .cm-s-material, .CodeMirror-wrap, .ngx-codemirror
+    {
+        /* min-height will do the job */
+        /* height: 1% !important;  */
+        font-size: 1.5em !important;   
+    }
+}

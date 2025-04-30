@@ -1,0 +1,7 @@
+#include <set>
+#include <vector>
+
+std::pair<bool, bool> chkList(const std::vector<int>& lst) {
+    std::set<int> unique_elements(lst.begin(), lst.end());
+    return std::make_pair(unique_elements.size() == 1, true);
+}

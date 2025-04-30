@@ -1,0 +1,1 @@
+ START ----->  using namespace std; ----->  char ----->  make_flip (char ch) ----->  return (ch == '0') ? '1' : '0'; -----> END

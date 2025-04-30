@@ -1,0 +1,9 @@
+#include <vector>
+
+int sum_range_list(const std::vector<int>& list1, int m, int n) {
+    int sum_range = 0;
+    for(int i = m; i <= n; ++i) {
+        sum_range += list1[i];
+    }
+    return sum_range;
+}

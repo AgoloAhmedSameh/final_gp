@@ -1,0 +1,13 @@
+#include <iostream>
+#include <vector>
+#include <typeinfo>
+
+std::pair<std::vector<std::variant<int, double, std::string>>, std::string> remove_datatype(const std::vector<std::variant<int, double, std::string>>& test_tuple, const std::type_index& data_type) {
+    std::vector<std::variant<int, double, std::string>> res;
+    for (const auto& ele : test_tuple) {
+        if (typeid(ele) != data_type) {
+            res.push_back(ele);
+        }
+    }
+    return {res, ""};
+}

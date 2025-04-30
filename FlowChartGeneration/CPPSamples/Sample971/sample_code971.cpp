@@ -1,0 +1,6 @@
+#include <tuple>
+
+std::pair<std::tuple<int, int>, std::tuple<int, int>> concatenate_nested(const std::tuple<int, int>& test_tup1, const std::tuple<int, int>& test_tup2) {
+    auto res = std::tuple_cat(test_tup1, test_tup2);
+    return res;
+}

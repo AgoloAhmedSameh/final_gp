@@ -1,0 +1,9 @@
+#include <vector>
+
+std::vector<double> derivative(const std::vector<double>& xs) {
+    std::vector<double> result;
+    for (size_t i = 1; i < xs.size(); ++i) {
+        result.push_back(i * xs[i]);
+    }
+    return result;
+}

@@ -1,0 +1,4 @@
+double diameter_circle(double r) {
+    double diameter = 2 * r;
+    return diameter;
+}

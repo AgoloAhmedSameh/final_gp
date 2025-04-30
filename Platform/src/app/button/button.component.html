@@ -1,0 +1,10 @@
+<ul style="--button-height: {{buttonHeight}}vh; --buttons-count: {{labels()!.length}}; --skew-level: {{skewLevel()}}deg;">
+    @for (item of labels(); track $index) {
+        <li (click)="functions()[$index]()" style="--i: {{labels.length - $index}};">
+            <div class="button-title">
+                {{item}}
+            </div>
+        </li> 
+    }
+</ul>
+

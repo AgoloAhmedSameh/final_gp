@@ -1,0 +1,23 @@
+#include <iostream>
+#include <set>
+#include <tuple>
+#include <vector>
+
+std::tuple<std::vector<int>> find_dissimilar(const std::vector<int>& test_tup1, const std::vector<int>& test_tup2) {
+    std::set<int> set1(test_tup1.begin(), test_tup1.end());
+    std::set<int> set2(test_tup2.begin(), test_tup2.end());
+    std::vector<int> res;
+
+    for (const auto& elem : set1) {
+        if (set2.find(elem) == set2.end()) {
+            res.push_back(elem);
+        }
+    }
+    for (const auto& elem : set2) {
+        if (set1.find(elem) == set1.end()) {
+            res.push_back(elem);
+        }
+    }
+    
+    return std::make_tuple(res);
+}

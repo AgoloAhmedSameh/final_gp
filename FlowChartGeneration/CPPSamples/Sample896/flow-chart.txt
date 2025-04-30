@@ -1,0 +1,2 @@
+ START ----->  bool ----->  is_Word_Present (const std::string &sentence, const std::string &word) ----->  std::istringstream iss (sentence); ----->  std::string token; -----> while (iss >> token) ----->  if (token == word) ----->  return true; -----> END
+ START ----->  bool ----->  is_Word_Present (const std::string &sentence, const std::string &word) ----->  std::istringstream iss (sentence); ----->  std::string token; -----> while (iss >> token) ----->  if (token == word) ----->  return false; -----> END

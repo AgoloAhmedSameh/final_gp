@@ -1,0 +1,4 @@
+ START ----->  bool ----->  validate (int n) -----> for (int i = 0; i < 10; i++) ----->  int temp = n; ----->  int count = 0; -----> while (temp) ----->  if (temp % 10 == i) ----->  count++; ----->  if (count > i) ----->  return false; -----> END
+ START ----->  bool ----->  validate (int n) -----> for (int i = 0; i < 10; i++) ----->  int temp = n; ----->  int count = 0; -----> while (temp) ----->  if (temp % 10 == i) ----->  count++; ----->  if (count > i) ----->  temp /= 10;
+ START ----->  bool ----->  validate (int n) -----> for (int i = 0; i < 10; i++) ----->  int temp = n; ----->  int count = 0; -----> while (temp) ----->  if (temp % 10 == i) ----->  if (count > i) ----->  return false; -----> END
+ START ----->  bool ----->  validate (int n) -----> for (int i = 0; i < 10; i++) ----->  int temp = n; ----->  int count = 0; -----> while (temp) ----->  if (temp % 10 == i) ----->  if (count > i) ----->  temp /= 10;

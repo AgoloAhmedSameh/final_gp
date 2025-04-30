@@ -1,0 +1,14 @@
+#include <vector>
+#include <cmath>
+
+int max_fill(const std::vector<std::vector<int>>& grid, int capacity) {
+    int total = 0;
+    for (const auto& arr : grid) {
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        total += std::ceil(static_cast<double>(sum) / capacity);
+    }
+    return total;
+}

@@ -1,0 +1,9 @@
+#include <algorithm>
+#include <vector>
+
+std::pair<std::vector<std::vector<int>>, std::vector<std::vector<int>>> reverse_list_lists(std::vector<std::vector<int>>& lists) {
+    for (auto& l : lists) {
+        std::sort(l.rbegin(), l.rend());
+    }
+    return {lists, lists};
+}

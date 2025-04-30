@@ -1,0 +1,6 @@
+#include <cmath>
+
+std::pair<int, int> is_polite(int n) { 
+    n = n + 1; 
+    return std::make_pair(n + static_cast<int>(log2(n + log2(n))), 0);
+}

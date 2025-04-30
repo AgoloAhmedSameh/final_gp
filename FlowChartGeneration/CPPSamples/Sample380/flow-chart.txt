@@ -1,0 +1,1 @@
+ START ----->  std::vector<std::vector<int> > ----->  index_on_inner_list (const std::vector<std::vector<int> > &list_data, int index_no) ----->  std::vector<std::vector<int> > result = list_data; ----->  std::sort (result.begin (), result.end (), [index_no] (const std::vector<int> &a, const std::vector<int> &b) { ----->  return a[index_no] < b[index_no]; -----> END

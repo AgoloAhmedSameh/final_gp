@@ -1,0 +1,2 @@
+ START ----->  std::string ----->  text_lowercase_underscore (const std::string &text) ----->  std::regex patterns ("^[a-z]+_[a-z]+$"); ----->  if (std::regex_search (text, patterns)) ----->  return "Found a match!"; -----> END
+ START ----->  std::string ----->  text_lowercase_underscore (const std::string &text) ----->  std::regex patterns ("^[a-z]+_[a-z]+$"); ----->  if (std::regex_search (text, patterns)) ----->  else ----->  return "Not matched!"; -----> END

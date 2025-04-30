@@ -1,0 +1,39 @@
+#include <string>
+#include <sstream>
+#include <vector>
+#include <iostream>
+
+bool valid_date(const std::string& date) {
+    try {
+        std::string trimmed_date = date;
+        trimmed_date.erase(0, trimmed_date.find_first_not_of(" \t"));
+        trimmed_date.erase(trimmed_date.find_last_not_of(" \t") + 1);
+
+        std::istringstream iss(trimmed_date);
+        std::string month_str, day_str, year_str;
+        std::getline(iss, month_str, '-');
+        std::getline(iss, day_str, '-');
+        std::getline(iss, year_str);
+
+        int month = std::stoi(month_str);
+        int day = std::stoi(day_str);
+        int year = std::stoi(year_str);
+
+        if (month < 1 || month > 12) {
+            return false;
+        }
+        if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (day < 1 || day > 31)) {
+            return false;
+        }
+        if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 || day > 30)) {
+            return false;
+        }
+        if (month == 2 && (day < 1 || day > 29)) {
+            return false;
+        }
+    } catch (...) {
+        return false;
+    }
+
+    return true;
+}

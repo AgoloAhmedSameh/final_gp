@@ -1,0 +1,15 @@
+#include <regex>
+#include <string>
+#include <tuple>
+
+std::pair<std::pair<size_t, size_t>, bool> search_literal(const std::string& pattern, const std::string& text) {
+    std::regex reg(pattern);
+    std::smatch match;
+
+    if (std::regex_search(text, match, reg)) {
+        size_t s = match.position();
+        size_t e = s + match.length();
+        return {{s, e}, true};
+    }
+    return {{0, 0}, false};
+}

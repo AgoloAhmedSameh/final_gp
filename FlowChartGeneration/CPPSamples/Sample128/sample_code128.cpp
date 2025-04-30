@@ -1,0 +1,34 @@
+#include <vector>
+#include <numeric>
+#include <set>
+
+bool magic_square_test(const std::vector<std::vector<int>>& my_matrix) {
+    int iSize = my_matrix[0].size();
+    std::vector<int> sum_list;
+
+    for (const auto& lines : my_matrix) {
+        sum_list.push_back(std::accumulate(lines.begin(), lines.end(), 0));
+    }
+
+    for (int col = 0; col < iSize; ++col) {
+        int col_sum = 0;
+        for (int row = 0; row < my_matrix.size(); ++row) {
+            col_sum += my_matrix[row][col];
+        }
+        sum_list.push_back(col_sum);
+    }
+
+    int result1 = 0;
+    for (int i = 0; i < iSize; ++i) {
+        result1 += my_matrix[i][i];
+    }
+    sum_list.push_back(result1);
+
+    int result2 = 0;
+    for (int i = iSize - 1; i >= 0; --i) {
+        result2 += my_matrix[i][i];
+    }
+    sum_list.push_back(result2);
+
+    return std::set<int>(sum_list.begin(), sum_list.end()).size() <= 1;
+}

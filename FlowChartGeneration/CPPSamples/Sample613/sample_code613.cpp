@@ -1,0 +1,10 @@
+#include <vector>
+#include <numeric>
+
+std::pair<int> cumulative_sum(const std::vector<std::vector<int>>& test_list) {
+    int res = 0;
+    for (const auto& sublist : test_list) {
+        res += std::accumulate(sublist.begin(), sublist.end(), 0);
+    }
+    return std::make_pair(res);
+}

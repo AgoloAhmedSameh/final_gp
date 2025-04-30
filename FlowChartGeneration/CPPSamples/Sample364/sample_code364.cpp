@@ -1,0 +1,10 @@
+#include <iostream>
+
+std::pair<int, int> count_Digit(int n) {
+    int count = 0;
+    while (n != 0) {
+        n /= 10;
+        count += 1;
+    }
+    return {count, count}; // To match the return type (tuple) in Python
+}

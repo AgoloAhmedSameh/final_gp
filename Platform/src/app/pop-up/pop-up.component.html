@@ -1,0 +1,47 @@
+<div class="parent">
+
+    <div class="bot">
+        <!-- content must be inputs -->
+        @if (happyState) {
+            <img src="/assets/Resources/Happy.png" alt="">
+        }
+        @else {
+            <img src="/assets/Resources/Sad.png" alt="">
+        }
+
+         <!-- <div class="shadow"></div> -->
+    </div>
+    <div class="content" #content>
+        @if(message != null)
+        {
+            <div class="text-box" #text>
+                <pre>
+                    {{message}}
+                </pre>
+            </div>
+        }
+        <div class="element">
+            @if(element === LoadingComponentProperty)
+            {
+                <ng-container [ngComponentOutlet]="targetComponent"></ng-container>
+            }
+            @else if (element === CodeAreaComponentProperty) 
+            {
+                <ng-container 
+                    [ngComponentOutlet]="targetComponent" 
+                    [ngComponentOutletInputs]="{
+                        forViewOnly: true,
+                        inputCode: code
+                    }"
+                >
+                </ng-container>
+            }
+            <!-- <ng-container #component></ng-container> -->
+        </div>
+    </div>
+    @if (buttonNames.length > 0) {
+        <div #buttons class="buttons">
+            <app-button [labels]="buttonNames" [functions]="buttonFunctions"></app-button>
+        </div>
+    }
+</div>

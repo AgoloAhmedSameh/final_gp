@@ -1,0 +1,2 @@
+ START ----->  std::string ----->  check (const std::string &str) ----->  std::set<char> p (str.begin (), str.end ()); ----->  std::set<char> s = { '0', '1' }; ----->  if (s == p || p == std::set<char> ({ '0' }) || p == std::set<char> ({ '1' })) ----->  return "Yes"; -----> END
+ START ----->  std::string ----->  check (const std::string &str) ----->  std::set<char> p (str.begin (), str.end ()); ----->  std::set<char> s = { '0', '1' }; ----->  if (s == p || p == std::set<char> ({ '0' }) || p == std::set<char> ({ '1' })) ----->  else ----->  return "No"; -----> END

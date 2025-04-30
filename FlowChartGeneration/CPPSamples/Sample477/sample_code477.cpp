@@ -1,0 +1,9 @@
+#include <iostream>
+#include <regex>
+#include <string>
+
+std::pair<std::string, std::string> remove_lowercase(const std::string& str1) {
+    std::regex lower_case("[a-z]");
+    std::string result = std::regex_replace(str1, lower_case, "");
+    return {result, ""};
+}

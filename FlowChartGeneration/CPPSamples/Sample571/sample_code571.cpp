@@ -1,0 +1,18 @@
+#include <vector>
+#include <unordered_map>
+
+std::vector<int> two_unique_nums(const std::vector<int>& nums) {
+    std::unordered_map<int, int> count_map;
+    for (int num : nums) {
+        count_map[num]++;
+    }
+    
+    std::vector<int> unique_nums;
+    for (const auto& pair : count_map) {
+        if (pair.second == 1) {
+            unique_nums.push_back(pair.first);
+        }
+    }
+    
+    return unique_nums;
+}

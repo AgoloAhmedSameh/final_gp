@@ -1,0 +1,2 @@
+ START ----->  std::pair<int, int> ----->  num_position (const std::string &text) ----->  std::regex pattern (R"(\d+)"); ----->  std::smatch match; ----->  if (std::regex_search (text, match, pattern)) ----->  return { match.position (), match.length () }; -----> END
+ START ----->  std::pair<int, int> ----->  num_position (const std::string &text) ----->  std::regex pattern (R"(\d+)"); ----->  std::smatch match; ----->  if (std::regex_search (text, match, pattern)) ----->  return { -1, -1 }; -----> END

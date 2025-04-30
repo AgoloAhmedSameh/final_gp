@@ -1,0 +1,14 @@
+#include <iostream>
+#include <bitset>
+
+std::pair<double, double> count_With_Odd_SetBits(int n) {
+    if (n % 2 != 0) {
+        return { (n + 1) / 2.0, 0 }; // Returning a pair, second value is a placeholder
+    }
+    int count = std::bitset<32>(n).count();
+    double ans = n / 2.0;
+    if (count % 2 != 0) {
+        ans += 1;
+    }
+    return { ans, 0 }; // Returning a pair, second value is a placeholder
+}

@@ -1,0 +1,1 @@
+ START ----->  int ----->  maximum_product (std::vector<int> &nums) ----->  std::vector<int> a (nums); ----->  std::vector<int> b (nums); ----->  std::sort (a.begin (), a.end (), std::greater<int> ()); ----->  std::sort (b.begin (), b.end ()); ----->  return std::max (a[0] * a[1] * a[2], a[0] * b[0] * b[1]); -----> END

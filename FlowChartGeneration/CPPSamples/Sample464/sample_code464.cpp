@@ -1,0 +1,11 @@
+#include <unordered_map>
+
+std::unordered_map<std::string, std::string> drop_empty(const std::unordered_map<std::string, std::string>& dict1) {
+    std::unordered_map<std::string, std::string> result;
+    for (const auto& pair : dict1) {
+        if (pair.second != "") {
+            result[pair.first] = pair.second;
+        }
+    }
+    return result;
+}

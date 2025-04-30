@@ -1,0 +1,1 @@
+ START ----->  using namespace std; ----->  int ----->  sum_Natural (int n) ----->  int sum = (n * (n + 1)); ----->  return sum; -----> END

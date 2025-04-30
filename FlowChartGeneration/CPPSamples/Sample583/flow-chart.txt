@@ -1,0 +1,2 @@
+ START ----->  std::pair<int, std::string> ----->  find_adverbs (const std::string &text) ----->  std::regex pattern (R"(\w+ly)"); ----->  std::smatch m; ----->  if (std::regex_search (text, m, pattern)) ----->  return { m.position (), m.str () }; -----> END
+ START ----->  std::pair<int, std::string> ----->  find_adverbs (const std::string &text) ----->  std::regex pattern (R"(\w+ly)"); ----->  std::smatch m; ----->  if (std::regex_search (text, m, pattern)) ----->  return { -1,  }; -----> END

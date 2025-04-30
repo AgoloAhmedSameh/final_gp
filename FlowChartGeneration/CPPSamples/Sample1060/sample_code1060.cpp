@@ -1,0 +1,25 @@
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+
+std::string anti_shuffle(const std::string& s) {
+    std::istringstream iss(s);
+    std::string word;
+    std::vector<std::string> sorted_words;
+
+    while (iss >> word) {
+        std::sort(word.begin(), word.end());
+        sorted_words.push_back(word);
+    }
+
+    std::ostringstream oss;
+    for (size_t i = 0; i < sorted_words.size(); ++i) {
+        oss << sorted_words[i];
+        if (i < sorted_words.size() - 1) {
+            oss << ' ';
+        }
+    }
+
+    return oss.str();
+}

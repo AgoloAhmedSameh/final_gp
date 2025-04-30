@@ -1,0 +1,46 @@
+#include <iostream>
+#include <map>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+
+std::string sort_numbers(const std::string& numbers) {
+    std::map<std::string, int> value_map = {
+        {"zero", 0},
+        {"one", 1},
+        {"two", 2},
+        {"three", 3},
+        {"four", 4},
+        {"five", 5},
+        {"six", 6},
+        {"seven", 7},
+        {"eight", 8},
+        {"nine", 9}
+    };
+    
+    std::istringstream iss(numbers);
+    std::vector<std::string> num_vector;
+    std::string num;
+
+    while (iss >> num) {
+        if (!num.empty()) {
+            num_vector.push_back(num);
+        }
+    }
+
+    std::sort(num_vector.begin(), num_vector.end(), [&](const std::string& a, const std::string& b) {
+        return value_map[a] < value_map[b];
+    });
+
+    std::ostringstream oss;
+    for (const auto& n : num_vector) {
+        oss << n << ' ';
+    }
+
+    std::string result = oss.str();
+    if (!result.empty()) {
+        result.pop_back(); // Remove trailing space
+    }
+    
+    return result;
+}

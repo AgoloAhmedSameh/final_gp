@@ -1,0 +1,27 @@
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
+int digits_sum(int n) {
+    int neg = 1;
+    if (n < 0) {
+        n = -n;
+        neg = -1;
+    }
+    std::vector<int> digits;
+    while (n > 0) {
+        digits.push_back(n % 10);
+        n /= 10;
+    }
+    if (neg == -1) {
+        digits[0] *= neg;
+    }
+    return std::accumulate(digits.begin(), digits.end(), 0);
+}
+
+std::vector<int> order_by_points(std::vector<int> nums) {
+    std::sort(nums.begin(), nums.end(), [](int a, int b) {
+        return digits_sum(a) < digits_sum(b);
+    });
+    return nums;
+}

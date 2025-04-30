@@ -1,0 +1,15 @@
+#include <tuple>
+#include <vector>
+#include <iostream>
+
+std::vector<std::tuple<int, int>> subtract_elements(const std::vector<std::tuple<int, int>>& test_tup1, const std::vector<std::tuple<int, int>>& test_tup2) {
+    std::vector<std::tuple<int, int>> res;
+
+    for (size_t i = 0; i < test_tup1.size(); ++i) {
+        int a = std::get<0>(test_tup1[i]) - std::get<0>(test_tup2[i]);
+        int b = std::get<1>(test_tup1[i]) - std::get<1>(test_tup2[i]);
+        res.emplace_back(a, b);
+    }
+
+    return res;
+}

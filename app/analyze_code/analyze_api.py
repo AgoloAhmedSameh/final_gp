@@ -1,25 +1,24 @@
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI,APIRouter, HTTPException
+
 from pydantic import BaseModel
 from typing import List
 
-# Import your logic
+# # Import your logic
 from app.analyze_code.matchingJudge import matching_judge
 from app.analyze_code.syntaxJudge import check_syntax
 from app.analyze_code.fix_syntax import fix_syntax_error
 from app.LLM.prompts import FEEDBACK_BOTH_BUG, FEEDBACK_MATCHING_BUG, FEEDBACK_NO_BUGS, FEEDBACK_SYNTAX_BUG
 from app.analyze_code.fix_matching import create_function_basedOn_descdescription
 
-
-
-app = FastAPI()
+router = APIRouter()
 
 # Define the input model
 class CodeInput(BaseModel):
     code: str
     description: str
     language: str
-    dependices: List[str]
+    dependencies: List[str]
 
 # Define the output model
 class CodeOutput(BaseModel):
@@ -28,7 +27,7 @@ class CodeOutput(BaseModel):
     feedback_message: str
     enhanced_code: str
 
-@app.post("/api/analyze_code", response_model=CodeOutput)
+@router.post("/api/analyze_code", response_model=CodeOutput)
 def analyze_code(input_data: CodeInput):
     try:
         code = input_data.code

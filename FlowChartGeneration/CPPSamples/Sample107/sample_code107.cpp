@@ -1,0 +1,23 @@
+#include <vector>
+#include <algorithm>
+#include <queue>
+
+std::vector<int> merge_sorted_list(std::vector<int> num1, std::vector<int> num2, std::vector<int> num3) {
+    std::sort(num1.begin(), num1.end());
+    std::sort(num2.begin(), num2.end());
+    std::sort(num3.begin(), num3.end());
+    
+    std::vector<int> result;
+    std::priority_queue<int, std::vector<int>, std::greater<int>> min_heap;
+
+    for (int num : num1) min_heap.push(num);
+    for (int num : num2) min_heap.push(num);
+    for (int num : num3) min_heap.push(num);
+
+    while (!min_heap.empty()) {
+        result.push_back(min_heap.top());
+        min_heap.pop();
+    }
+
+    return result;
+}

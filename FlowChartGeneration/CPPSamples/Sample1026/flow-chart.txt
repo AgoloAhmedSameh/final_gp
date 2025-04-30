@@ -1,0 +1,2 @@
+ START ----->  bool ----->  below_threshold (const std::vector<int> &l, int t) -----> for (int e : l) ----->  if (e >= t) ----->  return false; -----> END
+ START ----->  bool ----->  below_threshold (const std::vector<int> &l, int t) -----> for (int e : l) ----->  if (e >= t) ----->  return true; -----> END

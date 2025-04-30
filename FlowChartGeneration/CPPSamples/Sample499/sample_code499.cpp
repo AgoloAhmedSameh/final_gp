@@ -1,0 +1,11 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+std::pair<std::string> concatenate_elements(const std::vector<std::string>& list) {
+    std::string ans = " ";
+    for (const auto& i : list) {
+        ans += " " + i;
+    }
+    return {ans};
+}

@@ -1,0 +1,3 @@
+int find_rect_num(int n) {
+    return n * (n + 1);
+}

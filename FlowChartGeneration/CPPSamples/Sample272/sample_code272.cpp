@@ -1,0 +1,7 @@
+#include <tuple>
+#include <vector>
+#include <iostream>
+
+std::tuple<int, int> subtract_elements(const std::tuple<int, int>& test_tup1, const std::tuple<int, int>& test_tup2) {
+    return std::make_tuple(std::get<0>(test_tup1) - std::get<0>(test_tup2), std::get<1>(test_tup1) - std::get<1>(test_tup2));
+}

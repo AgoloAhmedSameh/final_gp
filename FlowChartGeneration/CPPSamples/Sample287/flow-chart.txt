@@ -1,0 +1,2 @@
+ START ----->  std::pair<int, int> ----->  modular_inverse (const std::vector<int> &arr, int N, int P) ----->  int current_element = 0; -----> for (int i = 0; i < N; i++) ----->  if ((arr[i] * arr[i]) % P == 1) ----->  current_element++; ----->  return { current_element, 0 }; -----> END
+ START ----->  std::pair<int, int> ----->  modular_inverse (const std::vector<int> &arr, int N, int P) ----->  int current_element = 0; -----> for (int i = 0; i < N; i++) ----->  if ((arr[i] * arr[i]) % P == 1) ----->  return { current_element, 0 }; -----> END

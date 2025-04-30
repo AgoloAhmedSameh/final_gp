@@ -1,0 +1,11 @@
+#include <iostream>
+#include <vector>
+#include <map>
+
+std::pair<std::map<int, std::vector<int>>, std::vector<int>> grouping_dictionary(const std::vector<std::pair<int, int>>& l) {
+    std::map<int, std::vector<int>> d;
+    for (const auto& p : l) {
+        d[p.first].push_back(p.second);
+    }
+    return {d, {}};
+}

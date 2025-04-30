@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <tuple>
+
+std::tuple<std::vector<int>> extract_min_max(std::vector<int> test_tup, int K) {
+    std::vector<int> res;
+    std::sort(test_tup.begin(), test_tup.end());
+    for (size_t idx = 0; idx < test_tup.size(); ++idx) {
+        if (idx < K || idx >= test_tup.size() - K) {
+            res.push_back(test_tup[idx]);
+        }
+    }
+    return std::make_tuple(res);
+}

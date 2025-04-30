@@ -1,0 +1,2 @@
+ START ----->  std::string ----->  check_email (const std::string &email) ----->  std::regex pattern ("^[a-z0-9]+[\\._]?[a-z0-9]+@[\\w]+[\\.]\\w{2,3}$"); ----->  if (std::regex_match (email, pattern)) ----->  return "Valid Email"; -----> END
+ START ----->  std::string ----->  check_email (const std::string &email) ----->  std::regex pattern ("^[a-z0-9]+[\\._]?[a-z0-9]+@[\\w]+[\\.]\\w{2,3}$"); ----->  if (std::regex_match (email, pattern)) ----->  else ----->  return "Invalid Email"; -----> END

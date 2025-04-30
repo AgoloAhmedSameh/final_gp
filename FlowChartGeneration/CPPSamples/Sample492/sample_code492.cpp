@@ -1,0 +1,59 @@
+#include <cmath>
+#include <vector>
+#include <utility>
+
+std::pair<std::vector<std::vector<std::pair<double, double>>>, int> calculate_polygons(double startx, double starty, double endx, double endy, double radius) {
+    double sl = (2 * radius) * tan(M_PI / 6);
+    double p = sl * 0.5;
+    double b = sl * cos(M_PI / 6);
+    double w = b * 2;
+    double h = 2 * sl;
+    startx = startx - w;
+    starty = starty - h;
+    endx = endx + w;
+    endy = endy + h;
+    double origx = startx;
+    double origy = starty;
+    double xoffset = b;
+    double yoffset = 3 * p;
+    std::vector<std::vector<std::pair<double, double>>> polygons;
+    int row = 1;
+    int counter = 0;
+
+    while (starty < endy) {
+        if (row % 2 == 0) {
+            startx = origx + xoffset;
+        } else {
+            startx = origx;
+        }
+        while (startx < endx) {
+            double p1x = startx;
+            double p1y = starty + p;
+            double p2x = startx;
+            double p2y = starty + (3 * p);
+            double p3x = startx + b;
+            double p3y = starty + h;
+            double p4x = startx + w;
+            double p4y = starty + (3 * p);
+            double p5x = startx + w;
+            double p5y = starty + p;
+            double p6x = startx + b;
+            double p6y = starty;
+            std::vector<std::pair<double, double>> poly = {
+                {p1x, p1y},
+                {p2x, p2y},
+                {p3x, p3y},
+                {p4x, p4y},
+                {p5x, p5y},
+                {p6x, p6y},
+                {p1x, p1y}
+            };
+            polygons.push_back(poly);
+            counter += 1;
+            startx += w;
+        }
+        starty += yoffset;
+        row += 1;
+    }
+    return {polygons, counter};
+}

@@ -1,0 +1,25 @@
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <cctype>
+
+std::vector<std::string> select_words(const std::string& s, int n) {
+    std::vector<std::string> result;
+    std::istringstream stream(s);
+    std::string word;
+
+    while (stream >> word) {
+        int n_consonants = 0;
+        for (char c : word) {
+            if (std::tolower(c) != 'a' && std::tolower(c) != 'e' && 
+                std::tolower(c) != 'i' && std::tolower(c) != 'o' && 
+                std::tolower(c) != 'u') {
+                n_consonants++;
+            }
+        }
+        if (n_consonants == n) {
+            result.push_back(word);
+        }
+    }
+    return result;
+}

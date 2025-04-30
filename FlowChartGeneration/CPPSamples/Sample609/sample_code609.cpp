@@ -1,0 +1,8 @@
+#include <vector>
+
+std::vector<int> remove_kth_element(const std::vector<int>& list1, int L) {
+    std::vector<int> result;
+    result.insert(result.end(), list1.begin(), list1.begin() + L - 1);
+    result.insert(result.end(), list1.begin() + L, list1.end());
+    return result;
+}

@@ -1,0 +1,1 @@
+ START ----->  int ----->  count_digs (const std::vector<int> &tup) ----->  int total_length = 0; -----> for (int ele : tup) ----->  total_length += std::to_string (ele).length (); ----->  return total_length; -----> END

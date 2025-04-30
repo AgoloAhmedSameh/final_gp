@@ -1,0 +1,9 @@
+#include <set>
+#include <tuple>
+
+std::pair<bool> check_subset(const std::tuple<int, int>& test_tup1, const std::tuple<int, int>& test_tup2) {
+    std::set<int> set1 = {std::get<0>(test_tup1), std::get<1>(test_tup1)};
+    std::set<int> set2 = {std::get<0>(test_tup2), std::get<1>(test_tup2)};
+    bool res = std::includes(set1.begin(), set1.end(), set2.begin(), set2.end());
+    return std::make_pair(res);
+}

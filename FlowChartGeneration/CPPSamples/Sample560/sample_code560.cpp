@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include <map>
+
+std::pair<std::map<int, std::vector<int>>, std::map<int, std::vector<int>>> assign_elements(const std::vector<std::pair<int, int>>& test_list) {
+    std::map<int, std::vector<int>> res;
+    for (const auto& p : test_list) {
+        int key = p.first;
+        int val = p.second;
+        res[val]; // ensure val exists
+        res[key].push_back(val);
+    }
+    return {res, res};
+}

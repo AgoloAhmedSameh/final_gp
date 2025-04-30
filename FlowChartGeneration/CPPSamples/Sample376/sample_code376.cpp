@@ -1,0 +1,9 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+std::pair<std::string> remove_Char(std::string s, char c) {
+    int counts = std::count(s.begin(), s.end(), c);
+    s.erase(std::remove(s.begin(), s.end(), c), s.end());
+    return std::make_pair(s);
+}

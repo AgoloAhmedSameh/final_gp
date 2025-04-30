@@ -1,0 +1,15 @@
+#include <vector>
+
+std::pair<int, int> count_no_of_ways(int n, int k) {
+    std::vector<int> dp(n + 1, 0);
+    long long total = k;
+    const int mod = 1000000007;
+    dp[1] = k;
+    dp[2] = k * k % mod;
+    
+    for (int i = 3; i <= n; ++i) {
+        dp[i] = ((k - 1) * (dp[i - 1] + dp[i - 2])) % mod;
+    }
+    
+    return {dp[n], 0};  // Returning a pair, second value as 0 as a placeholder
+}

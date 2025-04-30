@@ -1,0 +1,2 @@
+ START ----->  using namespace std; ----->  long long ----->  bin_coff (int n, int r) ----->  long long val = 1; ----->  if (r > (n - r)) ----->  r = (n - r); -----> for (int i = 0; i < r; i++) ----->  val *= (n - i); ----->  val /= (i + 1); ----->  return val; -----> END
+ START ----->  using namespace std; ----->  long long ----->  bin_coff (int n, int r) ----->  long long val = 1; ----->  if (r > (n - r)) -----> for (int i = 0; i < r; i++) ----->  val *= (n - i); ----->  val /= (i + 1); ----->  return val; -----> END

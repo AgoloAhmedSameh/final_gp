@@ -1,0 +1,1 @@
+ START ----->  std::pair<std::vector<int>, std::vector<int> > ----->  filter_evennumbers (const std::vector<int> &nums) ----->  std::vector<int> even_nums; ----->  std::copy_if (nums.begin (), nums.end (), std::back_inserter (even_nums), [] (int x) { return x % 2 == 0; }); -----> END

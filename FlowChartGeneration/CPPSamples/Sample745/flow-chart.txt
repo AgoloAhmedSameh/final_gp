@@ -1,0 +1,2 @@
+ START ----->  std::tuple<double> ----->  sector_area (double r, double a) ----->  double pi = 22.0 / 7.0; ----->  if (a >= 360) ----->  return std::make_tuple (0.0); -----> END
+ START ----->  std::tuple<double> ----->  sector_area (double r, double a) ----->  double pi = 22.0 / 7.0; ----->  if (a >= 360) ----->  double sectorarea = (pi * r * r) * (a / 360); ----->  return std::make_tuple (sectorarea); -----> END

@@ -1,0 +1,7 @@
+#include <string>
+#include <regex>
+
+std::pair<std::string, std::string> remove_extra_char(const std::string& text1) {
+    std::regex pattern("[\\W_]+");
+    return {std::regex_replace(text1, pattern, ""), ""};
+}

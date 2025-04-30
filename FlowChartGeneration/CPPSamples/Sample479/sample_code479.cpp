@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+pair<char, char> get_max_occuring_char(const string &str1) {
+    const int ASCII_SIZE = 256;
+    int ctr[ASCII_SIZE] = {0};
+    int max = -1;
+    char ch = '\0';
+
+    for (char i : str1) {
+        ctr[(int)i]++;
+    }
+    for (char i : str1) {
+        if (max < ctr[(int)i]) {
+            max = ctr[(int)i];
+            ch = i;
+        }
+    }
+    return make_pair(ch, ch);
+}

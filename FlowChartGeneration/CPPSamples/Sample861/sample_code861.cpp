@@ -1,0 +1,29 @@
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <unordered_map>
+#include <algorithm>
+#include <regex>
+#include <utility>
+
+std::vector<std::pair<std::string, int>> n_common_words(const std::string& text, int n) {
+    std::unordered_map<std::string, int> word_count;
+    std::regex word_regex("\\w+");
+    auto words_begin = std::sregex_iterator(text.begin(), text.end(), word_regex);
+    auto words_end = std::sregex_iterator();
+
+    for (auto it = words_begin; it != words_end; ++it) {
+        word_count[it->str()]++;
+    }
+
+    std::vector<std::pair<std::string, int>> common_words(word_count.begin(), word_count.end());
+    std::sort(common_words.begin(), common_words.end(), [](const auto& a, const auto& b) {
+        return a.second > b.second;
+    });
+
+    if (common_words.size() > n) {
+        common_words.resize(n);
+    }
+
+    return common_words;
+}

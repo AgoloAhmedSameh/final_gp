@@ -1,0 +1,2 @@
+ START ----->  double ----->  harmonic_sum (int n) ----->  if (n < 2) ----->  return 1; -----> END
+ START ----->  double ----->  harmonic_sum (int n) ----->  if (n < 2) ----->  else ----->  return 1.0 / n + harmonic_sum (n - 1); -----> END

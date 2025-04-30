@@ -1,0 +1,8 @@
+<div class="pdf-wrapper">
+    <header>
+        <p>{{this.pdfLabel}}</p>
+        <img class="exit-button" src="/assets/Resources/cross.png" alt="exit-button" (click)="Close()">
+    </header>
+    <!-- <pdf-viewer src="/assets/Resources/pdfExample.pdf" [render-text]="true" [original-size]="false"></pdf-viewer> -->
+    <pdf-viewer [src]="path" [render-text]="true" [original-size]="false"></pdf-viewer>
+</div>

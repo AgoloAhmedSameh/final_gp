@@ -1,0 +1,12 @@
+#include <map>
+#include <vector>
+
+std::map<int, std::vector<int>> filter_data(const std::map<int, std::vector<int>>& students, int h, int w) {
+    std::map<int, std::vector<int>> result;
+    for (const auto& student : students) {
+        if (student.second[0] >= h && student.second[1] >= w) {
+            result.insert(student);
+        }
+    }
+    return result;
+}

@@ -1,0 +1,2 @@
+ START ----->  int ----->  find_lists (const auto &Input) ----->  if (typeid (Input) == typeid (std::vector<int>)) ----->  return 1; -----> END
+ START ----->  int ----->  find_lists (const auto &Input) ----->  if (typeid (Input) == typeid (std::vector<int>)) ----->  else ----->  return Input.size (); -----> END

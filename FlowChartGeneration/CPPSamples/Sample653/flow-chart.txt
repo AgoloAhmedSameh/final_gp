@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  rectangle_perimeter (int l, int b) ----->  int perimeter = 2 * (l + b); ----->  return { perimeter, perimeter }; -----> END

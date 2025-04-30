@@ -1,0 +1,2 @@
+ START ----->  char ----->  first_Repeated_Char (const std::string &str) ----->  std::unordered_map<char, int> h; -----> for (char ch : str) ----->  if (h.find (ch) != h.end ()) ----->  return ch; -----> END
+ START ----->  char ----->  first_Repeated_Char (const std::string &str) ----->  std::unordered_map<char, int> h; -----> for (char ch : str) ----->  if (h.find (ch) != h.end ()) ----->  else ----->  h[ch] = 0; ----->  return '\0'; -----> END

@@ -1,0 +1,7 @@
+#include <cmath>
+#include <iomanip>
+
+std::pair<double, double> volume_tetrahedron(double num) {
+    double volume = (num * num * num) / (6 * sqrt(2));
+    return std::make_pair(std::round(volume * 100) / 100, volume);
+}

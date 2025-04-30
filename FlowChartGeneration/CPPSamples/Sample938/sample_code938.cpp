@@ -1,0 +1,11 @@
+#include <vector>
+#include <algorithm>
+#include <string>
+
+std::vector<std::map<std::string, std::string>> sorted_models(const std::vector<std::map<std::string, std::string>>& models) {
+    std::vector<std::map<std::string, std::string>> sorted_models = models;
+    std::sort(sorted_models.begin(), sorted_models.end(), [](const std::map<std::string, std::string>& a, const std::map<std::string, std::string>& b) {
+        return a.at("color") < b.at("color");
+    });
+    return sorted_models;
+}

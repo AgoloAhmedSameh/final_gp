@@ -1,0 +1,10 @@
+#include <vector>
+
+std::pair<std::vector<int>, std::vector<int>> extract_column(const std::vector<std::vector<int>>& list1, int n) {
+    std::vector<int> result;
+    for (auto& i : list1) {
+        result.push_back(i[n]);
+        i.erase(i.begin() + n);
+    }
+    return {result, {}};
+}

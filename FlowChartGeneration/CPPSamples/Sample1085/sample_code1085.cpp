@@ -1,0 +1,33 @@
+#include <iostream>
+#include <sstream>
+#include <map>
+#include <vector>
+#include <algorithm>
+
+std::map<std::string, int> histogram(const std::string& test) {
+    std::map<std::string, int> dict1;
+    std::istringstream iss(test);
+    std::string word;
+    std::vector<std::string> list1;
+    
+    while (iss >> word) {
+        list1.push_back(word);
+    }
+
+    int t = 0;
+
+    for (const auto& i : list1) {
+        if (std::count(list1.begin(), list1.end(), i) > t && i != "") {
+            t = std::count(list1.begin(), list1.end(), i);
+        }
+    }
+
+    if (t > 0) {
+        for (const auto& i : list1) {
+            if (std::count(list1.begin(), list1.end(), i) == t) {
+                dict1[i] = t;
+            }
+        }
+    }
+    return dict1;
+}

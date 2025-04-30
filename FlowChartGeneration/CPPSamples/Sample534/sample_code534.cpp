@@ -1,0 +1,6 @@
+#include <cmath>
+
+std::pair<double, double> topbottom_surfacearea(double r) {
+    double toporbottomarea = 3.1415 * r * r;
+    return {toporbottomarea, toporbottomarea};
+}

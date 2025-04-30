@@ -1,0 +1,2 @@
+ START ----->  int ----->  min_of_two (int x, int y) ----->  if (x < y) ----->  return x; -----> END
+ START ----->  int ----->  min_of_two (int x, int y) ----->  if (x < y) ----->  return y; -----> END

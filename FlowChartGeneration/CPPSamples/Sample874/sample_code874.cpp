@@ -1,0 +1,12 @@
+#include <vector>
+#include <cstdlib>
+#include <algorithm>
+
+std::pair<int, int> min_difference(const std::vector<std::pair<int, int>>& test_list) {
+    std::vector<int> temp;
+    for (const auto& p : test_list) {
+        temp.push_back(abs(p.second - p.first));
+    }
+    int res = *std::min_element(temp.begin(), temp.end());
+    return {res};
+}

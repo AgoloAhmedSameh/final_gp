@@ -1,0 +1,23 @@
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+pair<int, int> longest_increasing_subsequence(vector<int>& arr) {
+    int n = arr.size();
+    vector<int> longest_increasing_subsequence(n, 1);
+    
+    for (int i = 1; i < n; i++) {
+        for (int j = 0; j < i; j++) {
+            if (arr[i] > arr[j] && longest_increasing_subsequence[i] < longest_increasing_subsequence[j] + 1) {
+                longest_increasing_subsequence[i] = longest_increasing_subsequence[j] + 1;
+            }
+        }
+    }
+    
+    int maximum = 0;
+    for (int i = 0; i < n; i++) {
+        maximum = max(maximum, longest_increasing_subsequence[i]);
+    }
+    
+    return make_pair(maximum, 0);
+}

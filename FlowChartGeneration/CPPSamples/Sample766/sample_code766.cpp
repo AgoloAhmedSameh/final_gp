@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+
+std::pair<int, int> get_Pairs_Count(std::vector<int> arr, int n, int sum) {
+    int count = 0;  
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] + arr[j] == sum) {
+                count++;
+            }
+        }
+    }
+    return {count, 0}; // Returning 0 as a placeholder for the second value
+}

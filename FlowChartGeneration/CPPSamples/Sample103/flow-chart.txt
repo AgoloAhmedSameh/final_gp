@@ -1,0 +1,1 @@
+ START ----->  std::vector<std::vector<int> > ----->  sort_sublists (const std::vector<std::vector<int> > &input_list) ----->  std::vector<std::vector<int> > result; -----> for (const auto &x : input_list) ----->  std::vector<int> sorted_x = x; ----->  std::sort (sorted_x.begin (), sorted_x.end ()); ----->  result.push_back (sorted_x); ----->  return result; -----> END

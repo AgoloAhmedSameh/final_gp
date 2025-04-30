@@ -1,0 +1,5 @@
+#include <tuple>
+
+std::tuple<int> find_star_num(int n) {
+    return std::make_tuple(6 * n * (n - 1) + 1);
+}

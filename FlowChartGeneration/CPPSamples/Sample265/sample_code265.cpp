@@ -1,0 +1,6 @@
+#include <tuple>
+
+std::tuple<int> lateralsurface_cube(int l) {
+    int LSA = 4 * (l * l);
+    return std::make_tuple(LSA);
+}

@@ -1,0 +1,9 @@
+#include <tuple>
+#include <vector>
+#include <algorithm>
+
+std::tuple<std::vector<int>> inversion_elements(const std::tuple<int>& test_tup) {
+    std::vector<int> res;
+    std::apply([&res](int x) { res.push_back(~x); }, test_tup);
+    return std::make_tuple(res);
+}

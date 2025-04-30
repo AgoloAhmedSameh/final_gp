@@ -1,0 +1,9 @@
+#include <vector>
+
+double Average(const std::vector<double>& lst) {
+    double sum = 0;
+    for (double num : lst) {
+        sum += num;
+    }
+    return sum / lst.size();
+}

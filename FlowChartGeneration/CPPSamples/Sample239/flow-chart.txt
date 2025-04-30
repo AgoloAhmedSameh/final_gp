@@ -1,0 +1,1 @@
+ START ----->  std::vector<int> ----->  replace_list (std::vector<int> list1, const std::vector<int> &list2) ----->  list1.erase (list1.end () - 1, list1.end ()); ----->  list1.insert (list1.end (), list2.begin (), list2.end ()); ----->  return list1; -----> END

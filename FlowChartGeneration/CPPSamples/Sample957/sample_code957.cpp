@@ -1,0 +1,17 @@
+#include <string>
+#include <vector>
+
+std::string int_to_roman(int num) {
+    std::vector<int> val = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    std::vector<std::string> syb = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+    std::string roman_num = "";
+    int i = 0;
+    while (num > 0) {
+        for (int j = 0; j < num / val[i]; j++) {
+            roman_num += syb[i];
+            num -= val[i];
+        }
+        i++;
+    }
+    return roman_num;
+}

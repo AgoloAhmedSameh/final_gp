@@ -1,0 +1,16 @@
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <tuple>
+
+std::tuple<double, double> float_to_tuple(const std::string& test_str) {
+    std::stringstream ss(test_str);
+    std::string item;
+    std::vector<double> values;
+
+    while (std::getline(ss, item, ', ')) {
+        values.push_back(std::stod(item));
+    }
+
+    return std::make_tuple(values[0], values[1]);
+}

@@ -1,0 +1,6 @@
+#include <cmath>
+
+std::pair<int, int> next_Perfect_Square(int N) {
+    int nextN = std::floor(std::sqrt(N)) + 1;
+    return {nextN * nextN, nextN};
+}

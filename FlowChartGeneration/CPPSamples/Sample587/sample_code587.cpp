@@ -1,0 +1,7 @@
+#include <vector>
+#include <algorithm>
+
+std::pair<int, int> big_diff(const std::vector<int>& nums) {
+    int diff = *std::max_element(nums.begin(), nums.end()) - *std::min_element(nums.begin(), nums.end());
+    return std::make_pair(diff, diff);
+}

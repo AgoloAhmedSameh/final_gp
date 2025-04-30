@@ -1,0 +1,11 @@
+#include <iostream>
+
+std::pair<int, int> count_digits(int num1, int num2) {
+    int number = num1 + num2;
+    int count = 0;
+    while (number > 0) {
+        number = number / 10;
+        count = count + 1;
+    }
+    return {count, 0};
+}

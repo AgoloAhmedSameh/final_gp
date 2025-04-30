@@ -1,0 +1,13 @@
+#include <map>
+#include <vector>
+#include <algorithm>
+
+std::map<std::string, std::vector<int>> sorted_dict(const std::map<std::string, std::vector<int>>& dict1) {
+    std::map<std::string, std::vector<int>> sorted_dict;
+    for (const auto& pair : dict1) {
+        std::vector<int> sorted_vector = pair.second;
+        std::sort(sorted_vector.begin(), sorted_vector.end());
+        sorted_dict[pair.first] = sorted_vector;
+    }
+    return sorted_dict;
+}

@@ -1,0 +1,6 @@
+#include <set>
+#include <tuple>
+
+std::set<int> tuple_to_set(const std::tuple<int, int>& t) {
+    return std::set<int>{std::get<0>(t), std::get<1>(t)};
+}

@@ -1,0 +1,12 @@
+#include <vector>
+#include <tuple>
+
+std::vector<std::tuple<>> remove_tuples(const std::vector<std::tuple<>>& test_list, size_t K) {
+    std::vector<std::tuple<>> res;
+    for (const auto& ele : test_list) {
+        if (std::tuple_size<decltype(ele)>::value != K) {
+            res.push_back(ele);
+        }
+    }
+    return res;
+}

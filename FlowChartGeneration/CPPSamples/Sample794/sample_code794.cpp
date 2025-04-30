@@ -1,0 +1,16 @@
+#include <vector>
+#include <algorithm>
+
+struct Item {
+    double price;
+};
+
+std::vector<Item> cheap_items(const std::vector<Item>& items, int n) {
+    std::vector<Item> cheap_items = items;
+    std::partial_sort(cheap_items.begin(), cheap_items.begin() + n, cheap_items.end(), 
+                      [](const Item& a, const Item& b) {
+                          return a.price < b.price;
+                      });
+    cheap_items.resize(n);
+    return cheap_items;
+}

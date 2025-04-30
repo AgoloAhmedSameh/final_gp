@@ -1,0 +1,1 @@
+ START ----->  std::string ----->  remove_whitespaces (const std::string &text1) ----->  return std::regex_replace (text1, std::regex ("\\s+"), ""); -----> END

@@ -1,0 +1,5 @@
+#include <utility>
+
+std::pair<int, int> centered_hexagonal_number(int n) {
+    return std::make_pair(3 * n * (n - 1) + 1, 0);
+}

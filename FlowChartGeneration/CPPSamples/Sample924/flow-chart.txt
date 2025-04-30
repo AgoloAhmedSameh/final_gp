@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  multiple_tuple (const std::vector<int> &nums) ----->  std::vector<int> temp (nums); ----->  int product = 1; -----> for (int x : temp) ----->  product *= x; ----->  return { product, product }; -----> END

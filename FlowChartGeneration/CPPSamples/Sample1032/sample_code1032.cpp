@@ -1,0 +1,17 @@
+#include <vector>
+#include <set>
+#include <algorithm>
+
+std::vector<int> common(const std::vector<int>& l1, const std::vector<int>& l2) {
+    std::set<int> ret;
+    for (const auto& e1 : l1) {
+        for (const auto& e2 : l2) {
+            if (e1 == e2) {
+                ret.insert(e1);
+            }
+        }
+    }
+    std::vector<int> result(ret.begin(), ret.end());
+    std::sort(result.begin(), result.end());
+    return result;
+}

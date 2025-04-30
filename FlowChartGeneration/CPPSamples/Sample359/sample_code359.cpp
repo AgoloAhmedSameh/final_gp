@@ -1,0 +1,6 @@
+#include <cmath>
+
+long long get_carol(int n) {
+    long long result = pow(2, n) - 1;
+    return result * result - 2;
+}

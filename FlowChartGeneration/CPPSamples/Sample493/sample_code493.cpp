@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+std::pair<std::string, int> binary_to_integer(const std::vector<int>& test_tup) {
+    std::string binary_str;
+    for (int ele : test_tup) {
+        binary_str += std::to_string(ele);
+    }
+    int res = std::stoi(binary_str, nullptr, 2);
+    return std::make_pair(std::to_string(res), res);
+}

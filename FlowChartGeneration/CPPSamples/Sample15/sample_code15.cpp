@@ -1,0 +1,12 @@
+#include <iostream>
+#include <regex>
+#include <string>
+
+std::string text_lowercase_underscore(const std::string& text) {
+    std::regex patterns("^[a-z]+_[a-z]+$");
+    if (std::regex_search(text, patterns)) {
+        return "Found a match!";
+    } else {
+        return "Not matched!";
+    }
+}

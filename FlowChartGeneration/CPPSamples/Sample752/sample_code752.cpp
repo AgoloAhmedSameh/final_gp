@@ -1,0 +1,11 @@
+#include <vector>
+#include <algorithm>
+
+std::vector<std::pair<int, int>> min_k(const std::vector<std::pair<int, int>>& test_list, int K) {
+    std::vector<std::pair<int, int>> res = test_list;
+    std::sort(res.begin(), res.end(), [](const std::pair<int, int>& a, const std::pair<int, int>& b) {
+        return a.second < b.second;
+    });
+    res.resize(K);
+    return res;
+}

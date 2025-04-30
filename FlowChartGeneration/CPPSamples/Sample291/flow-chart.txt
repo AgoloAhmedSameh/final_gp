@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  find (int n, int m) ----->  int q = n / m; ----->  return std::make_pair (q, 0); -----> END

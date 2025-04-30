@@ -1,0 +1,2 @@
+ START ----->  std::pair<int, int> ----->  first_odd (const std::vector<int> &nums) -----> for (int el : nums) ----->  if (el % 2 != 0) ----->  return { el, 1 }; -----> END
+ START ----->  std::pair<int, int> ----->  first_odd (const std::vector<int> &nums) -----> for (int el : nums) ----->  if (el % 2 != 0) ----->  return { -1, 1 }; -----> END

@@ -1,0 +1,10 @@
+#include <tuple>
+#include <vector>
+
+std::tuple<std::vector<int>> bitwise_xor(const std::vector<int>& test_tup1, const std::vector<int>& test_tup2) {
+    std::vector<int> res;
+    for (size_t i = 0; i < test_tup1.size(); ++i) {
+        res.push_back(test_tup1[i] ^ test_tup2[i]);
+    }
+    return std::make_tuple(res);
+}

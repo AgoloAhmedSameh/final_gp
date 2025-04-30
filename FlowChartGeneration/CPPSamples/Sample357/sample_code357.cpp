@@ -1,0 +1,10 @@
+#include <vector>
+#include <functional>
+
+std::vector<int> moddiv_list(const std::vector<int>& nums1, const std::vector<int>& nums2) {
+    std::vector<int> result;
+    for (size_t i = 0; i < nums1.size(); ++i) {
+        result.push_back(nums1[i] % nums2[i]);
+    }
+    return result;
+}

@@ -1,0 +1,17 @@
+#include <vector>
+#include <unordered_set>
+
+int find_first_duplicate(const std::vector<int>& nums) {
+    std::unordered_set<int> num_set;
+    int no_duplicate = -1;
+
+    for (size_t i = 0; i < nums.size(); ++i) {
+        if (num_set.find(nums[i]) != num_set.end()) {
+            return nums[i];
+        } else {
+            num_set.insert(nums[i]);
+        }
+    }
+
+    return no_duplicate;
+}

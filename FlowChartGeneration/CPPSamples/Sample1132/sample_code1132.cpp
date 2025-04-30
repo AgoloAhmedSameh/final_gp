@@ -1,0 +1,19 @@
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <set>
+
+std::string find_max(const std::vector<std::string>& words) {
+    auto cmp = [](const std::string& a, const std::string& b) {
+        std::set<char> set_a(a.begin(), a.end());
+        std::set<char> set_b(b.begin(), b.end());
+        if (set_a.size() != set_b.size()) {
+            return set_a.size() > set_b.size();
+        }
+        return a < b;
+    };
+    
+    auto sorted_words = words;
+    std::sort(sorted_words.begin(), sorted_words.end(), cmp);
+    return sorted_words[0];
+}

@@ -1,0 +1,6 @@
+#include <tuple>
+
+std::tuple<double, double> tn_ap(double a, int n, double d) {
+    double tn = a + (n - 1) * d;
+    return std::make_tuple(tn);
+}

@@ -1,0 +1,1 @@
+ START ----->  std::pair<int, int> ----->  max_difference (const std::vector<std::pair<int, int> > &test_list) ----->  std::vector<int> temp; -----> for (const auto &p : test_list) ----->  temp.push_back (abs (p.second - p.first)); ----->  int res = *std::max_element (temp.begin (), temp.end ()); ----->  return std::make_pair (res, res); -----> END

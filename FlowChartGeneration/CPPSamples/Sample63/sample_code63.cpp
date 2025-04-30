@@ -1,0 +1,10 @@
+#include <vector>
+#include <algorithm>
+#include <utility>
+
+std::vector<std::pair<std::string, int>> subject_marks(std::vector<std::pair<std::string, int>>& subjectmarks) {
+    std::sort(subjectmarks.begin(), subjectmarks.end(), [](const std::pair<std::string, int>& a, const std::pair<std::string, int>& b) {
+        return a.second < b.second;
+    });
+    return subjectmarks;
+}

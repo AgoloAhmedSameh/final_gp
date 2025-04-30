@@ -1,0 +1,1 @@
+ START ----->  std::string ----->  camel_to_snake (const std::string &text) ----->  std::string str1 = std::regex_replace (text, std::regex ("(.)([A-Z][a-z]+)"), "$1_$2"); ----->  return std::regex_replace (str1, std::regex ("([a-z0-9])([A-Z])"), "$1_$2"); -----> END

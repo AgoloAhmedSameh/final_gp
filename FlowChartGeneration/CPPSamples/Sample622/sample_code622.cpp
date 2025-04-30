@@ -1,0 +1,10 @@
+#include <vector>
+#include <cmath>
+
+std::pair<std::vector<int>, std::vector<int>> nth_nums(const std::vector<int>& nums, int n) {
+    std::vector<int> nth_nums;
+    for (int x : nums) {
+        nth_nums.push_back(pow(x, n));
+    }
+    return {nth_nums};
+}

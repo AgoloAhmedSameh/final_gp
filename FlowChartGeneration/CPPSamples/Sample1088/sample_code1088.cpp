@@ -1,0 +1,19 @@
+#include <vector>
+#include <algorithm>
+
+int minSubArraySum(std::vector<int>& nums) {
+    int max_sum = 0;
+    int s = 0;
+    for (int num : nums) {
+        s += -num;
+        if (s < 0) {
+            s = 0;
+        }
+        max_sum = std::max(s, max_sum);
+    }
+    if (max_sum == 0) {
+        max_sum = *std::max_element(nums.begin(), nums.end(), [](int a, int b) { return -a < -b; });
+    }
+    int min_sum = -max_sum;
+    return min_sum;
+}

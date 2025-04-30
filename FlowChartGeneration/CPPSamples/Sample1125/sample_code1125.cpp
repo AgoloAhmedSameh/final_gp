@@ -1,0 +1,13 @@
+#include <vector>
+#include <cmath>
+#include <string>
+
+int double_the_difference(const std::vector<int>& lst) {
+    int sum = 0;
+    for (int i : lst) {
+        if (i > 0 && i % 2 != 0) {
+            sum += std::pow(i, 2);
+        }
+    }
+    return sum;
+}

@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+pair<int, int> cube_Sum(int n) {
+    int sum = 0;
+    for (int i = 1; i <= n; ++i) {
+        sum += (2 * i) * (2 * i) * (2 * i);
+    }
+    return make_pair(sum, 0);
+}

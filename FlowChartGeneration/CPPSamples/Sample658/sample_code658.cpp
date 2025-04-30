@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+std::pair<std::vector<int>, std::vector<int>> Repeat(const std::vector<int>& x) {
+    int _size = x.size();
+    std::vector<int> repeated;
+
+    for (int i = 0; i < _size; ++i) {
+        int k = i + 1;
+        for (int j = k; j < _size; ++j) {
+            if (x[i] == x[j] && std::find(repeated.begin(), repeated.end(), x[i]) == repeated.end()) {
+                repeated.push_back(x[i]);
+            }
+        }
+    }
+    return {repeated};
+}

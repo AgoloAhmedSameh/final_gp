@@ -1,0 +1,5 @@
+#include <string>
+
+std::string encode_cyclic(const std::string& s) {
+    return encode_cyclic(encode_cyclic(s));
+}

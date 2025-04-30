@@ -1,0 +1,15 @@
+#include <vector>
+
+std::vector<int> re_order(std::vector<int>& A) {
+    int k = 0;
+    for (int i : A) {
+        if (i) {
+            A[k] = i;
+            k = k + 1;
+        }
+    }
+    for (int i = k; i < A.size(); i++) {
+        A[i] = 0;
+    }
+    return A;
+}

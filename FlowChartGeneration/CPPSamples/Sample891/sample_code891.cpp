@@ -1,0 +1,7 @@
+#include <regex>
+#include <string>
+
+std::string remove_spaces(const std::string& text) {
+    std::regex ws_re("\\s+");
+    return std::regex_replace(text, ws_re, " ");
+}

@@ -1,0 +1,16 @@
+#include <vector>
+
+std::vector<std::vector<int>> combinations_list(const std::vector<int>& list1) {
+    if (list1.empty()) {
+        return {{}};
+    }
+    std::vector<std::vector<int>> result;
+    std::vector<std::vector<int>> sub_combinations = combinations_list(std::vector<int>(list1.begin() + 1, list1.end()));
+    for (const auto& el : sub_combinations) {
+        result.push_back(el);
+        std::vector<int> new_combination = el;
+        new_combination.push_back(list1[0]);
+        result.push_back(new_combination);
+    }
+    return result;
+}

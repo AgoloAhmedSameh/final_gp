@@ -1,4 +1,5 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI,APIRouter, HTTPException
+
 from pydantic import BaseModel
 from app.LLM.qween import Qwen
 from app.LLM.prompts import (
@@ -16,7 +17,7 @@ from app.generate_testcases.parsing import (
     parse_llm_response,
 )
 
-app = FastAPI()
+router = APIRouter()
 
 class TestCodeRequest(BaseModel):
     code: str
@@ -31,7 +32,7 @@ class TestCodeResponse(BaseModel):
     correctness: float
     failed_asserts: list[str]
 
-@app.post("/api/test_code", response_model=TestCodeResponse)
+@router.post("/api/test_code", response_model=TestCodeResponse)
 def test_code(request: TestCodeRequest):
     code = request.code
     description = request.description
@@ -74,6 +75,9 @@ def test_code(request: TestCodeRequest):
         pass
     else:
         raise HTTPException(status_code=400, detail="Invalid type_of_testing. Must be 'unit' or 'integration'.")
+
+
+
 
     return TestCodeResponse(
         asserts=asserts,

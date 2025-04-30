@@ -1,0 +1,11 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+std::pair<std::string, std::string> toggle_string(const std::string& str) {
+    std::string string1 = str;
+    std::transform(string1.begin(), string1.end(), string1.begin(), [](unsigned char c) {
+        return std::islower(c) ? std::toupper(c) : std::tolower(c);
+    });
+    return {string1, string1};
+}

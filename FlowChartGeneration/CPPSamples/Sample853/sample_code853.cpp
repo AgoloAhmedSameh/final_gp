@@ -1,0 +1,7 @@
+#include <vector>
+#include <algorithm>
+
+std::pair<std::vector<int>, void*> raw_heap(std::vector<int>& rawheap) {
+    std::make_heap(rawheap.begin(), rawheap.end());
+    return {rawheap, nullptr};
+}

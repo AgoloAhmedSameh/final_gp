@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+
+pair<int, int> square_perimeter(int a) {
+    int perimeter = 4 * a;
+    return make_pair(perimeter, perimeter);
+}

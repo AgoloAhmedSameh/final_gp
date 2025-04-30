@@ -1,0 +1,2 @@
+ START ----->  int ----->  minimum (int a, int b) ----->  if (a <= b) ----->  return a; -----> END
+ START ----->  int ----->  minimum (int a, int b) ----->  if (a <= b) ----->  else ----->  return b; -----> END

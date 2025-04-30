@@ -1,0 +1,19 @@
+#include <vector>
+#include <algorithm>
+
+std::pair<int, int> max_profit(std::vector<int>& price, int k) {
+    int n = price.size();
+    std::vector<std::vector<int>> final_profit(k + 1, std::vector<int>(n, 0));
+
+    for (int i = 1; i <= k; i++) {
+        for (int j = 1; j < n; j++) {
+            int max_so_far = 0;
+            for (int x = 0; x < j; x++) {
+                int curr_price = price[j] - price[x] + final_profit[i - 1][x];
+                max_so_far = std::max(max_so_far, curr_price);
+            }
+            final_profit[i][j] = std::max(final_profit[i][j - 1], max_so_far);
+        }
+    }
+    return {final_profit[k][n - 1], 0}; // Second value is not used in original Python code
+}

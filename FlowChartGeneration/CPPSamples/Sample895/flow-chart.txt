@@ -1,0 +1,1 @@
+ START ----->  using namespace std; ----->  auto ----->  last (const tuple<int, int> &n) ----->  return get<1> (n); -----> END

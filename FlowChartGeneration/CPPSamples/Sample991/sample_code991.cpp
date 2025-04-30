@@ -1,0 +1,19 @@
+#include <map>
+#include <vector>
+#include <string>
+#include <sstream>
+
+std::vector<int> parse_music(const std::string& music_string) {
+    std::map<std::string, int> note_map = {{"o", 4}, {"o|", 2}, {".|", 1}};
+    std::vector<int> result;
+    std::istringstream ss(music_string);
+    std::string token;
+
+    while (ss >> token) {
+        if (note_map.find(token) != note_map.end()) {
+            result.push_back(note_map[token]);
+        }
+    }
+
+    return result;
+}

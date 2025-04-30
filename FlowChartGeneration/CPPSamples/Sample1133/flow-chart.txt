@@ -1,0 +1,2 @@
+ START ----->  std::vector<int> ----->  eat (int number, int need, int remaining) ----->  if (need <= remaining) ----->  return { number + need, remaining - need }; -----> END
+ START ----->  std::vector<int> ----->  eat (int number, int need, int remaining) ----->  if (need <= remaining) ----->  else ----->  return { number + remaining, 0 }; -----> END

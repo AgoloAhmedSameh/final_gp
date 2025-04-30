@@ -1,0 +1,6 @@
+#include <cmath>
+
+std::pair<double, double> perimeter_polygon(int s, double l) {
+    double perimeter = s * l;
+    return {perimeter, perimeter};
+}

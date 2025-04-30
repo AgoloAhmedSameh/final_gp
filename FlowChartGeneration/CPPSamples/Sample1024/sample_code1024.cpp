@@ -1,0 +1,9 @@
+#include <string>
+
+std::string encode_shift(const std::string& s) {
+    std::string result;
+    for (char ch : s) {
+        result += static_cast<char>(((static_cast<int>(ch) - 5 - static_cast<int>('a')) % 26) + static_cast<int>('a'));
+    }
+    return result;
+}

@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+pair<int, int> cal_sum(int n) {
+    int a = 3;
+    int b = 0;
+    int c = 2;
+    if (n == 0) {
+        return {3, 0};
+    }
+    if (n == 1) {
+        return {3, 0};
+    }
+    if (n == 2) {
+        return {5, 0};
+    }
+    int sum = 5;
+    while (n > 2) {
+        int d = a + b;
+        sum = sum + d;
+        a = b;
+        b = c;
+        c = d;
+        n = n - 1;
+    }
+    return {sum, 0};
+}

@@ -1,0 +1,13 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+std::pair<int, int> max_Abs_Diff(std::vector<int>& arr, int n) {
+    int minEle = arr[0];
+    int maxEle = arr[0];
+    for (int i = 1; i < n; i++) {
+        minEle = std::min(minEle, arr[i]);
+        maxEle = std::max(maxEle, arr[i]);
+    }
+    return std::make_pair(maxEle - minEle, 0); // The second value is not used in the original function
+}

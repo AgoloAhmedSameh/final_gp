@@ -1,0 +1,2 @@
+ START ----->  std::tuple<int, bool> ----->  pos_nos (const std::vector<int> &list1) -----> for (int num : list1) ----->  if (num >= 0) ----->  return std::make_tuple (num, true); -----> END
+ START ----->  std::tuple<int, bool> ----->  pos_nos (const std::vector<int> &list1) -----> for (int num : list1) ----->  if (num >= 0) ----->  return std::make_tuple (0, false); -----> END

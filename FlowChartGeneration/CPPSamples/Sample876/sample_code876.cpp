@@ -1,0 +1,7 @@
+#include <algorithm>
+#include <string>
+
+std::string sort_String(std::string str) {
+    std::sort(str.begin(), str.end());
+    return str;
+}
