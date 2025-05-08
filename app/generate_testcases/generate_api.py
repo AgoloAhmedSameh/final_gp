@@ -56,7 +56,7 @@ def test_code(request: TestCodeRequest):
 
         if corr < 0.5:
             feedback_code, feedback_asserts = extract_code_and_asserts(
-                Qwen(DEFAULT_SYSTEM_PROMPT, generate_prompt_feedback_correctness(code, asserts))
+                Qwen(DEFAULT_SYSTEM_PROMPT, generate_prompt_feedback_correctness(code, failed_asserts))
             )
             corr, failed_asserts = calculate_correctness(feedback_code, feedback_asserts, language)
             cov = calculate_coverage(feedback_code, feedback_asserts, language)
