@@ -4,6 +4,7 @@ from collections import deque, defaultdict
 from RQueue import RQueue
 from Enums import LineType
 from Formater import Formater
+from helpers import ClearStrings, RemoveMultilineComments
 import re
 
 class Scraper(ABC):
@@ -104,8 +105,9 @@ class Scraper(ABC):
         self._indentation_value = defaultdict(int)
         self._block_id = {}
 
+        self.code = RemoveMultilineComments(code)
+
         self.lines_of_code = self.code.splitlines()
-        self._multi_line_commnet = False
         # ====================================================================
 
         self._last_loop[-1] = self._last_loop[-2] = -1

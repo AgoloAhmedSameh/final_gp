@@ -10,3 +10,14 @@ def ClearStrings(line_of_code):
         line_of_code,
     )
     return filtered_line_of_code
+
+def RemoveMultilineComments(code):
+    pattern = r'("""[\s\S]*?"""|\'\'\'[\s\S]*?\'\'\'|["\'][\s\S]*?["\']|\/\*[\s\S]*?\*\/)'
+
+    def replacer(match):
+        if match.group(0).startswith('/*'):
+            return ''  # Remove comment
+        else:
+            return match.group(0)  # Keep string literals
+
+    return re.sub(pattern, replacer, code)

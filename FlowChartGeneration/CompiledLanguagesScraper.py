@@ -275,11 +275,6 @@ class CompiledLanguagesScraper(Scraper):
     def _PreProcessLine(self, line_of_code:str):
         if(len(line_of_code) == 0 or len(line_of_code) == 1 and line_of_code[0] == ';'):
             return False
-        if(line_of_code.find('*/') != -1 and self.multi_line_commnet):
-            self.multi_line_commnet = False
-        if(line_of_code.find('/*') != -1):
-            self.multi_line_commnet = True
-            return False
         
         query_string = helpers.ClearStrings(line_of_code)
 
@@ -405,7 +400,7 @@ class CompiledLanguagesScraper(Scraper):
     
 
         for line_of_code in self.lines_of_code:
-            if(self._PreProcessLine(line_of_code.strip()) and not self._multi_line_commnet):
+            if(self._PreProcessLine(line_of_code.strip())):
                 if self.splitting_point and '{' not in helpers.ClearStrings(line_of_code.strip()):
                     self._ProcessLine(line_number, '{')
                     line_number += self._ProcessLine(line_number, line_of_code)

@@ -183,12 +183,6 @@ class PythonScraper(Scraper):
 		if(len(line_of_code) == 0):
 			return False
 		
-		if(line_of_code.find('*/') != -1 and self.multi_line_commnet):
-			self.multi_line_commnet = False
-		if(line_of_code.find('/*') != -1):
-			self.multi_line_commnet = True
-			return False
-		
 		# comment or a decorator
 		if(helpers.ClearStrings(line_of_code.lower())[0] in ['#',' @']):
 			return False
