@@ -2,7 +2,6 @@ import ast
 from typing import Dict, Set, List, Tuple, Optional, Any
 from dataclasses import dataclass
 
-@dataclass
 class FunctionWrapperNode:
     """Represents a function or method with its properties."""
     name: str

@@ -1,7 +1,8 @@
 from typing import List, Any
-from Splitting_Scripts import python_splitter,java_splitter,Cpp_Splitter
-from graph_generator.FunctionNode import FunctionNode
-from graph_generator.Graph_Constructor import graph
+from app.InegretationTestClient.Splitting_Scripts import python_splitter,java_splitter,Cpp_Splitter
+from app.InegretationTestClient.graph_generator.FunctionNode import FunctionNode
+from app.InegretationTestClient.graph_generator.Graph_Constructor import graph
+import re
 class Tester:
     def __init__(self,AgentCode):
         self.AgentCode=AgentCode
@@ -47,21 +48,24 @@ class Tester:
                     - The expected output should be assert statements only.
                 the Function is inside class name {function.get_ClassNameIfExist()}
                 then you need to start your code with if the class not (None or Unknown):
-                ```Cpp
-                class {function.get_ClassNameIfExist()}:
+                ```{LanguageName}
+                imports/includes
+                class {function.get_ClassNameIfExist()}
                     ...the target function or functions...
                 ```
                 Create the class if exist and the copy the function inside then make an object to test it
                 Make sure to write Ready to execute code to run it directly (Make a Start Point and Call)
                 Write the code inside:
-                ```cpp
+                ```{LanguageName}
                 ...your code here...
                 ```
                 """
                 print("unit")
-                testcases=self.AgentCode.generate_code(function.get_FunctionBody(),system_prompt)
+                testcases=self.AgentCode(system_prompt,function.get_FunctionBody())
                 print("---------")
                 print(testcases)
+                pattern = rf"```{LanguageName}\n(.*?)```"
+                testcases=re.findall(pattern, testcases, re.DOTALL)
                 print("---------")
                 Asserts.append((function.get_FunctionBody(),testcases))
                 function.Istested=True
@@ -96,9 +100,10 @@ class Tester:
                     the Function is inside class name {function.get_ClassNameIfExist()}
                     then you need to start your code with if the class not (None or Unknown):
                     ```{LanguageName}
-                    class {function.get_ClassNameIfExist()} {{
+                    imports/includes
+                    class {function.get_ClassNameIfExist()}
                     // The target function(s) will be placed here...
-                    }};
+                    
                     ```
                     Create the class if exist and the copy the function inside then make an object to test it
                     
@@ -107,9 +112,11 @@ class Tester:
                     ...your code here...
                     ```
                     """
-                    testcases=self.AgentCode.generate_code(function.get_FunctionBody(),system_prompt)
+                    testcases=self.AgentCode(system_prompt,function.get_FunctionBody())
                     print("---------")
                     print(testcases)
+                    pattern = rf"```{LanguageName}\n(.*?)```"
+                    testcases=re.findall(pattern, testcases, re.DOTALL)
                     print("---------")
 
 
@@ -197,12 +204,12 @@ class Tester:
                     Target Function :{function.get_Function_Name()} 
                     The expected output should be assert statements not unittest.
                     Write the code inside:
-                    ```cpp
+                    ```language
                     ...your code here...
                     ``` 
                     """
 
-                    testcases=self.AgentCode.generate_code(code,system_prompt)
+                    testcases=self.AgentCode(system_prompt,code)
                     print("---------")
                     print("integration testcases :",testcases)
                     print("---------")

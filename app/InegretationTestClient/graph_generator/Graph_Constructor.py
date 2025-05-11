@@ -1,5 +1,5 @@
 from typing import List, Tuple
-from graph_generator.FunctionNode import FunctionNode
+from app.InegretationTestClient.graph_generator.FunctionNode import FunctionNode
 from typing import Dict
 from collections import deque
 

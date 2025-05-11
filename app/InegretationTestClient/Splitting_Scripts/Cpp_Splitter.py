@@ -3,7 +3,6 @@ from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 
 
-@dataclass
 class CppFunctionWrapperNode:
     """Represents a C++ function/method with its properties."""
     name: str

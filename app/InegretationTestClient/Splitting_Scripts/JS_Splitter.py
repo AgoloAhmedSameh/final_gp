@@ -4,7 +4,6 @@ import esprima
 from typing import List, Tuple, Optional, Dict
 from dataclasses import dataclass
 
-@dataclass
 class JavaFunctionWrapperNode:
     """Represents a JavaScript function with its properties."""
     name: str

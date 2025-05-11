@@ -2,7 +2,7 @@ import javalang
 from typing import Dict, Set, List, Tuple, Optional, Any
 from dataclasses import dataclass
 
-@dataclass
+
 class JavaFunctionWrapperNode:
     """Represents a Java method with its properties."""
     name: str

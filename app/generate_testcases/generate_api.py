@@ -1,5 +1,5 @@
 from fastapi import FastAPI,APIRouter, HTTPException
-
+from app.InegretationTestClient.Integration_Testing.Integration_testerim import Tester
 from pydantic import BaseModel
 from app.LLM.qween import Qwen
 from app.LLM.prompts import (
@@ -72,7 +72,23 @@ def test_code(request: TestCodeRequest):
             asserts = feedback_asserts
 
     elif type_of_testing == "integration":
-        pass
+      tester=Tester(Qwen)
+      code = request.code
+      language = request.language
+      codes,asserts=tester.test(code,language)
+      Final_asserts=[]
+      final_corr=0
+      final_cov=0
+      for i in range(len(asserts)):
+        Final_five_asserts,code=parse_llm_response(language, asserts[i], code[i])
+        Final_asserts.append((Final_five_asserts,codes[i]))
+      for i in Final_asserts:
+        corr, failed_asserts = calculate_correctness(i[1], i[0], language)
+        cov = calculate_coverage(i[1], i[0], language)
+        final_corr+=corr
+        final_cov+=cov
+      corr=sum(final_corr)/len(final_corr)
+      cov=sum(final_cov)/len(final_cov)
     else:
         raise HTTPException(status_code=400, detail="Invalid type_of_testing. Must be 'unit' or 'integration'.")
 
