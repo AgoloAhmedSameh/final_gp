@@ -3,14 +3,13 @@ import torch
 import random
 from transformers import AutoModelForCausalLM
 
-#Qween code (Amjad Notebook)
-# model_qween_n = "Qwen/Qwen2.5-Coder-7B-Instruct"
-# model_qween = AutoModelForCausalLM.from_pretrained(
-#     model_qween_n,
-#     torch_dtype="auto",
-#     device_map="auto"
-# )
-# tokenizer_qween = AutoTokenizer.from_pretrained(model_qween_n)
+model_qween_n = "Qwen/Qwen2.5-Coder-7B-Instruct"
+model_qween = AutoModelForCausalLM.from_pretrained(
+    model_qween_n,
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer_qween = AutoTokenizer.from_pretrained(model_qween_n)
 
 def Qwen(system_prompt , user_prompt):
     messages = [
