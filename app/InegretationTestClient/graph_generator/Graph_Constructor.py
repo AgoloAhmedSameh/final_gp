@@ -10,7 +10,7 @@ class graph:
         # key -> str | value the node it self
         self.NodesDict:Dict[str,FunctionNode] = dict()
         
-    def construct_Graph(self) -> None:
+    def construct_Graph(self,flag :int =0 ) -> None:
         #Init Keys
         self.in_degree = {node._Hashed: 0 for node in self.Nodes}
 
@@ -23,10 +23,16 @@ class graph:
 
         #init the in_degree by counting how much each function called   
         for node in self.Nodes:
+          if flag == 0 :
             for neighbor in node.get_FunctionsCallsInside():
                 if neighbor[0] in self.NodesDict:
                     print(neighbor[0])
                     self.in_degree[neighbor[0]] += 1
+          if flag == 1 :
+            for neighbor in node.get_FunctionsCallsInside():
+                if neighbor in self.NodesDict:
+                    print(neighbor)
+                    self.in_degree[neighbor] += 1
                     
         for node_id, node in self.NodesDict.items():
           print(f"Function hashed {node_id} calls:", node.get_FunctionsCallsInside())
@@ -44,18 +50,26 @@ class graph:
 
     from typing import List, Tuple, Dict
 
-    def Topological_Sort(self) -> Tuple[List[int],  Dict[str, object]]:
+    def Topological_Sort(self,flag :int =0) -> Tuple[List[int],  Dict[str, object]]:
      topo_order = []
     
      while self.queue:
         node = self.queue.popleft()
         topo_order.append(self.NodesDict[node])
         
-        for neighbor in self.NodesDict[node].get_FunctionsCallsInside():  
+        if flag == 0:
+         for neighbor in self.NodesDict[node].get_FunctionsCallsInside():  
             if neighbor[0] in self.NodesDict:
                 self.in_degree[neighbor[0]] -= 1
                 if self.in_degree[neighbor[0]] == 0:
                     self.queue.append(neighbor[0])
+        if flag == 1:
+         for neighbor in self.NodesDict[node].get_FunctionsCallsInside():  
+            if neighbor in self.NodesDict:
+                self.in_degree[neighbor] -= 1
+                if self.in_degree[neighbor] == 0:
+                    self.queue.append(neighbor)
+    
     
      topo_order.reverse()
     

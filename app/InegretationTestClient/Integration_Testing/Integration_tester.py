@@ -1,5 +1,5 @@
 from typing import List, Any
-from app.InegretationTestClient.Splitting_Scripts import python_splitter,java_splitter,Cpp_Splitter
+from app.InegretationTestClient.Splitting_Scripts import python_splitter,java_splitter,Cpp_Splitter,JS_Splitter
 from app.InegretationTestClient.graph_generator.FunctionNode import FunctionNode
 from app.InegretationTestClient.graph_generator.Graph_Constructor import graph
 import re
@@ -7,6 +7,9 @@ class Tester:
     def __init__(self,AgentCode):
         self.AgentCode=AgentCode
     def test(self, File: str, LanguageName: str) -> List[Any]:  
+        #Identify Js or Not 
+        Is_JS= False 
+       
         if LanguageName=="python":
             Functions=self.pycode(File=File)
         elif LanguageName=="java":
@@ -14,11 +17,13 @@ class Tester:
         elif LanguageName=="cpp":
             Functions=self.cppcode(File=File)
         elif LanguageName=="javascript":
-            pass
+            Is_JS = True
+            Functions = self.Jscode(File=File)
         
 
-        functionsNodes=[]
-        for i in Functions:
+        if Is_JS == False:
+         functionsNodes=[]
+         for i in Functions:
             functionsNodes.append(FunctionNode(
             Function_Name=i.name,
             FunctionsCallsInside=i.calls,
@@ -29,10 +34,16 @@ class Tester:
             Description=""
     ))
             
+         graph_=graph(functionsNodes)
+         graph_.construct_Graph()
+         Sorted_FunctionNodes,Sorted_FunctionNames=graph_.Topological_Sort()
 
-        graph_=graph(functionsNodes)
-        graph_.construct_Graph()
-        Sorted_FunctionNodes,Sorted_FunctionNames=graph_.Topological_Sort()
+        #As js already returns Objects 
+        if Is_JS == True:
+         graph_=graph(Functions)
+         graph_.construct_Graph(1)
+         Sorted_FunctionNodes,Sorted_FunctionNames=graph_.Topological_Sort(1)
+
         Asserts=[]
         for function in Sorted_FunctionNodes:
             # node=Sorted_FunctionNames[function.split("|")[0]]
@@ -242,4 +253,26 @@ class Tester:
          print(i)
      print("Extracted functions:", New_Functions)
      return New_Functions
+    
+    def Jscode(self, File: str) -> List[Any]:
+     Functions = JS_Splitter.extract_functions(File)
+     if not Functions:  # Check if Functions is empty
+        print("Error: No functions extracted from the js code.")
+        return []
+     functionsNodes = []
+     for i in Functions:
+       functionsNodes.append(FunctionNode(
+        Function_Name=i.name,
+        Hashed=i.hash,
+        FunctionsCallsInside=i.calls,
+        ClassNameIfExist=i.class_name,
+        Arguments=i.params,
+        FunctionBody=i.body,
+        Description=""
+    ))
+     
+     for i in functionsNodes:
+         print(i)
+     print("Extracted functions:", functionsNodes)
+     return functionsNodes
 

@@ -4,6 +4,7 @@ import esprima
 from typing import List, Tuple, Optional, Dict
 from dataclasses import dataclass
 
+@dataclass
 class JavaFunctionWrapperNode:
     """Represents a JavaScript function with its properties."""
     name: str
@@ -124,42 +125,3 @@ def extract_functions(js_code):
 
     return functions
 
-js_code = """
-class Calculator {
-    add(a, b) {
-        return a + b;
-    }
-
-    multiply(x, y) {
-        return this.add(x, y) * 2;
-    }
-}
-
-function subtract(a, b) {
-    return a - b;
-}
-
-const divide = (a, b) => {
-    return a / b;
-};
-
-function main() {
-    let calc = new Calculator();
-    let result = calc.multiply(2, 3);
-    console.log(result);
-    return divide(result, 2);
-}
-"""
-
-# Extract functions
-functions = extract_functions(js_code)
-
-# Print extracted functions with hashes
-for func in functions:
-    print(f"Function Name: {func.name}")
-    print(f"Class Name: {func.class_name}")
-    print(f"Parameters: {func.params}")
-    print(f"Function Hash: {func.hash}")
-    print(f"Calls: {func.calls}")
-    print(f"Body:\n{func.body}")
-    print("-" * 50)
