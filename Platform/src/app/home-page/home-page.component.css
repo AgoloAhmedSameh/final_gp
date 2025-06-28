@@ -1,0 +1,648 @@
+.home-page
+{   
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    scrollbar-width: initial;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    
+    background-color: var(--second-color);
+
+    .run-button, .simulator-button
+    {
+        /* position: relative; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* top: 10px;
+        left: 50vw;
+        transform: translate(-50%); */
+        width: 50vw;
+        height: 22vh;
+    }
+
+    header
+    {    
+        position: relative;
+        width: 100%;
+        height: 20%;
+        min-height: 200px;
+        max-height: 350px;
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+        overflow: auto;
+
+        > .logo, .profile, .flowchart-button
+        {
+
+            min-width: 200px;
+            min-height: 200px;
+            max-width: 20vh;
+            max-height: 350px;
+
+            height: 100%;
+
+            /* position: absolute; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+    
+            > img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+            }
+
+        }
+        .profile
+        {
+
+            /* position: absolute; */
+            /* background-image: url('/assets/Resources/user.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center; */
+            /* min-width: 150px; */
+
+            
+            /* z-index: 2; */
+            /* top: 0vh;
+            right: 1vh; */
+            
+            scale: 0.7;
+        }
+
+        .profile:hover
+        {
+            transition: 0.5s;
+            cursor: pointer;
+            scale: 0.8;
+        }
+        .flowchart-button
+        {
+           
+            scale: 0.6;
+            /* position: absolute; */
+            /* left: 50vw; */
+           
+        }
+        .flowchart-button > img
+        {
+            border-style: solid;
+            border-color: var(--third-color);
+            border-radius: 24px;
+            border-width: 6px;
+        }
+        .flowchart-button:hover > img
+        {
+
+            border-width: 10px;
+        }
+        .flowchart-button:hover
+        {
+            transition: 0.5s;
+            scale: 0.7;
+            cursor: pointer;
+        }
+    }
+
+
+    .home-page-body
+    {
+        height: 70%;
+        margin: 0 10px;   
+        min-height: 460px;
+     
+
+        display: grid;
+
+        gap: 20px;
+        grid-template-areas:    "c desc"
+                                "c dep";
+
+        grid-template-rows: 2fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row dense;
+
+        > .codeArea, > .description, > .dependencies
+        {
+            transition: 0.5s;
+        }
+    }
+    .home-page-body:not(:has(.dependencies)) {
+        grid-template-areas:    "c desc"
+                                "c desc";
+    }
+    .home-page-body:has(*.active)
+    {
+        grid-template-areas: "a a" "a a";
+    }
+    .home-page-body:has(*.active) > *:has(*.active)
+    {
+        grid-area: a;
+    }
+    .home-page-body:has(*.active) > *:not(:has(*.active))
+    {
+        display: none;
+    }
+
+
+
+    .home-page-body > .description, .home-page-body > .dependencies , .home-page-body textarea{
+        
+        border-radius: 20px;
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+    }
+  
+
+    .dependencies ,.description
+    {
+        font-family: monospace;
+        display: flex;
+        flex-direction: column;
+        min-height: 1px;
+    }
+
+    .dependencies > textarea, .description > textarea
+    {
+        
+        text-wrap: nowrap;
+        resize: none;
+        border: none;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        padding: 20px;
+        /* scrollbar-width: 1px; */
+    }
+    [placeholder]{
+        font-size: 1.5em;
+    }
+  
+    .description
+    {
+        position: relative;
+        /* display: flex;
+        flex-direction: column; */
+        grid-area: desc;
+    }
+    .description .load-flowchart
+    {
+        position: sticky;
+        top: 50%;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+
+    }
+   
+    .description .download-button
+    {
+        position: fixed;
+        z-index: 100;
+        top:220px;
+        right: 40px;
+        object-fit: contain;
+        width: 80px;
+        height: 80px;
+        transition: 0.5s;
+    }
+    .description .download-button:hover
+    {
+        cursor: pointer;
+        opacity: 0.8;
+        scale: 1.2;
+    }
+    .description .simulation-options
+    {
+        overflow-x: auto;
+        background-color: var(--fourth-color);
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        top: 150px;
+        right: 12px;
+        /* padding: 10px; */
+        width: fit-content;
+        /* padding-left: 20px; */
+        /* padding-right: 20px; */
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        justify-content: end;
+        height: 35px;
+        margin-top: 20px;
+        gap: 10px;
+
+        align-items: center;
+        img
+        {
+            object-fit: contain;
+            width: 35px;
+            height: 35px;
+            scale: 0.8;
+        }
+        > .skip-button, .back-button
+        {
+            transition: 0.5s;
+            border-radius: 50%;
+        }
+        > .back-button
+        {
+            transform: rotate(-180deg);
+        }
+        > .skip-button:hover, > .back-button:hover
+        {
+            /* scale: 1; */
+            /* opacity: 0.4; */
+            border-width: 2px;
+            border-color: white;
+            border-style: solid;
+            cursor: pointer;
+            /* border-radius: 50%; */
+            opacity: 0.7;
+        }
+        .simulator-button
+        {
+            width: 35px;
+            height: 35px;
+            background-color: #25B7D3;
+            border-radius: 50%;
+            transition: 0.5s;
+            scale: 0.8;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            
+        }
+        .pause-button > div, .close-button > div
+        {
+            background-color: white;
+            width: 15%;
+            height: 60%;
+            border-radius: 10px;
+        }
+        .simulator-button:hover
+        {
+            border-width: 2px;
+            border-color: white;
+            border-style: solid;
+            opacity: 0.7;
+
+            /* opacity: 0.8; */
+            /* scale: 1; */
+            cursor: pointer;
+        }
+        .close-button > div:first-child
+        {
+            height: 70%;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+        .close-button > div:last-child
+        {
+            height: 70%;
+            position: absolute;
+            transform: rotate(-45deg);
+        }
+
+        
+        > .simulator-speed
+        {
+            text-align: center;
+            
+            width: 50px;
+            border-radius: 20px;
+            background-color: var(--second-color);
+            /* border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px; */
+            height: 100%;
+        }
+        > .speed-label
+        {
+            font-size: 1.2em;
+            font-weight: 900;
+            color: white;
+            margin-left: 10px;
+        }
+        > .replay-button
+        {
+            scale: 0.8;
+            /* background-color: var(--main-color); */
+        }
+        .replay-button:hover
+        {
+            opacity: 0.7;
+            border: none;
+        }
+    }
+    
+    .description:has(.step-into-options.simulation-paused) .skip-button, .description:has(.step-into-options.simulation-paused) .back-button
+    {
+        background-color: black;
+        opacity: 0.2;
+        pointer-events: none;
+    }
+    .description:has(.step-into-options.simulation-paused) .skip-button,  .description:has(.step-into-options.simulation-paused) > .back-button
+    {
+        background-color: black;
+        cursor: initial;
+    }
+
+
+    .step-into-options.simulation-paused
+    {
+        visibility: visible;
+    }
+
+    .step-into-options
+    {
+        visibility: hidden;
+
+        position: fixed;
+        top: 205px;
+        right: 185px;
+        height: 30px;
+        width: 90px;
+        border-radius: 10px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        background-color: var(--fourth-color);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        
+        > img
+        {
+            background-color: #25B7D3;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            object-fit: contain;
+        }
+        > img:first-child
+        {
+            transform: rotate(-90deg);
+        }
+        > img:last-child
+        {
+            transform: rotate(90deg);
+        }
+        > img:hover
+        {
+            border-width: 2px;
+            border-color: white;
+            border-style: solid;
+            opacity: 0.7;
+
+            /* opacity: 0.8; */
+            /* scale: 1; */
+            cursor: pointer;
+        }
+    
+    }
+    .description .counter
+    {
+        overflow: auto;
+        color: white;
+        background-color: black;
+        width: fit-content;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 35px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+
+    }
+    .description .counter:hover
+    {
+        content: "current branch";
+    }
+    .description .flowchart-error-window
+    {
+        text-align: center;
+        font-size: 2em;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: var(--main-color);
+        > :first-child
+        {
+            margin-top: 30px;
+        }
+        > img
+        {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+    }
+
+    .description:has(img)
+    {
+        overflow: auto;
+        scrollbar-width: initial;
+    }
+    .description:has(img.horizontal)
+    {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .description .horizontal
+    {
+        max-width: 100%;
+        height: auto;
+        transform: scale(5); /* Scale image */
+        transform-origin: top left; /* Keep scaling from the top-left corner */
+    }
+    .description > img
+    {
+        touch-action: manipulation;
+        transform-origin: center; /* Ensures smooth scaling */
+        /* width: 100%;
+        height: 100%; */
+    }
+    .dependencies
+    {
+        grid-area: dep;
+    }
+    .dependencies > textarea
+    {
+        text-wrap: wrap;
+    }
+    > footer
+    {
+        
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: end;
+
+        width: 100%;
+        height: 10%;
+        min-height: 100px;
+        margin-bottom: 10px;
+        /* > *
+        {
+            min-height: 100px;
+        } */
+
+        > .run-button, .simulator-button
+        {
+            position: relative;
+            min-width: 150px;
+            width: 30vw;
+            height: 50%;
+            /* top: auto; */
+            /* bottom: auto; */
+            /* position: absolute; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* padding: 50px;    */
+        }
+        > div:empty
+        {
+            display: none;
+        }
+
+    }
+
+
+
+
+}
+
+.codeArea{
+    grid-area: c;
+    position: relative;
+}
+
+
+
+.description:has(textarea:focus), .description:has(img:focus), .dependencies:has(textarea:focus){
+    outline-width: 7px;
+    outline-color: var(--third-color);
+    outline-style: groove;
+    outline-style: solid;
+}
+
+@media screen and (max-width: 768px) {
+    [placeholder]{
+        font-size: 1em !important;
+    }
+
+    .home-page
+    {
+        /* background-color: black; */
+        .description .simulation-options
+        {
+            top: 50px;
+        }
+        .description .download-button
+        {
+            top: 120px;
+        }
+        header
+        {
+            height: 10%;
+            min-height: 100px;
+
+            .logo, .profile, .flowchart-button
+            {
+        
+                min-width: 100px;
+                min-height: 100px;
+            }
+        }
+
+        .home-page-body
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: fit-content;
+        }
+        .home-page-body > *
+        {
+            width: 100%;
+        }
+        .home-page-body:has(*.active) > *:has(*.active)
+        {
+            height: 100%;
+        }
+        .home-page-body > .codeArea
+        {
+            min-height: 300px;
+        }
+        .home-page-body > .dependencies, .home-page-body > .description
+        {
+            min-height: 150px;
+        }
+        > footer
+        {
+            
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+    
+            width: 100%;
+            /* height: 20%; */
+            min-height: 20%;
+
+            > .run-button, simulator-button
+            {
+                width: 30vw;
+                /* width: 50vw;
+                min-width: 170px;
+                height: 40%;
+
+                top: auto;
+                bottom: auto;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center; */
+                /* padding: 50px;    */
+            }
+
+            .description .counter
+            {
+                top: 10vh;
+            }
+    
+        }
+    }
+
+
+}

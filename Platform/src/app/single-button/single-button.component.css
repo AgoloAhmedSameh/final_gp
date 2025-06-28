@@ -1,0 +1,94 @@
+.parent{
+    text-wrap: nowrap;
+    --button-depth: 5vh;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    
+    padding: 15px;
+    background-color: var(--main-color);
+    transition: 0.5s;
+    height: var(--button-height);
+
+
+    > .button-title
+   {
+       font-size: 0.7em;
+       color: white;
+   }
+
+}
+
+.parent::before{
+    content: "";
+    position: absolute;
+    width: var(--button-depth);
+    height: 100%;
+    background-color: var(--main-color);
+    top: 0px;
+    right: calc(-1 * var(--button-depth));
+    transform-origin: left;
+    transform: skewY(-45deg);
+    transition: 0.5s;
+
+    min-height: 1px;
+
+}
+
+.parent::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: var(--main-color);
+    height: var(--button-depth);
+    top: calc(-1 * var(--button-depth));
+    right: 0px;
+    transform-origin: bottom;
+    transform: skewX(-45deg);
+    transition: 0.5s;
+
+    min-height: 1px;
+
+
+    /* border-style: solid;
+    border-color: black;
+    border-width: 1px; */
+}
+
+
+.parent:hover{
+    cursor: pointer;
+    text-shadow: 0px 0px 6px white;
+    /* color: white; */
+    background-color: rgb(13, 124, 104);
+    transform: translateX(-20px) translateZ(50px);
+}
+.parent:hover::before, .parent:hover::after
+{
+    background-color: rgb(13, 124, 104);
+}
+
+@media screen and (max-width: 768px) {
+   .parent
+   {
+    font-size: 4vw;
+   }
+}
+
+@media screen and (max-height: 500px) {
+    .parent
+    {
+        font-size: 0.7em;
+    }
+}

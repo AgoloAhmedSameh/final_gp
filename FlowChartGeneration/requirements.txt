@@ -1,0 +1,9 @@
+ClangFormat:
+    sudo apt-get install clang-format  # For Linux
+    brew install clang-format          # For macOS
+Black:
+    pip install Black
+Java-goole-format:
+    https://github.com/google/google-java-format
+prettier:
+   npm install -g prettier (requires npm package manager to be installed!) 

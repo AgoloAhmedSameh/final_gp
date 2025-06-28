@@ -1,0 +1,69 @@
+<div class="wrapper" id="pdf-content" #page>
+   
+    <header>
+        <div class="section-title page-label">Full Report</div>
+    </header>
+    
+    
+    <div class="page1" #page1>
+        <div class="section-title"> Feedback </div>
+        <section class="feedback">
+            <p> {{this.message}} </p>
+        </section>
+    
+        <div class="section-title"> Test Casses </div>
+        <section class="test-cases">
+            @for (testCase of this.globals.fullReport?.response?.asserts; track $index) {
+                @if (this.globals.fullReport?.response?.faild_asserts?.includes(testCase)) {
+                    <div class="tag faild">{{testCase}} </div>
+                }
+                @else {
+                    <div class="tag">{{testCase}} </div>
+                }
+            }
+        </section>
+    
+        <div class="section-title"> Description </div>
+        <section class="description">
+            <p>{{this.globals.fullReport?.response?.description}}</p>
+        </section>
+    
+        
+        <div class="section-title"> Coverage </div>
+        <section class="coverage">
+            <p>{{this.globals.fullReport?.response?.coverage}}%</p>
+        </section>
+    
+        <div class="section-title"> Correctness </div>
+        <section class="correctness">
+            <p>{{this.globals.fullReport?.response?.correctness}}%</p>
+        </section>
+    </div>
+
+    @if (this.globals.fullReport?.corrected_code?.length! > 0) {
+        <div class="section-title"> Original Code </div>
+    }
+    @else
+    {
+        <div class="section-title"> Code </div>
+    }
+    <div class="code" #page2>
+        <app-code-area [inputCode]="old_code" [forViewOnly]="true" [playAnimation]="false"></app-code-area>
+    </div>
+
+    @if (this.globals.fullReport?.corrected_code!.length > 0) {
+        
+        <div class="section-title"> Corrected Code </div>
+        <div class="code" #page3>
+            <app-code-area [inputCode]="new_code" [forViewOnly]="true" [playAnimation]="false"></app-code-area>
+        </div>
+    }
+
+
+
+</div>    
+
+<button class="download-button" (click)="generatePDF()">
+    <img src="/assets/Resources/download5.png" alt="">
+</button>
+

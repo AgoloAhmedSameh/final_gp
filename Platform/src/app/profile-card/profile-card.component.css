@@ -1,0 +1,126 @@
+.parent
+{
+    color: white;
+    font-size: 3vh;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    /* background-color: black; */
+
+    > .upper-card, > .lower-card
+    {
+        width: 100%;
+        margin-bottom: 20px;
+
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 20px;
+    }
+
+    > .upper-card
+    {
+        position: relative;
+        background-color: var(--fourth-color);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        overflow-y: scroll;
+        scrollbar-width: none;
+        height: 30%;
+
+
+        .profile
+        {
+            /* position: absolute; */
+            margin-left: 30px;  
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            width: 20vw;
+            max-width: 150px;
+            height: 80%;
+
+            background-image: url('/assets/Resources/user.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    > .lower-card
+    {
+        color: black;
+        /* background-color: var(--fourth-color); */
+
+        position: relative;
+        overflow: scroll;
+        scrollbar-width: none;
+        height: 70%;
+
+        > .info
+        {
+
+           
+            padding: 5px;
+            display: grid;
+            gap: 50px;
+            grid-template-areas: "fname lname"
+                                 "email phone";
+        
+            > .first-name, > .last-name, > .email, > .phone-number
+            {
+                color: var(--third-color);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+            > * > *:first-child
+            {
+                font-size: 3.5vh;
+                text-wrap: nowrap;
+            }
+            > .first-name
+            {
+                
+                grid-area: fname;
+            }
+
+            > .last-name
+            {
+                display: flex;
+                flex-direction: column;
+                grid-area: lname;
+            }
+
+            > .email
+            {
+                display: flex;
+                flex-direction: column;
+                grid-area: email;
+            }
+
+            > .phone-number
+            {
+                display: flex;
+                flex-direction: column;
+                grid-area: phone;
+            }
+        }
+
+    }
+    
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .info
+    {
+        grid-template-areas: "fname" "lname" "email" "phone" !important;
+    }
+}

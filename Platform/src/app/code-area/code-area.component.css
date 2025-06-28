@@ -1,0 +1,187 @@
+@import 'codemirror/lib/codemirror.css';
+@import 'codemirror/theme/material.css';
+
+
+
+.code
+{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+
+    /* font-family: 'Fira Code', monospace !important; */
+    display: flex;
+    flex-direction: column;
+    min-height: 1px;
+    /* max-height: 1000px; */
+
+    transition: 0.5s;
+}
+.code:has(textarea:focus), .code:has(.code-parent:focus)
+{
+    outline-width: 7px;
+    outline-color: var(--third-color);
+    outline-style: groove;
+    outline-style: solid;
+}
+
+[placeholder]{
+    font-size: 2.7rem;
+}
+
+.editor-settings
+{
+    overflow-x: auto;
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    height: 40px;
+    min-height: 30px;
+    border-radius: 18px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: var(--third-color);
+
+    > .console-design
+    {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+
+        >.c1, >.c2, >.c3
+        {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin: 3px;
+            border-width: 1px;
+            border-style: solid;
+        }
+        > .c1
+        {
+            margin-left: 20px;
+            background-color: #C64231;
+        }
+        > .c2
+        {
+            background-color: #D0B11F;
+        }
+        > .c3
+        {
+            background-color: #C64231;
+        }
+    }
+
+    .select-wrapper
+    {
+        
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        width: fit-content;
+        gap: 10px;
+        > select
+        {
+
+            background-color: var(--second-color);
+            font-weight: 600;
+            cursor: pointer;
+            
+            border-radius: 25px;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: fit-content;
+            font-size: 1.2em;
+            text-align: center;
+            /* position: absolute; */
+            /* width: 10vw; */
+            height: 100%;
+            margin-right: 10px;
+            /* border-bottom-left-radius: 30px; */
+            /* border-top-left-radius: 20px; */
+        }
+        > select:first-of-type{
+            right: 15px;
+        }
+        > select:last-of-type{
+            right: 12vw;
+        }
+    }
+
+}
+
+
+
+textarea, .code-area{
+    font-size: 1.5em !important;
+    border-radius: 20px;
+    background-color: white;
+    border-width: 2px;
+    border-style: solid;
+    /* text-wrap: nowrap; */
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 20px;
+    border-top-left-radius: 0px;
+    white-space: pre;
+
+    border-top-right-radius: 0px;
+}
+
+p
+{
+    animation: typing 2s;    
+}
+
+@media screen and (max-width: 768px) {
+    [placeholder]{
+        font-size: 1em;
+    }
+    .code
+    {
+        font-size: 0.8em !important;
+    }
+    .editor-settings
+    {
+        height: 20px;
+
+        .console-design
+        {
+            >.c1, >.c2, >.c3
+            {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+    }
+
+}
+
+p.animated-text
+{
+    font-size: 0.8em;
+    width: 100%;
+    animation: typing 2s;
+}
+
+

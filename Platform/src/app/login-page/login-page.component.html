@@ -1,0 +1,39 @@
+
+<div class="login-page">
+    <div class="logo-form">
+        <div class="logo">
+            <img src="/assets/Resources/logo.png" alt="Logo">
+        </div>
+        <div class="logo-shadow">
+
+        </div>
+        <div class="description">
+            <div class="main-text">
+                Welcome to QAgent 2.0 - The Future of AI-Powered Software Testing <br>
+            </div>
+
+            <div class="sub-description">
+                <br>
+                AI-powered platform for fast, accurate unit and integration testing.
+                Automate testing, save time, and ensure top software performance
+                with cutting-edge Generative AI.
+            </div>
+        </div>
+    </div>
+    <div class="logo-form-bar"></div>
+    <div class="input-form">
+        <h2>Login your account</h2>
+        <div class="inputs">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" [(ngModel)]="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" [(ngModel)]="password">
+            </div>
+        </div>
+        <button class="login-button" (click)="onClick()">Login</button>
+    </div>
+</div>
+

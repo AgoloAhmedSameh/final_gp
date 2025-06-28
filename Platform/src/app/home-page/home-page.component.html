@@ -1,0 +1,102 @@
+<div class="home-page">
+
+    <header>
+        <div class="logo" title="logo!">
+            <img src="/assets/Resources/logo.png" alt="Logo">
+        </div>
+        <div class="flowchart-button" title="Switch to flowchart simulator" (click)="ToggleSimulatorButton()">
+            <img src="/assets/Resources/flowchartButton.png" alt="Logo">
+        </div>
+        <div class="profile" title="Navigate to your profile" #profile (click)="ToggleProfile()">
+            <img src="/assets/Resources/user.png" alt="Logo">
+        </div>
+    </header>
+
+    <div class="home-page-body">
+        <div class="codeArea">
+            <app-code-area #codeArea 
+            (valueChange)="onChildTextChanged($event)"
+            (languageChange)="onChildLangugaeChange($event)"
+            (typeOfTestingChange)="onChildTypeOfTestingChange($event)"
+            [forViewOnly]="false"
+            [playAnimation]="false"
+            >
+            </app-code-area>
+        </div>
+
+        <div class="description" #descriptionContainer>
+            @if (isSimulatorON()) {
+                @if(flowchartRequest)
+                {
+                    <div class="load-flowchart" #flowchart>
+                        <app-loading name="flowchart"></app-loading>
+                    </div>
+                }
+                @if(this.flowchartError)
+                {
+                    <div class="flowchart-error-window" #flowchart>
+                        <p> unexpected problem occoured! </p>
+                        <img src="/assets/Resources/Sad.png" name="flowchart" alt="Error">
+                    </div>
+                }
+                @else 
+                {
+                    <img [src]="flowchartImageURL" name="flowchart" alt="Loading" #flowchart>
+                    <img class="download-button" title="Download graph data" src="/assets/Resources/download4.png" alt="" (click)="DownloadGrpah()">
+                    @if (this.isSimulatorRunning()) {
+                        <div class="simulation-options">
+                            <label class="speed-label">speed:</label>
+                            <input type="number" class="simulator-speed" name="simulator-speed" title="speed = {{this.simulatorSpeed()}}" placeholder="speed=1" min="1" max="50" (change)="SimulatorSpeedChange($event)" [(ngModel)]="this.simulatorSpeed">
+                            <div class="simulator-button" title="replay">
+                                <img class="replay-button simulator-button" src="/assets/Resources/replay6.png" alt="skip-button" (click)="ReplaySimulation()">  
+                            </div>
+                            <img class="back-button" src="/assets/Resources/next-button.png" alt="skip-button" title="previous branch" (click)="PreviousBranch()">  
+                            <img class="skip-button" src="/assets/Resources/next-button.png" alt="skip-button" title="next branch" (click)="SkipBranch()">  
+                            <div class="pause-button simulator-button" title="pause" (click)="PauseSimulation()">
+                                @if (this.isSimulationPaused()) {
+                                    <img src="/assets/Resources/play.png" alt="play-button" title="play">  
+                                }
+                                @else {
+                                    <div></div>
+                                    <div></div>
+                                }
+                            </div>
+                            <div class="close-button simulator-button" title="close simulator" (click)="CloseSimulation()">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="counter" title="current branch is {{this.counter()}} from {{this.branchesCount()}} total branches"> {{this.counter()}}/{{this.branchesCount()}} </div>
+
+                        </div>
+                        <div class="step-into-options" #stepIntoOptions>
+                            <img src="/assets/Resources/step-into2.png" alt="previous-frame" title="previous-frame" (click)="PreviousFrame()">
+                            <img src="/assets/Resources/step-into2.png" alt="next-frame" title="next-frame" (click)="NextFrame()">
+                        </div>
+
+                    }
+                }
+            }
+            @else {
+                <textarea [(ngModel)]="descriptionText" name="description" id="description" #description placeholder="Write a description for your code here ..." (input)="SaveCode($event)"></textarea>
+            }
+        </div>
+        @if (!isSimulatorON()) {
+            <div class="dependencies">
+                <textarea [(ngModel)]="dependenciesText" name="dependencies" id="dependencies" #dependencies placeholder="Enter your code dependencies, separated by commas &#10;(e.g., numpy, pandas, matplotlib, scikit-learn)" (input)="SaveCode($event)"></textarea>
+            </div>
+        }
+    </div>
+
+    <footer>
+        <div class="run-button" (click)="Run()">
+            <app-single-button [label]="'Run'" [function]="empty" style="font-size: 5vh;"></app-single-button>
+        </div>
+        <div class="simulator-button" (click)="RunSimulator()">
+            @if (this.isSimulatorON()) {
+                <app-single-button title="detect all the branches from the start node to the end node!" [label]="'Run Simulator'" [function]="empty" style="font-size: 5vh;"></app-single-button>
+            }
+        </div>
+    </footer>
+
+</div>
+
